@@ -1,9 +1,9 @@
 .avatar {
-  border-radius: 20%;
-  width: 10px;
-  height: 10px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   objet-fit: cover;
-  #margin-bottom: var(--typography-spacing-vertical);
+  margin-bottom: var(--typography-spacing-vertical);
 }
 
 .section {
