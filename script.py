@@ -48,11 +48,11 @@ with open("data.toml", "rb") as f:
         # OG
         h("meta", property="og:title", content=data.get("name")),
         h("meta", property="og:description", content=data.get("description")),
-        h(
-            "meta",
-            property="og:image",
-            content=f"{data.get('base_url')}/img/{data.get('image')}",
-        ),
+        #h(
+        #    "meta",
+        #    property="og:image",
+        #    content=f"{data.get('base_url')}/img/{data.get('image')}",
+        #),
         # Twitter / X
         h("meta", name="twitter:title", content=data.get("name")),
         h("meta", name="twitter:description", content=data.get("description")),
