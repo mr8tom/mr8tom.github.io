@@ -48,11 +48,11 @@ with open("data.toml", "rb") as f:
         # OG
         h("meta", property="og:title", content=data.get("name")),
         h("meta", property="og:description", content=data.get("description")),
-        #h(
-        #    "meta",
-        #    property="og:image",
-        #    content=f"{data.get('base_url')}/img/{data.get('image')}",
-        #),
+        h(
+            "meta",
+            property="og:image",
+            content=f"{data.get('base_url')}/img/{data.get('image')}",
+        ),
         # Twitter / X
         h("meta", name="twitter:title", content=data.get("name")),
         h("meta", name="twitter:description", content=data.get("description")),
@@ -98,18 +98,18 @@ with open("data.toml", "rb") as f:
     )
 
     header = frag(
-        h("header", klass="container")(
-            h("hgroup")(
-                h(
-                    "img",
-                    klass="avatar",
-                    src=f"img/{data.get('image')}",
-                    alt="avatar",
-                ),
-                h("h1")(data.get("name")),
-                h("p")(data.get("description")) if data.get("description") else None,
-            ),
-        )
+    #    h("header", klass="container")(
+    #        h("hgroup")(
+    #            h(
+    #                "img",
+    #                klass="avatar",
+    #                src=f"img/{data.get('image')}",
+    #                alt="avatar",
+    #            ),
+    #            h("h1")(data.get("name")),
+    #            h("p")(data.get("description")) if data.get("description") else None,
+    #        ),
+    #    )
     )
 
     footer = frag(
