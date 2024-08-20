@@ -1,22 +1,22 @@
 name = "Tom"
 #description = "Accomplished actor, captivating with versatility and charisma."
 #keywords = "Jake Gyllenhaal, actor, filmography, awards, versatile performances, Hollywood"
-#image = "jake.webp"
+image = ""
 theme = "dark"
 primary_color = "#d81b60"
 text_align = "center"
-gtag_id = "G-33WB8LVHR6"
+#gtag_id = "G-33WB8LVHR6"
 base_url = "https://mr8tom.github.io/"
 
 [[sections]]
-title = "nc"
+#title = "nc"
 #description = "Here are some of my movies"
 direction = "column"
 item_style = "outline"
 [[sections.items]]
-title = "Nightcrawler"
-description = "A mesmerizing thriller delving into the dark world of crime journalism"
-url = "https://www.imdb.com/title/tt2872718/"
+title = "nc"
+#description = "A mesmerizing thriller delving into the dark world of crime journalism"
+url = "https://8tom.de"
 [[sections.items]]
 title = "Brokeback Mountain"
 description = "A groundbreaking romantic drama challenging societal expectations"
