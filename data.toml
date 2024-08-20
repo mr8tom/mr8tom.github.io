@@ -1,16 +1,16 @@
-name = "Jake Gyllenhaal"
-description = "Accomplished actor, captivating with versatility and charisma."
-keywords = "Jake Gyllenhaal, actor, filmography, awards, versatile performances, Hollywood"
-image = "jake.webp"
+name = "Tom"
+#description = "Accomplished actor, captivating with versatility and charisma."
+#keywords = "Jake Gyllenhaal, actor, filmography, awards, versatile performances, Hollywood"
+#image = "jake.webp"
 theme = "dark"
 primary_color = "#d81b60"
 text_align = "center"
 gtag_id = "G-33WB8LVHR6"
-base_url = "https://thevahidal.github.io/jake"
+base_url = "https://mr8tom.github.io/"
 
 [[sections]]
-title = "Movies"
-description = "Here are some of my movies"
+title = "nc"
+#description = "Here are some of my movies"
 direction = "column"
 item_style = "outline"
 [[sections.items]]
