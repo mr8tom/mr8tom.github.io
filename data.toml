@@ -15,36 +15,36 @@ base_url = "https://mr8tom.github.io/"
 direction = "row"
 item_style = "outline"
 [[sections.items]]
-title = "ha"
+title = "HA"
 #description = "A groundbreaking romantic drama challenging societal expectations"
 url = "https://home.8tom.de"
 [[sections.items]]
 title = "Mediathek"
 url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=4"
 [[sections.items]]
-title = "Arte TOP"
+title = "Arte Top"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
 
 [[sections]]
 direction = "row"
 item_style = "filled"
 [[sections.items]]
-title = "data"
+title = "DATA"
 url = "https://8tom.de/apps/files/"
 [[sections.items]]
-title = "tsk"
+title = "TSK"
 url = "https://8tom.de/apps/tasks/#/calendars/migrated-1"
 [[sections.items]]
-title = "notes"
+title = "NOTE"
 url = "https://8tom.de/apps/notes"
 [[sections.items]]
-title = "clnd"
+title = "CLND"
 url = "https://8tom.de/apps/calendar/dayGridMonth/now"
 [[sections.items]]
-title = "cll"
+title = "CLL"
 url = "https://8tom.de/apps/collectives/"
 [[sections.items]]
-title = "mem"
+title = "MEM"
 url = "https://8tom.de/apps/memories/"
 
 [[sections]]
@@ -52,28 +52,28 @@ url = "https://8tom.de/apps/memories/"
 direction = "row"
 item_style = "outline"
 [[sections.items]]
-title = "Valetudo"
+title = "staub"
 url = "http://192.168.2.208/"
 [[sections.items]]
-title = "WZ"
+title = "wz"
 url = "http://192.168.2.202/cgi-bin/main.cgi"
 [[sections.items]]
-title = "SZ"
+title = "sz"
 url = "http://192.168.2.201/cgi-bin/main.cgi"
 [[sections.items]]
-title = "KuBa"
+title = "kuba"
 url = "http://192.168.2.203/cgi-bin/main.cgi"
 [[sections.items]]
-title = "Prx"
+title = "prx"
 url = "https://192.168.2.111:8006/"
 [[sections.items]]
-title = "HA"
+title = "ha"
 url = "http://192.168.2.204:8123/lovelace/0"
 [[sections.items]]
-title = "Z2M"
+title = "z2m"
 url = "http://192.168.2.209:8080/#/"
 [[sections.items]]
-title = "LMS"
+title = "lms"
 url = "http://192.168.2.200:9000/material/"
 [[sections.items]]
 title = "pi"
@@ -87,10 +87,12 @@ url = "https://link.8tom.de/dashboard"
 [[sections.items]]
 title = "rd"
 url = "https://read.8tom.de/login"
-
-#[[sections.items]]
-#title = ""
-#url = ""
+[[sections.items]]
+title = "frb"
+url = "http://192.168.2.1"
+[[sections.items]]
+title = "frt"
+url = "http://192.168.2.2"
 #[[sections.items]]
 #title = ""
 #url = ""
