@@ -112,7 +112,7 @@ with open("data.toml", "rb") as f:
         )
     )
 
-    #footer = frag(
+    footer = frag(
     #    h("footer", klass="container")(
     #        h("small")("Generated with "),
     #        h(
@@ -122,7 +122,7 @@ with open("data.toml", "rb") as f:
     #            target="_blank",
     #        )("Jake"),
     #    ),
-    #)
+    )
 
     output = html(lang="en", data_theme=data.get("theme", "dark"))(
         head,
