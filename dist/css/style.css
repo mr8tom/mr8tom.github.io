@@ -26,3 +26,8 @@
   margin-bottom: var(--spacing);
   width: 100%;
 }
+
+:root {
+  --typography-spacing-vertical: 0.1rem;
+  --spacing: 0.5rem;
+}
