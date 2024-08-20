@@ -4,15 +4,16 @@
 #image = ""
 theme = "dark"
 primary_color = "#d81b60"
-text_align = "left"
+text_align = "center"
 #gtag_id = "G-33WB8LVHR6"
 base_url = "https://mr8tom.github.io/"
 
 [[sections]]
 #title = "nc"
 #description = "Here are some of my movies"
-direction = "column"
-item_style = "filled"
+#direction = "column"
+direction = "row"
+item_style = "outline"
 [[sections.items]]
 title = "ha"
 #description = "A groundbreaking romantic drama challenging societal expectations"
@@ -25,9 +26,8 @@ title = "Arte TOP"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
 
 [[sections]]
-title = "Intern"
 direction = "row"
-item_style = "outline"
+item_style = "filled"
 [[sections.items]]
 title = "data"
 url = "https://8tom.de/apps/files/"
@@ -44,11 +44,11 @@ url = "https://8tom.de/apps/calendar/dayGridMonth/now"
 title = "cll"
 url = "https://8tom.de/apps/collectives/"
 [[sections.items]]
-title = "clnd"
+title = "mem"
 url = "https://8tom.de/apps/memories/"
 
 [[sections]]
-title = "Intern"
+#title = "Intern"
 direction = "row"
 item_style = "outline"
 [[sections.items]]
@@ -67,14 +67,17 @@ url = "http://192.168.2.203/cgi-bin/main.cgi"
 title = "Prx"
 url = "https://192.168.2.111:8006/"
 [[sections.items]]
-title = "pi"
-url = "http://192.168.2.9/admin/login.php"
-[[sections.items]]
 title = "HA"
 url = "http://192.168.2.204:8123/lovelace/0"
 [[sections.items]]
+title = "Z2M"
+url = "http://192.168.2.209:8080/#/"
+[[sections.items]]
 title = "LMS"
 url = "http://192.168.2.200:9000/material/"
+[[sections.items]]
+title = "pi"
+url = "http://192.168.2.9/admin/login.php"
 [[sections.items]]
 title = "bk"
 url = "https://book.8tom.de/"
@@ -84,9 +87,7 @@ url = "https://link.8tom.de/dashboard"
 [[sections.items]]
 title = "rd"
 url = "https://read.8tom.de/login"
-[[sections.items]]
-title = "Z2M"
-url = "http://192.168.2.209:8080/#/"
+
 #[[sections.items]]
 #title = ""
 #url = ""
