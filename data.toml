@@ -21,25 +21,74 @@ url = "https://8tom.de"
 title = "ha"
 #description = "A groundbreaking romantic drama challenging societal expectations"
 url = "https://home.8tom.de"
-[[sections.items]]
-title = "Prisoners"
+#[[sections.items]]
+#title = "Prisoners"
 #description = "A gripping thriller entangling a detective in a web of secrets during a kidnapping investigation"
-url = "https://www.imdb.com/title/tt1392214/"
+#url = "https://www.imdb.com/title/tt1392214/"
+[[sections.items]]
+title = "ThekView"
+url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=4"
+[[sections.items]]
+title = "ATOP"
+url = "https://www.arte.tv/de/videos/meistgesehen/"
 
-#[[sections]]
-#title = "Links"
-#description = "Look for me on these websites"
-#direction = "row"
-#item_style = "outline"
+[[sections]]
+title = "Intern"
+direction = "row"
+item_style = "outline"
+[[sections.items]]
+title = "Valetudo"
+url = "192.168.2.208/"
+[[sections.items]]
+title = "WZ"
+url = "192.168.2.202/cgi-bin/main.cgi"
+[[sections.items]]
+title = "SZ"
+url = "192.168.2.201/cgi-bin/main.cgi"
+[[sections.items]]
+title = "KuBa"
+url = "192.168.2.203/cgi-bin/main.cgi"
+[[sections.items]]
+title = "Prx"
+url = "https://192.168.2.111:8006/"
+[[sections.items]]
+title = "pi"
+url = "http://192.168.2.9/admin/login.php"
+[[sections.items]]
+title = "HA"
+url = "http://192.168.2.204:8123/lovelace/0"
+[[sections.items]]
+title = "LMS"
+url = "http://192.168.2.200:9000/material/"
+[[sections.items]]
+title = "bk"
+url = "https://book.8tom.de/"
+[[sections.items]]
+title = "lnk"
+url = "https://link.8tom.de/dashboard"
+[[sections.items]]
+title = "rd"
+url = "https://read.8tom.de/login"
+[[sections.items]]
+title = "Z2M"
+url = "http://192.168.2.209:8080/#/"
 #[[sections.items]]
-#title = "Instagram"
-#url = "https://www.instagram.com/jakegyllenhaal"
+#title = ""
+#url = ""
 #[[sections.items]]
-#title = "IMDb"
-#url = "https://www.imdb.com/name/nm0350453/"
+#title = ""
+#url = ""
 #[[sections.items]]
-#title = "Wikipedia"
-#url = "https://en.wikipedia.org/wiki/Jake_Gyllenhaal"
+#title = ""
+#url = ""
 #[[sections.items]]
-#title = "Rotten Tomatoes"
-#url = "https://www.rottentomatoes.com/celebrity/jake_gyllenhaal"
+#title = ""
+#url = ""
+
+
+
+
+
+
+
+
