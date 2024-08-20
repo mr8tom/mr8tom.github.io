@@ -1,10 +1,10 @@
 #name = "Tom"
 #description = "Accomplished actor, captivating with versatility and charisma."
 #keywords = "Jake Gyllenhaal, actor, filmography, awards, versatile performances, Hollywood"
-image = ""
+#image = ""
 theme = "dark"
 primary_color = "#d81b60"
-text_align = "center"
+text_align = "left"
 #gtag_id = "G-33WB8LVHR6"
 base_url = "https://mr8tom.github.io/"
 
@@ -14,22 +14,14 @@ base_url = "https://mr8tom.github.io/"
 direction = "column"
 item_style = "filled"
 [[sections.items]]
-title = "nc"
-#description = "A mesmerizing thriller delving into the dark world of crime journalism"
-url = "https://8tom.de"
-[[sections.items]]
 title = "ha"
 #description = "A groundbreaking romantic drama challenging societal expectations"
 url = "https://home.8tom.de"
-#[[sections.items]]
-#title = "Prisoners"
-#description = "A gripping thriller entangling a detective in a web of secrets during a kidnapping investigation"
-#url = "https://www.imdb.com/title/tt1392214/"
 [[sections.items]]
-title = "ThekView"
+title = "Mediathek"
 url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=4"
 [[sections.items]]
-title = "ATOP"
+title = "Arte TOP"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
 
 [[sections]]
@@ -37,17 +29,40 @@ title = "Intern"
 direction = "row"
 item_style = "outline"
 [[sections.items]]
+title = "data"
+url = "https://8tom.de/apps/files/"
+[[sections.items]]
+title = "tsk"
+url = "https://8tom.de/apps/tasks/#/calendars/migrated-1"
+[[sections.items]]
+title = "notes"
+url = "https://8tom.de/apps/notes"
+[[sections.items]]
+title = "clnd"
+url = "https://8tom.de/apps/calendar/dayGridMonth/now"
+[[sections.items]]
+title = "cll"
+url = "https://8tom.de/apps/collectives/"
+[[sections.items]]
+title = "clnd"
+url = "https://8tom.de/apps/memories/"
+
+[[sections]]
+title = "Intern"
+direction = "row"
+item_style = "outline"
+[[sections.items]]
 title = "Valetudo"
-url = "192.168.2.208/"
+url = "http://192.168.2.208/"
 [[sections.items]]
 title = "WZ"
-url = "192.168.2.202/cgi-bin/main.cgi"
+url = "http://192.168.2.202/cgi-bin/main.cgi"
 [[sections.items]]
 title = "SZ"
-url = "192.168.2.201/cgi-bin/main.cgi"
+url = "http://192.168.2.201/cgi-bin/main.cgi"
 [[sections.items]]
 title = "KuBa"
-url = "192.168.2.203/cgi-bin/main.cgi"
+url = "http://192.168.2.203/cgi-bin/main.cgi"
 [[sections.items]]
 title = "Prx"
 url = "https://192.168.2.111:8006/"
