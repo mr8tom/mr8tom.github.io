@@ -92,7 +92,10 @@ title = "frb"
 url = "http://192.168.2.1"
 [[sections.items]]
 title = "frt"
-url = "http://192.168.2.2"
+url = "http://192.168.2.3"
+[[sections.items]]
+title = "rpt"
+url = "http://192.168.2.136"
 #[[sections.items]]
 #title = ""
 #url = ""
