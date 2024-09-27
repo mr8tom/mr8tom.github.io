@@ -110,7 +110,7 @@ url = "http://192.168.2.3"
 title = "rpt"
 url = "http://192.168.2.136"
 [[sections.items]]
-title = "gthb"
+title = "git"
 url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 #[[sections.items]]
 #title = ""
