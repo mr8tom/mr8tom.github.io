@@ -26,7 +26,7 @@ with open("data.toml", "rb") as f:
                         role="button",
                         klass=f"{'outline' if section.get('item_style', 'outline') == 'outline' else ''}",
                         href=item.get("url"),
-                        target="_blank",
+                        #target="_blank",
                     )(
                         h("hgroup")(
                             h("h4")(item.get("title")), h("h5")(item.get("description"))
