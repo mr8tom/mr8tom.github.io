@@ -11,8 +11,8 @@ base_url = "https://mr8tom.github.io/"
 [[sections]]
 #title = "nc"
 #description = "Here are some of my movies"
-direction = "column"
-#direction = "row"
+#direction = "column"
+direction = "row"
 item_style = "filled"
 [[sections.items]]
 title = "bk"
