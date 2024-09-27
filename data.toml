@@ -11,6 +11,25 @@ base_url = "https://mr8tom.github.io/"
 [[sections]]
 #title = "nc"
 #description = "Here are some of my movies"
+direction = "column"
+#direction = "row"
+item_style = "filled"
+[[sections.items]]
+title = "bk"
+url = "https://book.8tom.de/"
+[[sections.items]]
+title = "lnk"
+url = "https://link.8tom.de/dashboard"
+[[sections.items]]
+title = "rd"
+url = "https://read.8tom.de/login"
+[[sections.items]]
+title = "pd"
+url = "https://pad.8tom.de/lucatom"
+
+[[sections]]
+#title = "nc"
+#description = "Here are some of my movies"
 #direction = "column"
 direction = "row"
 item_style = "outline"
@@ -82,15 +101,6 @@ url = "http://192.168.2.200:9000/material/"
 title = "pi"
 url = "http://192.168.2.9/admin/login.php"
 [[sections.items]]
-title = "bk"
-url = "https://book.8tom.de/"
-[[sections.items]]
-title = "lnk"
-url = "https://link.8tom.de/dashboard"
-[[sections.items]]
-title = "rd"
-url = "https://read.8tom.de/login"
-[[sections.items]]
 title = "frb"
 url = "http://192.168.2.1"
 [[sections.items]]
@@ -99,16 +109,15 @@ url = "http://192.168.2.3"
 [[sections.items]]
 title = "rpt"
 url = "http://192.168.2.136"
+[[sections.items]]
+title = "gthb"
+url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 #[[sections.items]]
 #title = ""
 #url = ""
 #[[sections.items]]
 #title = ""
 #url = ""
-#[[sections.items]]
-#title = ""
-#url = ""
-
 
 
 
