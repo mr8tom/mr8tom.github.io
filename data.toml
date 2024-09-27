@@ -9,9 +9,6 @@ text_align = "center"
 base_url = "https://mr8tom.github.io/"
 
 [[sections]]
-#title = "nc"
-#description = "Here are some of my movies"
-#direction = "column"
 direction = "row"
 item_style = "filled"
 [[sections.items]]
@@ -26,6 +23,9 @@ url = "https://read.8tom.de/login"
 [[sections.items]]
 title = "pd"
 url = "https://pad.8tom.de/lucatom"
+[[sections.items]]
+title = "ha"
+url = "home.8tom.de"
 
 [[sections]]
 #title = "nc"
@@ -74,7 +74,7 @@ url = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&pr
 direction = "row"
 item_style = "outline"
 [[sections.items]]
-title = "staub"
+title = "stb"
 url = "http://192.168.2.208/"
 [[sections.items]]
 title = "wz"
