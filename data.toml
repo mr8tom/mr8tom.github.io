@@ -34,10 +34,6 @@ url = "home.8tom.de"
 direction = "row"
 item_style = "outline"
 [[sections.items]]
-title = "HA"
-#description = "A groundbreaking romantic drama challenging societal expectations"
-url = "https://home.8tom.de"
-[[sections.items]]
 title = "Mediathek"
 url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=4"
 [[sections.items]]
