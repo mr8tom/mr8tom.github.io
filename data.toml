@@ -39,6 +39,9 @@ url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=4"
 [[sections.items]]
 title = "Arte Top"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
+[[sections.items]]
+title = "🌥️"
+url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
 
 [[sections]]
 direction = "row"
