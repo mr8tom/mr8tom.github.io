@@ -24,6 +24,9 @@ url = "https://read.8tom.de/login"
 title = "pd"
 url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
+title = "str"
+url = "https://stream.8tom.de"
+[[sections.items]]
 title = "ha"
 url = "https://home.8tom.de"
 
@@ -37,8 +40,11 @@ item_style = "outline"
 title = "Mediathek"
 url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=4"
 [[sections.items]]
-title = "Arte Top"
+title = "Arte 🔝"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
+[[sections.items]]
+title = "git"
+url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 [[sections.items]]
 title = "🌥️"
 url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
@@ -73,32 +79,8 @@ url = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&pr
 direction = "row"
 item_style = "outline"
 [[sections.items]]
-title = "stb"
-url = "http://192.168.2.208/"
-[[sections.items]]
-title = "wz"
-url = "http://192.168.2.202/cgi-bin/main.cgi"
-[[sections.items]]
-title = "sz"
-url = "http://192.168.2.201/cgi-bin/main.cgi"
-[[sections.items]]
-title = "kü"
-url = "http://192.168.2.203/cgi-bin/main.cgi"
-[[sections.items]]
 title = "prx"
 url = "https://192.168.2.111:8006/"
-[[sections.items]]
-title = "ha"
-url = "http://192.168.2.204:8123/lovelace/0"
-[[sections.items]]
-title = "z2m"
-url = "http://192.168.2.209:8080/#/"
-[[sections.items]]
-title = "lms"
-url = "http://192.168.2.200:9000/material/"
-[[sections.items]]
-title = "pi"
-url = "http://192.168.2.9/admin/login.php"
 [[sections.items]]
 title = "frb"
 url = "http://192.168.2.1"
@@ -109,8 +91,30 @@ url = "http://192.168.2.3"
 title = "rpt"
 url = "http://192.168.2.136"
 [[sections.items]]
-title = "git"
-url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
+title = "lms"
+url = "http://192.168.2.200:9000/material/"
+[[sections.items]]
+title = "wz"
+url = "http://192.168.2.202/cgi-bin/main.cgi"
+[[sections.items]]
+title = "sz"
+url = "http://192.168.2.201/cgi-bin/main.cgi"
+[[sections.items]]
+title = "kü"
+url = "http://192.168.2.203/cgi-bin/main.cgi"
+[[sections.items]]
+title = "ha"
+url = "http://192.168.2.204:8123/lovelace/0"
+[[sections.items]]
+title = "z2m"
+url = "http://192.168.2.209:8080/#/"
+[[sections.items]]
+title = "pi"
+url = "http://192.168.2.9/admin/login.php"
+[[sections.items]]
+title = "stb"
+url = "http://192.168.2.208/"
+
 #[[sections.items]]
 #title = ""
 #url = ""
