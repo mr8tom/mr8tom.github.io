@@ -43,8 +43,7 @@ url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
 title = "Arte"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
 [[sections.items]]
-title = ""
-image = "https://www.pngegg.com/en/png-yrwfa"
+title = "git"
 url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 [[sections.items]]
 title = "🌥️"
