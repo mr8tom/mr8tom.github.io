@@ -24,7 +24,7 @@ url = "https://read.8tom.de/login"
 title = "pd"
 url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
-title = "sm"
+title = "st"
 url = "https://stream.8tom.de"
 [[sections.items]]
 title = "ha"
@@ -37,13 +37,14 @@ url = "https://home.8tom.de"
 direction = "row"
 item_style = "outline"
 [[sections.items]]
-title = "Mediathek"
+title = "Thek"
 url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
 [[sections.items]]
 title = "Arte"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
 [[sections.items]]
-title = "git"
+title = ""
+image = "https://www.pngegg.com/en/png-yrwfa"
 url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 [[sections.items]]
 title = "🌥️"
@@ -73,6 +74,9 @@ url = "https://8tom.de/apps/memories/"
 [[sections.items]]
 title = "SRCH"
 url = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&provider=collectives-pages&provider=collectives-page-content&provider=notes&provider=files&provider=tasks"
+[[sections.items]]
+title = "LOG"
+url = "https://8tom.de/settings/admin/logging"
 
 [[sections]]
 #title = "Intern"
