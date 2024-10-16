@@ -37,10 +37,10 @@ url = "https://home.8tom.de"
 direction = "row"
 item_style = "outline"
 [[sections.items]]
-title = "Thek"
+title = "thek"
 url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
 [[sections.items]]
-title = "Arte"
+title = "arte"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
 [[sections.items]]
 title = "git"
@@ -53,29 +53,32 @@ url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
 direction = "row"
 item_style = "filled"
 [[sections.items]]
-title = "DATA"
+title = "DIR"
 url = "https://8tom.de/apps/files/"
 [[sections.items]]
 title = "TSK"
 url = "https://8tom.de/apps/tasks/#/calendars/migrated-1"
 [[sections.items]]
-title = "NOTE"
+title = "PAD"
 url = "https://8tom.de/apps/notes"
 [[sections.items]]
-title = "CLND"
+title = "CAL"
 url = "https://8tom.de/apps/calendar/dayGridMonth/now"
 [[sections.items]]
-title = "CLL"
+title = "COL"
 url = "https://8tom.de/apps/collectives/"
 [[sections.items]]
-title = "MEM"
+title = "PIC"
 url = "https://8tom.de/apps/memories/"
 [[sections.items]]
-title = "SRCH"
+title = "FND"
 url = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&provider=collectives-pages&provider=collectives-page-content&provider=notes&provider=files&provider=tasks"
 [[sections.items]]
 title = "LOG"
 url = "https://8tom.de/settings/admin/logging"
+[[sections.items]]
+title = "SYS"
+url = "https://8tom.de/settings/admin/overview"
 
 [[sections]]
 #title = "Intern"
