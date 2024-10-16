@@ -85,11 +85,11 @@ item_style = "outline"
 title = "prx"
 url = "https://192.168.2.111:8006/"
 [[sections.items]]
-title = "frt"
-url = "http://192.168.2.3"
-[[sections.items]]
 title = "frb"
 url = "http://192.168.2.1"
+[[sections.items]]
+title = "frt"
+url = "http://192.168.2.3"
 [[sections.items]]
 title = "rpt"
 url = "http://192.168.2.136"
