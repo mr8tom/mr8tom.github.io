@@ -31,4 +31,5 @@
 :root {
   --typography-spacing-vertical: 0.1rem;
   --spacing: 0.5rem;
+  --form-element-spacing-horizontal: 0.6rem;
 }
