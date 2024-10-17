@@ -16,7 +16,6 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  --form-element-spacing-horizontal: 0.6rem;
 }
 
 [role="button"] > hgroup {
@@ -31,5 +30,5 @@
 :root {
   --typography-spacing-vertical: 0.1rem;
   --spacing: 0.5rem;
-  --form-element-spacing-horizontal: 0.6rem;
+  --form-element-spacing-horizontal: 0.8rem;
 }
