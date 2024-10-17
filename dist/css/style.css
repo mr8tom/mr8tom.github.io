@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  --form-element-spacing-horizontal: 0.6rem;
 }
 
 [role="button"] > hgroup {
