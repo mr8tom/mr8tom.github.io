@@ -76,9 +76,9 @@ url = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&pr
 [[sections.items]]
 title = "LOG"
 url = "https://8tom.de/settings/admin/logging"
-[[sections.items]]
-title = "SYS"
-url = "https://8tom.de/settings/admin/overview"
+#[[sections.items]]
+#title = "SYS"
+#url = "https://8tom.de/settings/admin/overview"
 
 [[sections]]
 #title = "Intern"
