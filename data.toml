@@ -24,11 +24,11 @@ url = "https://read.8tom.de/login"
 title = "pd"
 url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
-title = "st"
-url = "https://stream.8tom.de"
-[[sections.items]]
 title = "ha"
 url = "https://home.8tom.de"
+[[sections.items]]
+title = "nt"
+url = "https://note.8tom.de"
 
 [[sections]]
 #title = "nc"
@@ -120,10 +120,24 @@ url = "http://192.168.2.9/admin/login.php"
 [[sections.items]]
 title = "stb"
 url = "http://192.168.2.208/"
-
-#[[sections.items]]
-#title = ""
-#url = ""
+[[sections.items]]
+title = "nc"
+url = "http://192.168.2.100/"
+[[sections.items]]
+title = "trl"
+url = "http://192.168.2.206/""
+[[sections.items]]
+title = "aff"
+url = "http://192.168.2.217:3030/"
+[[sections.items]]
+title = "st"
+url = "http://192.168.2.219"
+[[sections.items]]
+title = "bk"
+url = "http://192.168.2.213"
+[[sections.items]]
+title = "dge"
+url = "http://192.168.2.214:5001/"
 #[[sections.items]]
 #title = ""
 #url = ""
