@@ -125,7 +125,7 @@ title = "nc"
 url = "http://192.168.2.100/"
 [[sections.items]]
 title = "trl"
-url = "http://192.168.2.206/""
+url = "http://192.168.2.206/"
 [[sections.items]]
 title = "aff"
 url = "http://192.168.2.217:3030/"
