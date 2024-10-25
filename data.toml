@@ -132,6 +132,12 @@ url = "http://192.168.2.212/"
 [[sections.items]]
 title = "dge"
 url = "http://192.168.2.214:5001/"
+[[sections.items]]
+title = "yno"
+url = "http://192.168.2.210/"
+#[[sections.items]]
+#title = ""
+#url = ""
 #[[sections.items]]
 #title = ""
 #url = ""
