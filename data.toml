@@ -59,7 +59,7 @@ url = "https://8tom.de/apps/files/"
 title = "TSK"
 url = "https://8tom.de/apps/tasks/#/calendars/migrated-1"
 [[sections.items]]
-title = "PAD"
+title = "NOT"
 url = "https://8tom.de/apps/notes"
 [[sections.items]]
 title = "CAL"
