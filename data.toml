@@ -26,9 +26,9 @@ url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
 title = "ha"
 url = "https://home.8tom.de"
-[[sections.items]]
-title = "nt"
-url = "https://note.8tom.de"
+#[[sections.items]]
+#title = "nt"
+#url = "https://note.8tom.de"
 
 [[sections]]
 #title = "nc"
