@@ -124,17 +124,11 @@ url = "http://192.168.2.208/"
 title = "nc"
 url = "http://192.168.2.100/"
 [[sections.items]]
-title = "trl"
-url = "http://192.168.2.206/"
-[[sections.items]]
-title = "aff"
-url = "http://192.168.2.217:3030/"
-[[sections.items]]
-title = "st"
-url = "http://192.168.2.219"
+title = "str"
+url = "http://192.168.2.219/"
 [[sections.items]]
 title = "bk"
-url = "http://192.168.2.213"
+url = "http://192.168.2.212/"
 [[sections.items]]
 title = "dge"
 url = "http://192.168.2.214:5001/"
