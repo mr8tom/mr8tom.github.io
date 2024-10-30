@@ -26,9 +26,9 @@ url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
 title = "ha"
 url = "https://home.8tom.de"
-#[[sections.items]]
-#title = "nt"
-#url = "https://note.8tom.de"
+[[sections.items]]
+title = "fi"
+url = "https://fin.8tom.de"
 
 [[sections]]
 #title = "nc"
@@ -138,9 +138,9 @@ url = "http://192.168.2.214:5001/"
 [[sections.items]]
 title = "yno"
 url = "http://192.168.2.210/"
-#[[sections.items]]
-#title = ""
-#url = ""
+[[sections.items]]
+title = "wg1"
+url = "https://wire.8tom.de/"
 #[[sections.items]]
 #title = ""
 #url = ""
