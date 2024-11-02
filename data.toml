@@ -18,8 +18,8 @@ url = "https://book.8tom.de/"
 title = "lk"
 url = "https://link.8tom.de/links"
 [[sections.items]]
-title = "rd"
-url = "https://read.8tom.de/login"
+title = "wg"
+url = "https://wire.8tom.de/"
 [[sections.items]]
 title = "pd"
 url = "https://pad.8tom.de/lucatom"
@@ -138,9 +138,9 @@ url = "http://192.168.2.214:5001/"
 [[sections.items]]
 title = "yno"
 url = "http://192.168.2.210/"
-[[sections.items]]
-title = "wg1"
-url = "https://wire.8tom.de/"
+#[[sections.items]]
+#title = "wg1"
+#url = "https://wire.8tom.de/"
 #[[sections.items]]
 #title = ""
 #url = ""
