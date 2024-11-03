@@ -138,6 +138,9 @@ url = "http://192.168.2.214:5001/"
 [[sections.items]]
 title = "yno"
 url = "http://192.168.2.210/"
+[[sections.items]]
+title = "pdf"
+url = "http://192.168.2.151:8080/"
 #[[sections.items]]
 #title = "wg1"
 #url = "https://wire.8tom.de/"
