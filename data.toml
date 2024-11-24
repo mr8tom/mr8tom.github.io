@@ -29,6 +29,9 @@ url = "https://home.8tom.de"
 [[sections.items]]
 title = "fi"
 url = "https://fin.8tom.de"
+[[sections.items]]
+title = "au"
+url = "https://audio.8tom.de"
 
 [[sections]]
 #title = "nc"
