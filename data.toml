@@ -131,7 +131,7 @@ title = "nc"
 url = "http://192.168.2.100/"
 [[sections.items]]
 title = "str"
-url = "http://192.168.2.219/"
+url = "http://192.168.2.219:8096/"
 [[sections.items]]
 title = "bk"
 url = "http://192.168.2.212/"
@@ -144,9 +144,9 @@ url = "http://192.168.2.210/"
 [[sections.items]]
 title = "pdf"
 url = "http://192.168.2.151:8080/"
-#[[sections.items]]
-#title = "wg1"
-#url = "https://wire.8tom.de/"
+[[sections.items]]
+title = "mtb"
+url = "http://192.168.2.161:8081/"
 #[[sections.items]]
 #title = ""
 #url = ""
