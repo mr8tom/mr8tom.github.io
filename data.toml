@@ -12,26 +12,30 @@ base_url = "https://mr8tom.github.io/"
 direction = "row"
 item_style = "filled"
 [[sections.items]]
-title = "bk"
+title = "b"
 url = "https://book.8tom.de/"
 [[sections.items]]
-title = "lk"
+title = "a"
+url = "https://audio.8tom.de"
+[[sections.items]]
+title = "s"
+url = "https://stream.8tom.de"
+[[sections.items]]
+title = "l"
 url = "https://link.8tom.de/links"
 [[sections.items]]
-title = "wg"
+title = "w"
 url = "https://wire.8tom.de/"
 [[sections.items]]
-title = "pd"
+title = "p"
 url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
-title = "ha"
+title = "h"
 url = "https://home.8tom.de"
 [[sections.items]]
-title = "fi"
+title = "f"
 url = "https://fin.8tom.de"
-[[sections.items]]
-title = "au"
-url = "https://audio.8tom.de"
+
 
 [[sections]]
 #title = "nc"
