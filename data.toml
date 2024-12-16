@@ -12,9 +12,9 @@ base_url = "https://mr8tom.github.io/"
 direction = "row"
 item_style = "filled"
 [[sections.items]]
-title = "b"
-url = "https://book.8tom.de/"
-[[sections.items]]
+#title = "b"
+#url = "https://book.8tom.de/"
+#[[sections.items]]
 title = "a"
 url = "https://audio.8tom.de"
 [[sections.items]]
