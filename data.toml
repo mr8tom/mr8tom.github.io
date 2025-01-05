@@ -24,9 +24,6 @@ url = "https://stream.8tom.de"
 title = "l"
 url = "https://link.8tom.de/links"
 [[sections.items]]
-title = "w"
-url = "https://wire.8tom.de/"
-[[sections.items]]
 title = "p"
 url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
@@ -151,6 +148,12 @@ url = "http://192.168.2.151:8080/"
 [[sections.items]]
 title = "mtb"
 url = "http://192.168.2.161:8081/"
+[[sections.items]]
+title = "wre"
+url = "https://wire.8tom.de/"
+[[sections.items]]
+title = "tec"
+url = "https://tec.8tom.de/"
 #[[sections.items]]
 #title = ""
 #url = ""
