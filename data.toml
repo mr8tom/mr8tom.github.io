@@ -1,6 +1,6 @@
 #name = "Tom"
-#description = "Accomplished actor, captivating with versatility and charisma."
-#keywords = "Jake Gyllenhaal, actor, filmography, awards, versatile performances, Hollywood"
+#description = ""
+#keywords = ""
 #image = ""
 theme = "dark"
 primary_color = "#d81b60"
@@ -12,17 +12,14 @@ base_url = "https://mr8tom.github.io/"
 direction = "row"
 item_style = "filled"
 [[sections.items]]
-#title = "b"
-#url = "https://book.8tom.de/"
-#[[sections.items]]
-title = "a"
-url = "https://audio.8tom.de"
-[[sections.items]]
 title = "s"
 url = "https://stream.8tom.de"
 [[sections.items]]
 title = "l"
 url = "https://link.8tom.de/links"
+[[sections.items]]
+title = "a"
+url = "https://audio.8tom.de"
 [[sections.items]]
 title = "p"
 url = "https://pad.8tom.de/lucatom"
@@ -31,27 +28,8 @@ title = "h"
 url = "https://home.8tom.de"
 
 [[sections]]
-#title = "nc"
-#description = "Here are some of my movies"
-#direction = "column"
 direction = "row"
 item_style = "outline"
-[[sections.items]]
-title = "thek"
-url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
-[[sections.items]]
-title = "arte"
-url = "https://www.arte.tv/de/videos/meistgesehen/"
-[[sections.items]]
-title = "git"
-url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
-[[sections.items]]
-title = "🌥️"
-url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
-
-[[sections]]
-direction = "row"
-item_style = "filled"
 [[sections.items]]
 title = "/"
 url = "https://8tom.de/apps/files/"
@@ -79,14 +57,11 @@ url = "https://8tom.de/apps/collectives/"
 [[sections.items]]
 title = "🖼️"
 url = "https://8tom.de/apps/memories/"
-#[[sections.items]]
-#title = "SYS"
-#url = "https://8tom.de/settings/admin/overview"
 
 [[sections]]
 #title = "Intern"
 direction = "row"
-item_style = "outline"
+item_style = "filled"
 [[sections.items]]
 title = "prx"
 url = "https://192.168.2.4:8006/"
@@ -152,14 +127,23 @@ title = "tec"
 url = "https://tec.8tom.de/"
 [[sections.items]]
 title = "fin"
-url = "https://fin.8tom.de"
+url = "https://fin.8tom.de/"
 #[[sections.items]]
 #title = ""
 #url = ""
 
-
-
-
-
-
-
+[[sections]]
+direction = "row"
+item_style = "outline"
+[[sections.items]]
+title = "thek"
+url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
+[[sections.items]]
+title = "arte"
+url = "https://www.arte.tv/de/videos/meistgesehen/"
+[[sections.items]]
+title = "git"
+url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
+[[sections.items]]
+title = "🌥️"
+url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
