@@ -29,10 +29,6 @@ url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
 title = "h"
 url = "https://home.8tom.de"
-[[sections.items]]
-title = "f"
-url = "https://fin.8tom.de"
-
 
 [[sections]]
 #title = "nc"
@@ -93,43 +89,43 @@ direction = "row"
 item_style = "outline"
 [[sections.items]]
 title = "prx"
-url = "https://192.168.2.111:8006/"
+url = "https://192.168.2.4:8006/"
 [[sections.items]]
 title = "frb"
 url = "http://192.168.2.1"
 [[sections.items]]
 title = "frt"
-url = "http://192.168.2.3"
+url = "http://192.168.2.2"
 [[sections.items]]
 title = "rpt"
-url = "http://192.168.2.136"
+url = "http://192.168.2.3"
 [[sections.items]]
 title = "lms"
-url = "http://192.168.2.200:9000/material/"
+url = "http://192.168.2.10:9000/material/"
 [[sections.items]]
 title = "wz"
-url = "http://192.168.2.202/cgi-bin/main.cgi"
+url = "http://192.168.2.42/cgi-bin/main.cgi"
 [[sections.items]]
 title = "sz"
-url = "http://192.168.2.201/cgi-bin/main.cgi"
+url = "http://192.168.2.41/cgi-bin/main.cgi"
 [[sections.items]]
 title = "kü"
-url = "http://192.168.2.203/cgi-bin/main.cgi"
+url = "http://192.168.2.43/cgi-bin/main.cgi"
 [[sections.items]]
 title = "ha"
-url = "http://192.168.2.204:8123/lovelace/0"
+url = "http://192.168.2.6:8123/lovelace/0"
 [[sections.items]]
 title = "z2m"
-url = "http://192.168.2.209:8080/#/"
+url = "http://192.168.2.15:8080/#/"
 [[sections.items]]
 title = "pi"
 url = "http://192.168.2.9/admin/login.php"
 [[sections.items]]
 title = "stb"
-url = "http://192.168.2.208/"
+url = "http://192.168.2.45/"
 [[sections.items]]
 title = "nc"
-url = "http://192.168.2.100/"
+url = "http://192.168.2.5/"
 [[sections.items]]
 title = "str"
 url = "http://192.168.2.219:8096/"
@@ -154,6 +150,9 @@ url = "https://wire.8tom.de/"
 [[sections.items]]
 title = "tec"
 url = "https://tec.8tom.de/"
+[[sections.items]]
+title = "fin"
+url = "https://fin.8tom.de"
 #[[sections.items]]
 #title = ""
 #url = ""
