@@ -115,7 +115,7 @@ title = "yno"
 url = "http://192.168.2.210/"
 [[sections.items]]
 title = "pdf"
-url = "http://192.168.2.151:8080/"
+url = "http://192.168.2.18:8080/"
 [[sections.items]]
 title = "mtb"
 url = "http://192.168.2.161:8081/"
