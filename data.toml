@@ -106,13 +106,13 @@ title = "str"
 url = "http://192.168.2.219:8096/"
 [[sections.items]]
 title = "bk"
-url = "http://192.168.2.212/"
+url = "http://192.168.2.12/"
 [[sections.items]]
 title = "dge"
-url = "http://192.168.2.214:5001/"
+url = "http://192.168.2.14:5001/"
 [[sections.items]]
 title = "yno"
-url = "http://192.168.2.210/"
+url = "http://192.168.2.10/"
 [[sections.items]]
 title = "pdf"
 url = "http://192.168.2.18:8080/"
