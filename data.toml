@@ -91,7 +91,7 @@ title = "ha"
 url = "http://192.168.2.6:8123/lovelace/0"
 [[sections.items]]
 title = "z2m"
-url = "http://192.168.2.15:8080/#/"
+url = "http://192.168.2.12:8080/#/"
 [[sections.items]]
 title = "pi"
 url = "http://192.168.2.9/admin/"
@@ -142,5 +142,5 @@ url = "https://www.arte.tv/de/videos/meistgesehen/"
 title = "git"
 url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 [[sections.items]]
-title = "🌥"
+title = "w"
 url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
