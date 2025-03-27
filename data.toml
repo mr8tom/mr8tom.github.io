@@ -125,6 +125,12 @@ url = "https://tec.8tom.de/"
 [[sections.items]]
 title = "fin"
 url = "https://fin.8tom.de/"
+[[sections.items]]
+title = "con"
+url = "https://con.8tom.de/"
+[[sections.items]]
+title = "wat"
+url = "https://watcharr.8tom.de/"
 #[[sections.items]]
 #title = ""
 #url = ""
