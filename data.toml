@@ -131,6 +131,12 @@ url = "https://con.8tom.de/"
 [[sections.items]]
 title = "wat"
 url = "https://watcharr.8tom.de/"
+[[sections.items]]
+title = "plt"
+url = "https://plants.8tom.de/"
+[[sections.items]]
+title = "rei"
+url = "https://reise.8tom.de/"
 #[[sections.items]]
 #title = ""
 #url = ""
