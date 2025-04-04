@@ -76,7 +76,7 @@ title = "rpt"
 url = "http://192.168.2.3/"
 [[sections.items]]
 title = "lms"
-url = "http://192.168.2.10:9000/material/"
+url = "http://192.168.2.11:9000/material/"
 [[sections.items]]
 title = "wz"
 url = "http://192.168.2.42/cgi-bin/main.cgi"
