@@ -137,6 +137,9 @@ url = "https://plants.8tom.de/"
 [[sections.items]]
 title = "rei"
 url = "https://reise.8tom.de/"
+[[sections.items]]
+title = "scr"
+url = "https://screen.8tom.de/?room=sonnesaftigsark/"
 #[[sections.items]]
 #title = ""
 #url = ""
