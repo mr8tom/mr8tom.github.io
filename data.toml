@@ -29,6 +29,34 @@ url = "https://home.8tom.de"
 
 [[sections]]
 direction = "row"
+item_style = "filled"
+[[sections.items]]
+title = "wre"
+url = "https://wire.8tom.de/"
+[[sections.items]]
+title = "tec"
+url = "https://tec.8tom.de/"
+[[sections.items]]
+title = "fin"
+url = "https://fin.8tom.de/"
+[[sections.items]]
+title = "con"
+url = "https://con.8tom.de/"
+[[sections.items]]
+title = "wat"
+url = "https://watcharr.8tom.de/"
+[[sections.items]]
+title = "plt"
+url = "https://plants.8tom.de/"
+[[sections.items]]
+title = "rei"
+url = "https://reise.8tom.de/"
+[[sections.items]]
+title = "scr"
+url = "https://screen.8tom.de/?room=sonnesaftigsark/"
+
+[[sections]]
+direction = "row"
 item_style = "outline"
 [[sections.items]]
 title = "/"
@@ -116,33 +144,6 @@ url = "http://192.168.2.25/"
 [[sections.items]]
 title = "pdf"
 url = "http://192.168.2.18:8080/"
-[[sections.items]]
-title = "wre"
-url = "https://wire.8tom.de/"
-[[sections.items]]
-title = "tec"
-url = "https://tec.8tom.de/"
-[[sections.items]]
-title = "fin"
-url = "https://fin.8tom.de/"
-[[sections.items]]
-title = "con"
-url = "https://con.8tom.de/"
-[[sections.items]]
-title = "wat"
-url = "https://watcharr.8tom.de/"
-[[sections.items]]
-title = "plt"
-url = "https://plants.8tom.de/"
-[[sections.items]]
-title = "rei"
-url = "https://reise.8tom.de/"
-[[sections.items]]
-title = "scr"
-url = "https://screen.8tom.de/?room=sonnesaftigsark/"
-#[[sections.items]]
-#title = ""
-#url = ""
 
 [[sections]]
 direction = "row"
@@ -159,3 +160,6 @@ url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 [[sections.items]]
 title = "w"
 url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
+#[[sections.items]]
+#title = ""
+#url = ""
