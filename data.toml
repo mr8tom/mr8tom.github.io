@@ -37,13 +37,10 @@ url = "https://wire.8tom.de/"
 title = "tec"
 url = "https://tec.8tom.de/"
 [[sections.items]]
-title = "fin"
-url = "https://fin.8tom.de/"
-[[sections.items]]
-title = "con"
-url = "https://con.8tom.de/"
-[[sections.items]]
-title = "wat"
+#title = "fin"
+#url = "https://fin.8tom.de/"
+#[[sections.items]]
+title = "wtc"
 url = "https://watcharr.8tom.de/"
 [[sections.items]]
 title = "plt"
@@ -54,6 +51,9 @@ url = "https://reise.8tom.de/"
 [[sections.items]]
 title = "scr"
 url = "https://screen.8tom.de/?room=sonnesaftigsark/"
+[[sections.items]]
+title = "con"
+url = "https://con.8tom.de/"
 
 [[sections]]
 direction = "row"
