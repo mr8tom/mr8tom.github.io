@@ -144,6 +144,9 @@ url = "http://192.168.2.25/"
 [[sections.items]]
 title = "pdf"
 url = "http://192.168.2.18:8080/"
+[[sections.items]]
+title = "jdl"
+url = "http://192.168.2.26:5800/"
 
 [[sections]]
 direction = "row"
