@@ -147,6 +147,9 @@ url = "http://192.168.2.18:8080/"
 [[sections.items]]
 title = "jdl"
 url = "http://192.168.2.26:5800/"
+[[sections.items]]
+title = "mon"
+url = "http://192.168.2.19/"
 
 [[sections]]
 direction = "row"
