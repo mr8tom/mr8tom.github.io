@@ -62,6 +62,9 @@ item_style = "outline"
 title = "/"
 url = "https://8tom.de/apps/files/"
 [[sections.items]]
+title = "AZE"
+url = "https://8tom.de/apps/files/files/1007017?dir=/Archiv/Arbeit&openfile=true"
+[[sections.items]]
 title = "FND"
 url = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&provider=collectives-pages&provider=collectives-page-content&provider=notes&provider=files&provider=tasks"
 [[sections.items]]
