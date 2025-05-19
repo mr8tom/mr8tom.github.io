@@ -45,6 +45,7 @@ with open("data.toml", "rb") as f:
         h("meta", name="keywords", content=data.get("keywords")),
         h("meta", name="viewport", content="width=device-width, initial-scale=1"),
         h("meta", charset="utf-8"),
+        h("link", rel="icon", href=f"{data.get('base_url')}/img/{data.get('favicon', 'favicon.ico')}", type="image/x-icon"),
         # OG
         h("meta", property="og:title", content=data.get("name")),
         h("meta", property="og:description", content=data.get("description")),
