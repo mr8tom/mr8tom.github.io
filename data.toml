@@ -54,6 +54,9 @@ url = "https://screen.8tom.de/?room=sonnesaftigsark/"
 [[sections.items]]
 title = "con"
 url = "https://con.8tom.de/"
+[[sections.items]]
+title = "kch"
+url = "https://koch.8tom.de/"
 
 [[sections]]
 direction = "row"
