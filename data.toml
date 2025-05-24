@@ -13,7 +13,7 @@ direction = "row"
 item_style = "filled"
 [[sections.items]]
 title = "s"
-url = "https://stream.8tom.de"
+url = "https://stream.8tom.de/web/#/tv.html?topParentId=43cfe12fe7d9d8d21251e0964e0232e2&collectionType=tvshows"
 [[sections.items]]
 title = "l"
 url = "https://link.8tom.de/links"
