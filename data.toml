@@ -41,7 +41,7 @@ title = "rss"
 url = "https://rss.8tom.de/"
 [[sections.items]]
 title = "prn"
-url = "https://p.8tom.de/scenes?sortby=date/"
+url = "https://p.8tom.de/scenes?sortby=date"
 [[sections.items]]
 title = "wtc"
 url = "https://watcharr.8tom.de/"
