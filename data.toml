@@ -37,9 +37,12 @@ url = "https://wire.8tom.de/"
 title = "tec"
 url = "https://tec.8tom.de/"
 [[sections.items]]
-#title = "fin"
-#url = "https://fin.8tom.de/"
-#[[sections.items]]
+title = "rss"
+url = "https://rss.8tom.de/"
+[[sections.items]]
+title = "prn"
+url = "https://p.8tom.de/"
+[[sections.items]]
 title = "wtc"
 url = "https://watcharr.8tom.de/"
 [[sections.items]]
@@ -57,6 +60,7 @@ url = "https://con.8tom.de/"
 [[sections.items]]
 title = "kch"
 url = "https://koch.8tom.de/"
+
 
 [[sections]]
 direction = "row"
@@ -108,6 +112,9 @@ url = "http://192.168.2.2/"
 [[sections.items]]
 title = "rpt"
 url = "http://192.168.2.3/"
+[[sections.items]]
+title = "npm"
+url = "https://192.168.2.7:81/"
 [[sections.items]]
 title = "lms"
 url = "http://192.168.2.11:9000/material/"
