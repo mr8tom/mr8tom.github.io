@@ -19,7 +19,7 @@ title = "l"
 url = "https://link.8tom.de/de/collections/36"
 [[sections.items]]
 title = "a"
-url = "https://audio.8tom.de"
+url = "https://audio.8tom.de/audiobookshelf/library/c3d39639-835c-4d3a-8904-aa7953684608/bookshelf?filter=genres.8J%252BMtu%252B4jw%253D%253D&sort=mtimeMs&desc=1"
 [[sections.items]]
 title = "p"
 url = "https://pad.8tom.de/lucatom"
@@ -185,7 +185,7 @@ url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
 title = "arte"
 url = "https://www.arte.tv/de/videos/meistgesehen/"
 [[sections.items]]
-title = "git"
+title = "g"
 url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 [[sections.items]]
 title = "w"
