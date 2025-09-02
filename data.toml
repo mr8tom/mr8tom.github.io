@@ -66,6 +66,9 @@ url = "https://bar.8tom.de/"
 [[sections.items]]
 title = "rss"
 url = "https://rss.8tom.de/"
+[[sections.items]]
+title = "pic"
+url = "https://pic.8tom.de/"
 
 [[sections]]
 direction = "row"
@@ -173,7 +176,7 @@ title = "fil"
 url = "http://192.168.2.4:8080/files/mnt/pool/"
 [[sections.items]]
 title = "arg"
-url = "http://192.168.2.20:8080/"
+url = "http://192.168.2.21:8080/"
 
 [[sections]]
 direction = "row"
