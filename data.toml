@@ -84,7 +84,6 @@ title = "PIC"
 url = "https://8tom.de/apps/memories/"
 
 [[sections]]
-#title = "Intern"
 direction = "row"
 item_style = "filled"
 [[sections.items]]
