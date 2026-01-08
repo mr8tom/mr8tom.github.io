@@ -37,32 +37,17 @@ url = "https://wire.8tom.de/"
 title = "tec"
 url = "https://tec.8tom.de/"
 [[sections.items]]
-title = "rss"
-url = "https://rss.8tom.de/"
-[[sections.items]]
 title = "prn"
 url = "https://p.8tom.de/scenes?sortby=date"
 [[sections.items]]
 title = "wtc"
 url = "https://watcharr.8tom.de/"
 [[sections.items]]
-title = "plt"
-url = "https://plant.8tom.de/"
-[[sections.items]]
-title = "rei"
-url = "https://reise.8tom.de/"
-[[sections.items]]
 title = "scr"
 url = "https://screen.8tom.de/?room=sonnesaftigsark/"
 [[sections.items]]
 title = "con"
 url = "https://con.8tom.de/"
-[[sections.items]]
-title = "kch"
-url = "https://koch.8tom.de/"
-[[sections.items]]
-title = "bar"
-url = "https://bar.8tom.de/"
 [[sections.items]]
 title = "rss"
 url = "https://rss.8tom.de/"
@@ -82,12 +67,6 @@ url = "https://8tom.de/apps/files/files/1557730?dir=/Archiv/Arbeit&openfile=true
 [[sections.items]]
 title = "FND"
 url = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&provider=collectives-pages&provider=collectives-page-content&provider=notes&provider=files&provider=tasks"
-[[sections.items]]
-title = "DL"
-url = "https://8tom.de/apps/ncdownloader/"
-[[sections.items]]
-title = "LOG"
-url = "https://8tom.de/settings/admin/logging"
 [[sections.items]]
 title = "DO"
 url = "https://8tom.de/apps/tasks/#/calendars/migrated-1"
@@ -148,32 +127,14 @@ url = "http://192.168.2.9/admin/"
 title = "stb"
 url = "http://192.168.2.44/"
 [[sections.items]]
-title = "nc"
-url = "http://192.168.2.6/"
-[[sections.items]]
-title = "str"
-url = "http://192.168.2.13:8096/"
-[[sections.items]]
-title = "bk"
-url = "http://192.168.2.29/"
-[[sections.items]]
 title = "dge"
 url = "http://192.168.2.26:5001/"
-[[sections.items]]
-title = "yno"
-url = "http://192.168.2.25/"
-[[sections.items]]
-title = "pdf"
-url = "http://192.168.2.18:8080/"
 [[sections.items]]
 title = "jdl"
 url = "http://192.168.2.26:5800/"
 [[sections.items]]
-title = "mon"
-url = "http://192.168.2.19/"
-[[sections.items]]
 title = "fil"
-url = "http://192.168.2.4:8080/files/mnt/pool/"
+url = "http://192.168.2.4:8080/files/RootFS/mnt/pool/video/"
 [[sections.items]]
 title = "arg"
 url = "http://192.168.2.21:8080/"
@@ -196,3 +157,33 @@ url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
 [[sections.items]]
 title = "y"
 url = "https://finance.yahoo.com/portfolio/p_0/view/view_0"
+[[sections.items]]
+title = "nc"
+url = "http://192.168.2.6/"
+[[sections.items]]
+title = "str"
+url = "http://192.168.2.13:8096/"
+[[sections.items]]
+title = "bk"
+url = "http://192.168.2.29/"
+[[sections.items]]
+title = "mon"
+url = "http://192.168.2.19/"
+[[sections.items]]
+title = "yno"
+url = "http://192.168.2.25/"
+[[sections.items]]
+title = "pdf"
+url = "http://192.168.2.18:8080/"
+[[sections.items]]
+title = "plt"
+url = "https://plant.8tom.de/"
+[[sections.items]]
+title = "rei"
+url = "https://reise.8tom.de/"
+[[sections.items]]
+title = "kch"
+url = "https://koch.8tom.de/"
+[[sections.items]]
+title = "bar"
+url = "https://bar.8tom.de/"
