@@ -102,6 +102,9 @@ url = "http://192.168.2.3/"
 title = "npm"
 url = "https://192.168.2.7:81/"
 [[sections.items]]
+title = "tmx"
+url = "http://192.168.2.18/"
+[[sections.items]]
 title = "lms"
 url = "http://192.168.2.11:9000/material/"
 [[sections.items]]
