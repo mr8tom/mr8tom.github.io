@@ -216,12 +216,20 @@ stream = "http://somafm.com/spacestation130.pls"
 [[sections.items]]
 title = "SEE"
 stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
+[[sections]]
+title = "Radio"
+description = "Deine Streams laufen automatisch."
 
-
-
-
-
-
-
-
-
+[[sections.items]]
+title = "⏹ Radio Stoppen"
+description = """
+<div style="text-align: center;">
+  <button onclick="document.getElementById('radioStream').pause(); document.getElementById('radioStream').currentTime=0; this.textContent='Gestoppt'; this.style.background='#f44336';" 
+          style="padding: 15px 30px; background: #00897b; color: white; border: none; border-radius: 50px; font-size: 18px; cursor: pointer; width: 100%; max-width: 300px;">
+    Radio Stoppen
+  </button>
+</div>
+<script>
+  // Falls Audio dynamisch: window.onload = () => { /* Audio-Setup */ };
+</script>
+"""
