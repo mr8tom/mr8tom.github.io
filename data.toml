@@ -191,7 +191,7 @@ title = "bar"
 url = "https://bar.8tom.de/"
 
 [[sections]]
-title = "Stop"
+title = "Radio"
 description = ""
 direction = "row"
 item_style = "outline"
@@ -216,3 +216,6 @@ stream = "https://ice3.somafm.com/spacestation-128-aac"
 [[sections.items]]
 title = "SEE"
 stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
+[[sections.items]]
+title = "🟥"
+data-stop = "true"
