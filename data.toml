@@ -28,6 +28,22 @@ title = "h"
 url = "https://home.8tom.de"
 
 [[sections]]
+title = "Radio"
+description = ""
+direction = "row"
+item_style = "outline"
+[[sections.items]]
+title = "DLF"
+stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
+[[sections.items]]
+title = "DLFK"
+stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
+[[sections.items]]
+title = "RP"
+stream = "https://stream.radioparadise.com/aac-32"
+
+
+[[sections]]
 direction = "row"
 item_style = "filled"
 [[sections.items]]
