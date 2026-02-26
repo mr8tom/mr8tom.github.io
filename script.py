@@ -22,6 +22,19 @@ def render_item(item, outline: bool):
             ),
         )
 
+    if "stop" in (item.get("title") or "").lower():
+        return h(
+            "button",
+            role="button",
+            klass=klass,
+            onclick="window.jakeRadio.stop(); return false;",
+        )(
+            h("hgroup")(
+                h("h4")(item.get("title")),
+                h("h5")(item.get("description", "Stream stoppen")),
+            ),
+        )
+
     return h(
         "a",
         role="button",
