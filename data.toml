@@ -191,7 +191,7 @@ title = "bar"
 url = "https://bar.8tom.de/"
 
 [[sections]]
-title = "Radio"
+title = "Stop"
 description = ""
 direction = "row"
 item_style = "outline"
@@ -216,12 +216,3 @@ stream = "https://ice3.somafm.com/spacestation-128-aac"
 [[sections.items]]
 title = "SEE"
 stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
-
-[[sections.items]]
-title = "⏹ Stop"
-description = '''<div style="text-align: center; padding: 20px;">
-  <button onclick="let audio=document.getElementById('radioStream') || document.querySelector('audio'); if(audio){audio.pause(); audio.currentTime=0; this.textContent='Gestoppt ✅'; this.style.background=\'#f44336\';} else{alert('Kein Stream');}"
-          style="padding: 15px 30px; background: #00897b; color: white; border: none; border-radius: 50px; font-size: 18px; cursor: pointer; width: 90%; max-width: 300px;">
-    Radio Stoppen
-  </button>
-</div>'''
