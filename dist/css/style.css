@@ -27,6 +27,11 @@
   width: 100%;
 }
 
+button.radio-active[role="button"] {
+  outline: 3px solid var(--primary);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
 :root {
   --typography-spacing-vertical: 0.1rem;
   --spacing: 0.5rem;
