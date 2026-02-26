@@ -22,7 +22,7 @@ def render_item(item, outline: bool):
             ),
         )
 
-    if "stop" in (item.get("title") or "").lower():
+    if item.get("data-stop"):
         return h(
             "button",
             role="button",
@@ -31,7 +31,7 @@ def render_item(item, outline: bool):
         )(
             h("hgroup")(
                 h("h4")(item.get("title")),
-                h("h5")(item.get("description", "Stream stoppen")),
+                h("h5")("Stream stoppen"),
             ),
         )
 
@@ -47,7 +47,6 @@ def render_item(item, outline: bool):
             h("h5")(item.get("description")),
         ),
     )
-
 
 with open("data.toml", "rb") as f:
     data = tomllib.load(f)
