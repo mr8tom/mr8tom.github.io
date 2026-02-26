@@ -28,22 +28,6 @@ title = "h"
 url = "https://home.8tom.de"
 
 [[sections]]
-title = "Radio"
-description = ""
-direction = "row"
-item_style = "outline"
-[[sections.items]]
-title = "DLF"
-stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
-[[sections.items]]
-title = "DLFK"
-stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
-[[sections.items]]
-title = "RP"
-stream = "https://stream.radioparadise.com/aac-32"
-
-
-[[sections]]
 direction = "row"
 item_style = "filled"
 [[sections.items]]
@@ -205,3 +189,39 @@ url = "https://koch.8tom.de/"
 [[sections.items]]
 title = "bar"
 url = "https://bar.8tom.de/"
+
+[[sections]]
+title = "Radio"
+description = ""
+direction = "row"
+item_style = "outline"
+[[sections.items]]
+title = "DLF"
+stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
+[[sections.items]]
+title = "DLFK"
+stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
+[[sections.items]]
+title = "RP"
+stream = "https://stream.radioparadise.com/aac-32"
+[[sections.items]]
+title = "FLX
+stream = "https://streams.fluxfm.de/chillout/aac-64/audio/"
+[[sections.items]]
+title = "SOM"
+stream = "http://ice1.somafm.com/dronezone-128-aac"
+[[sections.items]]
+title = "SPC"
+stream = "http://somafm.com/spacestation130.pls"
+[[sections.items]]
+title = "SEE"
+stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
+
+
+
+
+
+
+
+
+
