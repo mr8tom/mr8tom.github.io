@@ -3,6 +3,39 @@ import tomllib
 from tinyhtml import html, h, frag, raw
 
 
+def render_item(item, outline: bool):
+    klass = "outline" if outline else ""
+
+    if item.get("stream"):
+        return h(
+            "button",
+            role="button",
+            klass=klass,
+            **{
+                "data-stream": item.get("stream"),
+                "data-title": item.get("title") or "",
+            },
+        )(
+            h("hgroup")(
+                h("h4")(item.get("title")),
+                h("h5")(item.get("description")),
+            ),
+        )
+
+    return h(
+        "a",
+        role="button",
+        klass=klass,
+        href=item.get("url"),
+        # target="_blank",
+    )(
+        h("hgroup")(
+            h("h4")(item.get("title")),
+            h("h5")(item.get("description")),
+        ),
+    )
+
+
 with open("data.toml", "rb") as f:
     data = tomllib.load(f)
     sections = frag(
@@ -21,17 +54,10 @@ with open("data.toml", "rb") as f:
                     klass="item",
                     style=f"width: {'100%' if section.get('direction', 'column') == 'column' else 'unset'}",
                 )(
-                    h(
-                        "a",
-                        role="button",
-                        klass=f"{'outline' if section.get('item_style', 'outline') == 'outline' else ''}",
-                        href=item.get("url"),
-                        #target="_blank",
-                    )(
-                        h("hgroup")(
-                            h("h4")(item.get("title")), h("h5")(item.get("description"))
-                        ),
-                    ),
+                    render_item(
+                        item,
+                        section.get("item_style", "outline") == "outline",
+                    )
                 )
                 for item in section["items"]
             ),
@@ -45,8 +71,12 @@ with open("data.toml", "rb") as f:
         h("meta", name="keywords", content=data.get("keywords")),
         h("meta", name="viewport", content="width=device-width, initial-scale=1"),
         h("meta", charset="utf-8"),
-        h("link", rel="icon", href=f"{data.get('base_url')}/img/{data.get('favicon', 'favicon.ico')}", type="image/x-icon"),
-        # OG
+        h(
+            "link",
+            rel="icon",
+            href=f"{data.get('base_url')}/img/{data.get('favicon', 'favicon.ico')}",
+            type="image/x-icon",
+        ),
         h("meta", property="og:title", content=data.get("name")),
         h("meta", property="og:description", content=data.get("description")),
         h(
@@ -54,7 +84,6 @@ with open("data.toml", "rb") as f:
             property="og:image",
             content=f"{data.get('base_url')}/img/{data.get('image')}",
         ),
-        # Twitter / X
         h("meta", name="twitter:title", content=data.get("name")),
         h("meta", name="twitter:description", content=data.get("description")),
         h(
@@ -82,13 +111,11 @@ with open("data.toml", "rb") as f:
             ),
             raw(
                 f"""
-                    <!-- Google tag (gtag.js) -->
                     <script async src="https://www.googletagmanager.com/gtag/js?id={data.get("gtag_id")}"></script>
                     <script>
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){{dataLayer.push(arguments);}}
                     gtag('js', new Date());
-
                     gtag('config', '{data.get("gtag_id")}');
                     </script>
                 """
@@ -99,30 +126,30 @@ with open("data.toml", "rb") as f:
     )
 
     header = frag(
-    #    h("header", klass="container")(
-    #        h("hgroup")(
-    #            h(
-    #                "img",
-    #                klass="avatar",
-    #                src=f"img/{data.get('image')}",
-    #                alt="avatar",
-    #            ),
-    #            h("h1")(data.get("name")),
-    #            h("p")(data.get("description")) if data.get("description") else None,
-    #        ),
-    #    )
+        # h("header", klass="container")(
+        #     h("hgroup")(
+        #         h(
+        #             "img",
+        #             klass="avatar",
+        #             src=f"img/{data.get('image')}",
+        #             alt="avatar",
+        #         ),
+        #         h("h1")(data.get("name")),
+        #         h("p")(data.get("description")) if data.get("description") else None,
+        #     ),
+        # )
     )
 
     footer = frag(
-    #    h("footer", klass="container")(
-    #        h("small")("Generated with "),
-    #        h(
-    #            "a",
-    #            klass="",
-    #            href="https://github.com/thevahidal/jake/",
-    #            target="_blank",
-    #        )("Jake"),
-    #    ),
+        # h("footer", klass="container")(
+        #     h("small")("Generated with "),
+        #     h(
+        #         "a",
+        #         klass="",
+        #         href="https://github.com/thevahidal/jake/",
+        #         target="_blank",
+        #     )("Jake"),
+        # ),
     )
 
     output = html(lang="en", data_theme=data.get("theme", "dark"))(
@@ -131,6 +158,55 @@ with open("data.toml", "rb") as f:
             header,
             h("main", klass="container")(
                 sections,
+                h("audio", id="radio-player", preload="none")(),
+                raw(
+                    """
+<script>
+(() => {
+  const player = document.getElementById("radio-player");
+  if (!player) return;
+
+  let vol = 0.6;
+  let active = null;
+
+  const setActive = (el) => {
+    if (active) active.classList.remove("radio-active");
+    active = el;
+    if (active) active.classList.add("radio-active");
+  };
+
+  const stop = () => {
+    try { player.pause(); } catch (e) {}
+    player.removeAttribute("src");
+    player.load();
+    setActive(null);
+  };
+
+  document.addEventListener("click", async (ev) => {
+    const btn = ev.target.closest("button[data-stream]");
+    if (!btn) return;
+
+    setActive(btn);
+    player.volume = vol;
+    player.src = btn.dataset.stream;
+
+    try {
+      await player.play();
+    } catch (e) {
+      stop();
+      console.warn("play() failed", e);
+    }
+  });
+
+  window.jakeRadio = {
+    volDown: () => { vol = Math.max(0, Math.round((vol - 0.1) * 10) / 10); player.volume = vol; },
+    volUp:   () => { vol = Math.min(1, Math.round((vol + 0.1) * 10) / 10); player.volume = vol; },
+    stop
+  };
+})();
+</script>
+"""
+                ),
             ),
             footer,
         ),
