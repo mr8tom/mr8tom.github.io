@@ -218,22 +218,10 @@ title = "SEE"
 stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
 
 [[sections.items]]
-title = "⏹ Radio Stoppen"
+title = "⏹ Stop"
 description = '''<div style="text-align: center; padding: 20px;">
-  <button id="radioStop" style="padding: 15px 30px; background: #00897b; color: white; border: none; border-radius: 50px; font-size: 18px; cursor: pointer; width: 90%; max-width: 300px;"
-          onclick="stopRadio()">Radio Stoppen</button>
-</div>
-<script>
-function stopRadio() {
-  let audio = document.getElementById('radioStream') || document.querySelector('audio');
-  if (audio) {
-    audio.pause();
-    audio.currentTime = 0;
-    event.target.textContent = 'Gestoppt ✅';
-    event.target.style.background = '#f44336';
-  } else {
-    alert('Kein Radio-Stream gefunden');
-  }
-}
-</script>'''
-
+  <button onclick="let audio=document.getElementById('radioStream') || document.querySelector('audio'); if(audio){audio.pause(); audio.currentTime=0; this.textContent='Gestoppt ✅'; this.style.background=\'#f44336\';} else{alert('Kein Stream');}"
+          style="padding: 15px 30px; background: #00897b; color: white; border: none; border-radius: 50px; font-size: 18px; cursor: pointer; width: 90%; max-width: 300px;">
+    Radio Stoppen
+  </button>
+</div>'''
