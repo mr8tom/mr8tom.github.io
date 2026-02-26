@@ -31,7 +31,6 @@ def render_item(item, outline: bool):
         )(
             h("hgroup")(
                 h("h4")(item.get("title")),
-                h("h5")("Stream stoppen"),
             ),
         )
 
