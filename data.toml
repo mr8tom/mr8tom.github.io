@@ -203,7 +203,7 @@ title = "DLFK"
 stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
 [[sections.items]]
 title = "RP"
-stream = "https://stream.radioparadise.com/"
+stream = "http://stream.radioparadise.com/aac-64"
 [[sections.items]]
 title = "FLX"
 stream = "https://streams.fluxfm.de/chillout/aac-64/audio/"
