@@ -22,7 +22,7 @@ title = "a"
 url = "https://audio.8tom.de/audiobookshelf/library/c3d39639-835c-4d3a-8904-aa7953684608/bookshelf?filter=genres.8J%252BMtu%252B4jw%253D%253D&sort=mtimeMs&desc=1"
 [[sections.items]]
 title = "p"
-url = "https://pad.8tom.de/lucatom"
+url = "https://pic.8tom.de/"
 [[sections.items]]
 title = "h"
 url = "https://home.8tom.de"
@@ -52,8 +52,17 @@ url = "https://con.8tom.de/"
 title = "rss"
 url = "https://rss.8tom.de/"
 [[sections.items]]
-title = "pic"
-url = "https://pic.8tom.de/"
+title = "rei"
+url = "https://reise.8tom.de/"
+[[sections.items]]
+title = "kch"
+url = "https://koch.8tom.de/"
+[[sections.items]]
+title = "bar"
+url = "https://bar.8tom.de/"
+[[sections.items]]
+title = "eth"
+url = "https://pad.8tom.de/lucatom"
 
 [[sections]]
 direction = "row"
@@ -138,8 +147,20 @@ url = "http://192.168.2.26:5800/"
 title = "fil"
 url = "http://192.168.2.4:8080/files/RootFS/mnt/pool/video/"
 [[sections.items]]
-title = "arg"
-url = "http://192.168.2.21:8080/"
+title = "wpr"
+url = "http://192.168.2.21:80/"
+[[sections.items]]
+title = "ncl"
+url = "http://192.168.2.6/"
+[[sections.items]]
+title = "jel"
+url = "http://192.168.2.13:8096/"
+[[sections.items]]
+title = "rss"
+url = "http://192.168.2.19/"
+[[sections.items]]
+title = "pdf"
+url = "http://192.168.2.24:8080/"
 
 [[sections]]
 direction = "row"
@@ -159,36 +180,6 @@ url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
 [[sections.items]]
 title = "y"
 url = "https://finance.yahoo.com/portfolio/p_0/view/view_0"
-[[sections.items]]
-title = "nc"
-url = "http://192.168.2.6/"
-[[sections.items]]
-title = "str"
-url = "http://192.168.2.13:8096/"
-[[sections.items]]
-title = "bk"
-url = "http://192.168.2.29/"
-[[sections.items]]
-title = "mon"
-url = "http://192.168.2.19/"
-[[sections.items]]
-title = "yno"
-url = "http://192.168.2.25/"
-[[sections.items]]
-title = "pdf"
-url = "http://192.168.2.18:8080/"
-[[sections.items]]
-title = "plt"
-url = "https://plant.8tom.de/"
-[[sections.items]]
-title = "rei"
-url = "https://reise.8tom.de/"
-[[sections.items]]
-title = "kch"
-url = "https://koch.8tom.de/"
-[[sections.items]]
-title = "bar"
-url = "https://bar.8tom.de/"
 
 [[sections]]
 title = "Radio"
