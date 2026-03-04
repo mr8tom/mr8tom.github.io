@@ -194,13 +194,13 @@ title = "DLFK"
 stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
 [[sections.items]]
 title = "RP"
-stream = "http://stream.radioparadise.com/aac-64"
+stream = "https://stream.radioparadise.com/aac-64"
 [[sections.items]]
 title = "FLX"
 stream = "https://streams.fluxfm.de/chillout/aac-64/audio/"
 [[sections.items]]
 title = "SOM"
-stream = "http://ice1.somafm.com/dronezone-128-aac"
+stream = "https://ice1.somafm.com/dronezone-128-aac"
 [[sections.items]]
 title = "SPC"
 stream = "https://ice3.somafm.com/spacestation-128-aac"
