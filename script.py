@@ -85,8 +85,8 @@ with open("data.toml", "rb") as f:
         h(
             "link",
             rel="icon",
-            href=f"img/{data.get('favicon', 'favicon.ico')}?v=2",
-            type="image/x-icon",
+            href=f"./img/{data.get('favicon', 'favicon.png')}?v=3",
+            type="image/png",
         )
     )
 
