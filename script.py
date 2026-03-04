@@ -162,21 +162,52 @@ with open("data.toml", "rb") as f:
   const player = document.getElementById("radio-player");
   if (!player) return;
 
-  const DEFAULT_TITLE = "8tom"; // <-- HIER: Fallback-Titel definiert
+  const DEFAULT_TITLE = "8tom";
   let vol = 0.6;
   let active = null;
 
-  const setActive = (el) => {
+  // Diese Funktion holt die Icecast-Header (Name und Description) direkt vom Stream
+  async function fetchIcecastHeaders(streamUrl) {
+    try {
+      // Wir machen nur einen HEAD-Request, um Traffic zu sparen (lädt nicht die Musik runter, nur die Infos)
+      const response = await fetch(streamUrl, { method: 'HEAD' });
+      
+      const icyName = response.headers.get('icy-name');
+      const icyDesc = response.headers.get('icy-description');
+      
+      // Bastelt den Titel zusammen. Wenn beides da ist: "Name - Description"
+      if (icyName && icyDesc) {
+        return `${icyName} - ${icyDesc}`;
+      } else if (icyName) {
+        return icyName;
+      }
+    } catch (e) {
+      console.warn("Konnte Stream-Header nicht lesen", e);
+    }
+    return null;
+  }
+
+  const setActive = async (el) => {
     if (active) active.classList.remove("radio-active");
     active = el;
     
     if (active) {
       active.classList.add("radio-active");
-      // <-- HIER: Tab-Titel aus data-title auslesen und setzen
-      const streamTitle = active.dataset.title;
-      document.title = streamTitle ? streamTitle + " — " + DEFAULT_TITLE : DEFAULT_TITLE;
+      
+      // Zuerst den Button-Titel als Fallback anzeigen, damit man sofort was sieht
+      const fallbackTitle = active.dataset.title || "Radio";
+      document.title = `${fallbackTitle} — ${DEFAULT_TITLE}`;
+
+      // Dann im Hintergrund die echten Stream-Header holen
+      const streamUrl = active.dataset.stream;
+      const icyTitle = await fetchIcecastHeaders(streamUrl);
+      
+      // Wenn das Auslesen geklappt hat, Tab-Titel mit den Icecast-Daten überschreiben
+      if (icyTitle && active === el) { // Check ob der Button noch aktiv ist
+        document.title = `${icyTitle} — ${DEFAULT_TITLE}`;
+      }
+      
     } else {
-      // <-- HIER: Tab-Titel zurücksetzen, wenn gestoppt
       document.title = DEFAULT_TITLE;
     }
   };
