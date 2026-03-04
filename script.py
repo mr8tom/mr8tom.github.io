@@ -103,6 +103,19 @@ with open("data.toml", "rb") as f:
                     * {{
                         text-align: {data.get("text_align", "center")};
                     }}
+                    /* Dim-Overlay Styles */
+                    #dim-overlay {{
+                        position: fixed;
+                        top: 0; left: 0; width: 100vw; height: 100vh;
+                        background: rgba(0, 0, 0, 0.85);
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: opacity 2s ease-in-out;
+                        z-index: 9999;
+                    }}
+                    body.is-dimmed #dim-overlay {{
+                        opacity: 1;
+                    }}
                 """
             ),
             raw(
@@ -151,6 +164,7 @@ with open("data.toml", "rb") as f:
     output = html(lang="en", data_theme=data.get("theme", "dark"))(
         head,
         h("body")(
+            h("div", id="dim-overlay")(), # Das Overlay-Element für die Abdunklung
             header,
             h("main", klass="container")(
                 sections,
@@ -165,17 +179,35 @@ with open("data.toml", "rb") as f:
   const DEFAULT_TITLE = "8tom";
   let vol = 0.6;
   let active = null;
+  
+  // -- Dimming Logik --
+  let idleTimer = null;
+  const IDLE_TIME = 10000; // 10 Sekunden
+
+  const resetIdleTimer = () => {
+    if (!active) {
+      document.body.classList.remove("is-dimmed");
+      clearTimeout(idleTimer);
+      return;
+    }
+    document.body.classList.remove("is-dimmed");
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => {
+      document.body.classList.add("is-dimmed");
+    }, IDLE_TIME);
+  };
+
+  ['mousemove', 'mousedown', 'keydown', 'scroll', 'touchstart'].forEach(evt => 
+    document.addEventListener(evt, resetIdleTimer, { passive: true })
+  );
 
   // Diese Funktion holt die Icecast-Header (Name und Description) direkt vom Stream
   async function fetchIcecastHeaders(streamUrl) {
     try {
-      // Wir machen nur einen HEAD-Request, um Traffic zu sparen (lädt nicht die Musik runter, nur die Infos)
       const response = await fetch(streamUrl, { method: 'HEAD' });
-      
       const icyName = response.headers.get('icy-name');
       const icyDesc = response.headers.get('icy-description');
       
-      // Bastelt den Titel zusammen. Wenn beides da ist: "Name - Description"
       if (icyName && icyDesc) {
         return `${icyName} - ${icyDesc}`;
       } else if (icyName) {
@@ -194,21 +226,21 @@ with open("data.toml", "rb") as f:
     if (active) {
       active.classList.add("radio-active");
       
-      // Zuerst den Button-Titel als Fallback anzeigen, damit man sofort was sieht
       const fallbackTitle = active.dataset.title || "Radio";
       document.title = `${fallbackTitle} — ${DEFAULT_TITLE}`;
 
-      // Dann im Hintergrund die echten Stream-Header holen
       const streamUrl = active.dataset.stream;
       const icyTitle = await fetchIcecastHeaders(streamUrl);
       
-      // Wenn das Auslesen geklappt hat, Tab-Titel mit den Icecast-Daten überschreiben
-      if (icyTitle && active === el) { // Check ob der Button noch aktiv ist
+      if (icyTitle && active === el) { 
         document.title = `${icyTitle} — ${DEFAULT_TITLE}`;
       }
       
+      resetIdleTimer();
+      
     } else {
       document.title = DEFAULT_TITLE;
+      resetIdleTimer(); 
     }
   };
 
