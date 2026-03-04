@@ -77,7 +77,7 @@ with open("data.toml", "rb") as f:
     )
 
     meta_tags = frag(
-        h("title")(data.get("name")),
+        h("title")("8tom"),
         h("meta", name="description", content=data.get("description")),
         h("meta", name="keywords", content=data.get("keywords")),
         h("meta", name="viewport", content="width=device-width, initial-scale=1"),
@@ -85,24 +85,9 @@ with open("data.toml", "rb") as f:
         h(
             "link",
             rel="icon",
-            href=f"{data.get('base_url')}/img/{data.get('favicon', 'favicon.ico')}",
+            href=f"img/{data.get('favicon', 'favicon.ico')}?v=2",
             type="image/x-icon",
-        ),
-        h("meta", property="og:title", content=data.get("name")),
-        h("meta", property="og:description", content=data.get("description")),
-        h(
-            "meta",
-            property="og:image",
-            content=f"{data.get('base_url')}/img/{data.get('image')}",
-        ),
-        h("meta", name="twitter:title", content=data.get("name")),
-        h("meta", name="twitter:description", content=data.get("description")),
-        h(
-            "meta",
-            name="twitter:image",
-            content=f"{data.get('base_url')}/img/{data.get('image')}",
-        ),
-        h("meta", name="twitter:card", content="summary_large_image"),
+        )
     )
 
     head = frag(
@@ -177,13 +162,23 @@ with open("data.toml", "rb") as f:
   const player = document.getElementById("radio-player");
   if (!player) return;
 
+  const DEFAULT_TITLE = "8tom"; // <-- HIER: Fallback-Titel definiert
   let vol = 0.6;
   let active = null;
 
   const setActive = (el) => {
     if (active) active.classList.remove("radio-active");
     active = el;
-    if (active) active.classList.add("radio-active");
+    
+    if (active) {
+      active.classList.add("radio-active");
+      // <-- HIER: Tab-Titel aus data-title auslesen und setzen
+      const streamTitle = active.dataset.title;
+      document.title = streamTitle ? streamTitle + " — " + DEFAULT_TITLE : DEFAULT_TITLE;
+    } else {
+      // <-- HIER: Tab-Titel zurücksetzen, wenn gestoppt
+      document.title = DEFAULT_TITLE;
+    }
   };
 
   const stop = () => {
