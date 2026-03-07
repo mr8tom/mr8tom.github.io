@@ -161,6 +161,9 @@ url = "http://192.168.2.19/"
 [[sections.items]]
 title = "pdf"
 url = "http://192.168.2.24:8080/"
+[[sections.items]]
+title = "bch"
+url = "http://192.168.2.16:15630/"
 
 [[sections]]
 direction = "row"
