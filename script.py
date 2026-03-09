@@ -97,12 +97,29 @@ with open("data.toml", "rb") as f:
             h("link", rel="stylesheet", href="css/style.css"),
             h("style", rel="stylesheet")(
                 f"""
-                    :root, [data-theme="dark"], [data-theme="light"] {{
-                        --primary: {data.get("primary_color", "#546e7a")} !important;
-                    }}
+                    /* Standard: Fallback & Textausrichtung */
                     * {{
                         text-align: {data.get("text_align", "center")};
                     }}
+                    
+                    /* Theme-Farben je nach Browser-Einstellung (Dark/Light) */
+                    :root {{
+                        /* Wenn nichts erkannt wird (Standard oft Dark) */
+                        --primary: {data.get("primary_color_dark", data.get("primary_color", "#546e7a"))} !important;
+                    }}
+
+                    @media (prefers-color-scheme: dark) {{
+                        :root {{
+                            --primary: {data.get("primary_color_dark", data.get("primary_color", "#546e7a"))} !important;
+                        }}
+                    }}
+
+                    @media (prefers-color-scheme: light) {{
+                        :root {{
+                            --primary: {data.get("primary_color_light", data.get("primary_color", "#546e7a"))} !important;
+                        }}
+                    }}
+
                     /* Dim-Overlay Styles für Dark Mode (Standard) */
                     #dim-overlay {{
                         position: fixed;
@@ -120,7 +137,7 @@ with open("data.toml", "rb") as f:
                     /* Dim-Overlay Styles für Light Mode */
                     @media (prefers-color-scheme: light) {{
                         #dim-overlay {{
-                            background: rgba(255, 255, 255, 0.75); /* Heller Schleier statt schwarz */
+                            background: rgba(255, 255, 255, 0.75); /* Heller Schleier */
                         }}
                     }}
                 """
@@ -143,35 +160,20 @@ with open("data.toml", "rb") as f:
 
     header = frag(
         # h("header", klass="container")(
-        #     h("hgroup")(
-        #         h(
-        #             "img",
-        #             klass="avatar",
-        #             src=f"img/{data.get('image')}",
-        #             alt="avatar",
-        #         ),
-        #         h("h1")(data.get("name")),
-        #         h("p")(data.get("description")) if data.get("description") else None,
-        #     ),
+        #     ...
         # )
     )
 
     footer = frag(
         # h("footer", klass="container")(
-        #     h("small")("Generated with "),
-        #     h(
-        #         "a",
-        #         klass="",
-        #         href="https://github.com/thevahidal/jake/",
-        #         target="_blank",
-        #     )("Jake"),
-        # ),
+        #     ...
+        # )
     )
 
     output = html(lang="en")(
         head,
         h("body")(
-            h("div", id="dim-overlay")(), # Das Overlay-Element für die Abdunklung
+            h("div", id="dim-overlay")(), 
             header,
             h("main", klass="container")(
                 sections,
@@ -189,7 +191,7 @@ with open("data.toml", "rb") as f:
   
   // -- Dimming Logik --
   let idleTimer = null;
-  const IDLE_TIME = 10000; // 10 Sekunden
+  const IDLE_TIME = 10000; 
 
   const resetIdleTimer = () => {
     if (!active) {
@@ -208,7 +210,6 @@ with open("data.toml", "rb") as f:
     document.addEventListener(evt, resetIdleTimer, { passive: true })
   );
 
-  // Diese Funktion holt die Icecast-Header (Name und Description) direkt vom Stream
   async function fetchIcecastHeaders(streamUrl) {
     try {
       const response = await fetch(streamUrl, { method: 'HEAD' });
