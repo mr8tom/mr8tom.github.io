@@ -103,11 +103,11 @@ with open("data.toml", "rb") as f:
                     * {{
                         text-align: {data.get("text_align", "center")};
                     }}
-                    /* Dim-Overlay Styles */
+                    /* Dim-Overlay Styles für Dark Mode (Standard) */
                     #dim-overlay {{
                         position: fixed;
                         top: 0; left: 0; width: 100vw; height: 100vh;
-                        background: rgba(0, 0, 0, 0.85);
+                        background: rgba(0, 0, 0, 0.85); /* Dunkler Schleier */
                         opacity: 0;
                         pointer-events: none;
                         transition: opacity 2s ease-in-out;
@@ -115,6 +115,13 @@ with open("data.toml", "rb") as f:
                     }}
                     body.is-dimmed #dim-overlay {{
                         opacity: 1;
+                    }}
+                    
+                    /* Dim-Overlay Styles für Light Mode */
+                    @media (prefers-color-scheme: light) {{
+                        #dim-overlay {{
+                            background: rgba(255, 255, 255, 0.75); /* Heller Schleier statt schwarz */
+                        }}
                     }}
                 """
             ),
@@ -161,7 +168,8 @@ with open("data.toml", "rb") as f:
         # ),
     )
 
-    output = html(lang="en", data_theme=data.get("theme", "dark"))(
+    # HIER GEÄNDERT: data_theme entfernt, damit der Browser selbst (Hell/Dunkel) entscheidet
+    output = html(lang="en")(
         head,
         h("body")(
             h("div", id="dim-overlay")(), # Das Overlay-Element für die Abdunklung
