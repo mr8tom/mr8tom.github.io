@@ -2,7 +2,7 @@
 #description = ""
 #keywords = ""
 #image = ""
-theme = "dark"
+#theme = "dark"
 primary_color = "#d81b60"
 text_align = "center"
 #gtag_id = "G-33WB8LVHR6"
@@ -10,7 +10,7 @@ base_url = "https://mr8tom.github.io/"
 
 [[sections]]
 direction = "row"
-item_style = "filled"
+item_style = "outline"
 [[sections.items]]
 title = "s"
 url = "https://stream.8tom.de/web/#/tv.html?topParentId=43cfe12fe7d9d8d21251e0964e0232e2&collectionType=tvshows"
@@ -185,8 +185,6 @@ title = "y"
 url = "https://finance.yahoo.com/portfolio/p_0/view/view_0"
 
 [[sections]]
-title = "Radio"
-description = ""
 direction = "row"
 item_style = "outline"
 [[sections.items]]
