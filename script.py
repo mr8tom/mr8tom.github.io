@@ -97,7 +97,7 @@ with open("data.toml", "rb") as f:
             h("link", rel="stylesheet", href="css/style.css"),
             h("style", rel="stylesheet")(
                 f"""
-                    [data-theme="dark"], [data-theme="light"] {{
+                    :root, [data-theme="dark"], [data-theme="light"] {{
                         --primary: {data.get("primary_color", "#546e7a")} !important;
                     }}
                     * {{
@@ -168,7 +168,6 @@ with open("data.toml", "rb") as f:
         # ),
     )
 
-    # HIER GEÄNDERT: data_theme entfernt, damit der Browser selbst (Hell/Dunkel) entscheidet
     output = html(lang="en")(
         head,
         h("body")(
