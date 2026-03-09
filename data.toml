@@ -3,9 +3,11 @@
 #keywords = ""
 #image = ""
 #theme = "dark"
-primary_color = "#d81b60"
-text_align = "center"
+#primary_color = "#d81b60"
 #gtag_id = "G-33WB8LVHR6"
+primary_color_dark = "#d81b60"
+primary_color_light = "#85d457" 
+text_align = "center"
 base_url = "https://mr8tom.github.io/"
 
 [[sections]]
