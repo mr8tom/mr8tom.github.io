@@ -65,6 +65,9 @@ url = "https://bar.8tom.de/"
 [[sections.items]]
 title = "eth"
 url = "https://pad.8tom.de/lucatom"
+[[sections.items]]
+title = "koi"
+url = "https://koi.8tom.de/"
 
 [[sections]]
 direction = "row"
