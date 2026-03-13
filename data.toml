@@ -150,7 +150,7 @@ title = "jdl"
 url = "http://192.168.2.26:5800/"
 [[sections.items]]
 title = "fil"
-url = "http://192.168.2.4:8080/files/RootFS/mnt/pool/video/"
+url = "http://192.168.2.4:8080/files/RootFS/"
 [[sections.items]]
 title = "wpr"
 url = "http://192.168.2.21:80/"
