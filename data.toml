@@ -176,21 +176,7 @@ url = "http://192.168.2.65/"
 [[sections]]
 direction = "row"
 item_style = "outline"
-[[sections.items]]
-title = "thek"
-url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
-[[sections.items]]
-title = "arte"
-url = "https://www.arte.tv/de/videos/meistgesehen/"
-[[sections.items]]
-title = "g"
-url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
-[[sections.items]]
-title = "w"
-url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
-[[sections.items]]
-title = "y"
-url = "https://finance.yahoo.com/portfolio/p_0/view/view_0"
+
 
 [[sections]]
 direction = "row"
@@ -219,3 +205,18 @@ stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
 [[sections.items]]
 title = "🟥"
 data-stop = "true"
+[[sections.items]]
+title = "thk"
+url = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
+[[sections.items]]
+title = "art"
+url = "https://www.arte.tv/de/videos/meistgesehen/"
+[[sections.items]]
+title = "git"
+url = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
+[[sections.items]]
+title = "wtr"
+url = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
+[[sections.items]]
+title = "yah"
+url = "https://finance.yahoo.com/portfolio/p_0/view/view_0"
