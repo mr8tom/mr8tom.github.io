@@ -48,8 +48,8 @@ url = "https://watcharr.8tom.de/"
 title = "scr"
 url = "https://screen.8tom.de/?room=sonnesaftigsark/"
 [[sections.items]]
-title = "con"
-url = "https://con.8tom.de/"
+title = "eko"
+url = "https://neko.8tom.de/"
 [[sections.items]]
 title = "rss"
 url = "https://rss.8tom.de/"
@@ -60,14 +60,14 @@ url = "https://reise.8tom.de/"
 title = "kch"
 url = "https://koch.8tom.de/"
 [[sections.items]]
-title = "bar"
-url = "https://bar.8tom.de/"
-[[sections.items]]
 title = "eth"
 url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
-title = "koi"
-url = "https://koi.8tom.de/"
+title = "cyp"
+url = "https://cypht.8tom.de/"
+[[sections.items]]
+title = "frm"
+url = "https://picframe.8tom.de/"
 
 [[sections]]
 direction = "row"
@@ -93,9 +93,6 @@ url = "https://8tom.de/apps/calendar/dayGridMonth/now"
 [[sections.items]]
 title = "COL"
 url = "https://8tom.de/apps/collectives/"
-[[sections.items]]
-title = "PIC"
-url = "https://8tom.de/apps/memories/"
 
 [[sections]]
 direction = "row"
@@ -132,7 +129,7 @@ title = "kü"
 url = "http://192.168.2.43/cgi-bin/main.cgi"
 [[sections.items]]
 title = "ha"
-url = "http://192.168.2.6:8123/lovelace/0"
+url = "http://192.168.2.10:8123/lovelace/0"
 [[sections.items]]
 title = "z2m"
 url = "http://192.168.2.12:8080/#/"
@@ -172,11 +169,6 @@ url = "http://192.168.2.16:15630/"
 [[sections.items]]
 title = "esp"
 url = "http://192.168.2.65/"
-
-[[sections]]
-direction = "row"
-item_style = "outline"
-
 
 [[sections]]
 direction = "row"
