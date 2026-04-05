@@ -39,13 +39,13 @@ url = "https://wire.8tom.de/"
 title = "tec"
 url = "https://tec.8tom.de/"
 [[sections.items]]
-title = "prn"
+title = ".prn"
 url = "https://p.8tom.de/scenes?sortby=date"
 [[sections.items]]
 title = "wtc"
 url = "https://watcharr.8tom.de/"
 [[sections.items]]
-title = "scr"
+title = ".scr"
 url = "https://screen.8tom.de/?room=sonnesaftigsark/"
 [[sections.items]]
 title = "eko"
@@ -54,13 +54,13 @@ url = "https://neko.8tom.de/"
 title = "rss"
 url = "https://rss.8tom.de/"
 [[sections.items]]
-title = "rei"
+title = ".rei"
 url = "https://reise.8tom.de/"
 [[sections.items]]
-title = "kch"
+title = ".kch"
 url = "https://koch.8tom.de/"
 [[sections.items]]
-title = "eth"
+title = ".eth"
 url = "https://pad.8tom.de/lucatom"
 [[sections.items]]
 title = "cyp"
@@ -68,6 +68,9 @@ url = "https://cypht.8tom.de/"
 [[sections.items]]
 title = "frm"
 url = "https://picframe.8tom.de/"
+[[sections.items]]
+title = "rtt"
+url = "https://reitti.8tom.de/"
 
 [[sections]]
 direction = "row"
