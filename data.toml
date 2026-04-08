@@ -57,11 +57,11 @@ url = "https://rss.8tom.de/"
 title = ".rei"
 url = "https://reise.8tom.de/"
 [[sections.items]]
-title = ".kch"
+title = "kch"
 url = "https://koch.8tom.de/"
 [[sections.items]]
-title = ".eth"
-url = "https://pad.8tom.de/lucatom"
+title = "eth"
+url = "https://pad.8tom.de/p/lucatom"
 [[sections.items]]
 title = "cyp"
 url = "https://cypht.8tom.de/"
@@ -71,6 +71,10 @@ url = "https://picframe.8tom.de/"
 [[sections.items]]
 title = "rtt"
 url = "https://reitti.8tom.de/"
+[[sections.items]]
+title = "jnl"
+url = "https://journal.8tom.de/"
+
 
 [[sections]]
 direction = "row"
