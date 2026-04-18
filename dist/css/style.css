@@ -17,12 +17,12 @@ body {
   --surface2: #242424;
   --border: rgba(255,255,255,0.08);
   --fg: #d0d0d0;
-  --fg-muted: #888;
+  --fg-muted: #777;
   --radius: 8px;
-  --gap: 10px;
 }
 @media (prefers-color-scheme: light) {
   :root {
+    --primary: #85d457;
     --bg: #f2f2f2;
     --surface: #ffffff;
     --surface2: #f8f8f8;
@@ -33,12 +33,12 @@ body {
 }
 
 /* ── Layout ───────────────────────────────────────────────────────────────── */
-.container { max-width: 1400px; margin: 0 auto; padding: 16px 12px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 14px 12px; }
 
 .clusters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 10px;
 }
 
 /* ── Cluster ──────────────────────────────────────────────────────────────── */
@@ -46,45 +46,43 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 10px;
+  padding: 8px 10px 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
+/* Header: nur Text, kein Icon, wenig Abstand */
 .cluster-header {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
   border-bottom: 1px solid var(--border);
 }
 
 .cluster-name {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--fg-muted);
+  line-height: 1;
 }
 
+/* ── Items ────────────────────────────────────────────────────────────────── */
 .cluster-items {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  align-items: center;
 }
 
-/* ── Item ─────────────────────────────────────────────────────────────────── */
-.item-wrap {
-  position: relative;
-  display: inline-flex;
-}
+/* ── Item (link/button) ───────────────────────────────────────────────────── */
+.item-wrap { position: relative; display: inline-flex; }
 
 .item {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
+  gap: 5px;
+  padding: 4px 9px;
   background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -92,8 +90,9 @@ body {
   text-decoration: none;
   font-size: 13px;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition: background 0.13s, border-color 0.13s, color 0.13s;
   white-space: nowrap;
+  line-height: 1.3;
 }
 .item:hover {
   background: var(--primary);
@@ -102,67 +101,90 @@ body {
 }
 .item:hover .service-icon { filter: brightness(10); }
 
-/* ── Stream button active state ───────────────────────────────────────────── */
-.stream-btn { border: none; }
+/* ── Radio: compact stream buttons ───────────────────────────────────────── */
+/* Radio-Buttons sind noch kompakter, ohne Icon */
+.stream-btn {
+  padding: 3px 8px;
+  font-size: 12px;
+  border: none;
+}
+
 .stream-btn.radio-active {
   background: var(--primary);
   border-color: var(--primary);
   color: #fff;
-  outline: 2px solid rgba(255,255,255,0.4);
+  outline: 2px solid rgba(255,255,255,0.35);
   outline-offset: 1px;
 }
-.stream-btn.radio-active .service-icon { filter: brightness(10); }
+
+.stop-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+}
+.stop-btn:hover { background: #c0392b; border-color: #c0392b; color: #fff; }
+
+.now-playing {
+  font-size: 11px;
+  color: var(--primary);
+  font-style: italic;
+  align-self: center;
+  padding-left: 2px;
+  flex-basis: 100%;
+  min-height: 14px;
+}
 
 /* ── Intern-Badge ─────────────────────────────────────────────────────────── */
 .int-badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  width: 14px;
-  height: 14px;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 7px;
+  font-size: 9px;
   color: #4caf50;
   text-decoration: none;
   line-height: 1;
-  transition: transform 0.15s, background 0.15s;
-  z-index: 1;
+  transition: transform 0.13s, background 0.13s;
+  z-index: 2;
 }
 .int-badge:hover {
-  transform: scale(1.3);
+  transform: scale(1.4);
   background: #4caf50;
   color: #fff;
+  border-color: #4caf50;
 }
 
 /* ── Service Icon ─────────────────────────────────────────────────────────── */
 .service-icon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
   flex-shrink: 0;
-  transition: filter 0.15s;
+  transition: filter 0.13s;
 }
 
-/* ── Dim overlay ──────────────────────────────────────────────────────────── */
+/* ── Dim Overlay (idle) ───────────────────────────────────────────────────── */
 #dim-overlay {
   position: fixed; inset: 0;
-  background: rgba(0,0,0,0.88);
+  background: rgba(0,0,0,0.92);
   opacity: 0; pointer-events: none;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 3s ease-in-out;
   z-index: 9999;
 }
 body.is-dimmed #dim-overlay { opacity: 1; }
 @media (prefers-color-scheme: light) {
-  #dim-overlay { background: rgba(255,255,255,0.8); }
+  #dim-overlay { background: rgba(255,255,255,0.85); }
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .clusters-grid { grid-template-columns: 1fr; }
-  .item { font-size: 12px; padding: 5px 8px; }
+  .item { font-size: 12px; }
 }
