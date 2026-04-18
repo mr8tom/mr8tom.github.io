@@ -16,8 +16,10 @@ def icon_img(name, size=18):
     )
 
 def render_item(item):
-    has_both = item.get("url_ext") and item.get("url_int")
-    url = item.get("url_ext") or item.get("url_int") or "#"
+    has_ext = bool(item.get("url_ext"))
+    has_int = bool(item.get("url_int"))
+    has_both = has_ext and has_int
+    int_only  = has_int and not has_ext
 
     if item.get("stream"):
         return h("button", klass="item stream-btn",
@@ -25,25 +27,34 @@ def render_item(item):
             h("span", klass="item-title")(item["title"]),
         )
 
-    return h("div", klass="item-wrap")(
-        h("a", klass="item", href=url, target="_blank")(
-            icon_img(item.get("icon")),
-            h("span", klass="item-title")(item["title"]),
-        ),
-        h("a",
-            klass="int-badge",
-            href=item.get("url_int", ""),
-            target="_blank",
-            title="Intern öffnen",
-        )("●") if has_both else frag(),
+    # Klasse: ext (hat url_ext), int-only (nur url_int)
+    if int_only:
+        css_class = "item int-only"
+        url = item["url_int"]
+    else:
+        css_class = "item ext"
+        url = item.get("url_ext") or item.get("url_int") or "#"
+
+    link = h("a", klass=css_class, href=url)(
+        icon_img(item.get("icon")),
+        h("span", klass="item-title")(item["title"]),
     )
+
+    # Badge: grüner Punkt für Dual-URL – öffnet die interne URL
+    badge = h("a",
+        klass="int-badge",
+        href=item.get("url_int", ""),
+        title="Intern öffnen",
+    )("●") if has_both else frag()
+
+    return h("div", klass="item-wrap")(link, badge)
 
 def render_cluster(cluster):
     is_radio = cluster.get("radio", False)
     items_html = list(render_item(item) for item in cluster.get("items", []))
 
     stop_btn = h("button", klass="item stream-btn stop-btn", **{"data-stop": "true"})(
-        h("span", klass="item-title")("⏹ Stop"),
+        h("span")("⏹ Stop"),
     ) if is_radio else frag()
 
     now_playing = h("span", klass="now-playing", id="now-playing")() if is_radio else frag()
@@ -62,27 +73,32 @@ def render_cluster(cluster):
 with open("data.toml", "rb") as f:
     data = tomllib.load(f)
 
-meta = data.get("meta", {})
-gtag = meta.get("gtag_id", "")
-primary_dark = meta.get("primary_color_dark", "#d81b60")
-primary_light = meta.get("primary_color_light", "#85d457")
-title = meta.get("title", "Dashboard")
+meta    = data.get("meta", {})
+gtag    = meta.get("gtag_id", "")
+title   = meta.get("title", "Dashboard")
 
 gtag_block = raw(f"""
 <script async src="https://www.googletagmanager.com/gtag/js?id={gtag}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{gtag}');</script>
 """) if gtag else frag()
 
+# Favicons aus dist/img/
+favicons = raw("""
+  <link rel="icon" type="image/x-icon"    href="img/favicon.ico">
+  <link rel="icon" type="image/svg+xml"   href="img/logo.svg">
+  <link rel="apple-touch-icon"            href="img/apple-touch-icon.png">
+  <link rel="manifest" href="img/manifest.json">
+""")
+
 radio_js = r"""
 <script>
 (() => {
-  const player = document.getElementById("radio-player");
-  const nowPlaying = document.getElementById("now-playing");
-  const DEFAULT_TITLE = document.title;
+  const player    = document.getElementById("radio-player");
+  const nowPlay   = document.getElementById("now-playing");
+  const DEF_TITLE = document.title;
   let active = null, vol = 0.65, idleTimer = null;
   const IDLE_MS = 12000;
 
-  // ── Idle/dim logic ────────────────────────────────────────────────────────
   const resetIdle = () => {
     clearTimeout(idleTimer);
     document.body.classList.remove("is-dimmed");
@@ -92,32 +108,28 @@ radio_js = r"""
   ["mousemove","mousedown","keydown","scroll","touchstart"]
     .forEach(e => document.addEventListener(e, resetIdle, {passive:true}));
 
-  // ── Stop ──────────────────────────────────────────────────────────────────
   const stop = () => {
     try { player.pause(); } catch(e) {}
     player.removeAttribute("src"); player.load();
     if (active) { active.classList.remove("radio-active"); active = null; }
-    document.title = DEFAULT_TITLE;
-    if (nowPlaying) nowPlaying.textContent = "";
+    document.title = DEF_TITLE;
+    if (nowPlay) nowPlay.textContent = "";
     clearTimeout(idleTimer);
     document.body.classList.remove("is-dimmed");
   };
 
-  // ── Click delegation ──────────────────────────────────────────────────────
   document.addEventListener("click", async ev => {
     const btn = ev.target.closest(".stream-btn");
     if (!btn) return;
-
     if (btn.dataset.stop === "true") { stop(); return; }
-
     stop();
     active = btn;
     btn.classList.add("radio-active");
     player.volume = vol;
     player.src = btn.dataset.stream;
     const name = btn.dataset.title || "Radio";
-    document.title = name + " — " + DEFAULT_TITLE;
-    if (nowPlaying) nowPlaying.textContent = "▶ " + name;
+    document.title = name + " — " + DEF_TITLE;
+    if (nowPlay) nowPlay.textContent = "▶ " + name;
     try { await player.play(); } catch(e) { stop(); }
     resetIdle();
   });
@@ -130,11 +142,8 @@ page = html(lang="de")(
         h("meta", charset="utf-8"),
         h("meta", name="viewport", content="width=device-width, initial-scale=1"),
         h("title")(title),
+        favicons,
         h("link", rel="stylesheet", href="css/style.css"),
-        h("style")(raw(f"""
-            :root {{ --primary: {primary_dark}; }}
-            @media (prefers-color-scheme: light) {{ :root {{ --primary: {primary_light}; }} }}
-        """)),
         gtag_block,
     ),
     h("body")(
@@ -154,4 +163,4 @@ os.makedirs("dist", exist_ok=True)
 with open("dist/index.html", "w") as f:
     f.write(page.render())
 
-print("done – dist/index.html written")
+print("done")
