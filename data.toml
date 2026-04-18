@@ -73,6 +73,71 @@ url_ext = "https://8tom.de/apps/calendar/dayGridMonth/now"
 title = "Collectives"
 url_ext = "https://8tom.de/apps/collectives/"
 
+
+[[clusters]]
+name = "Infra"
+[[clusters.items]]
+title = "Proxmox"
+icon = "proxmox"
+url_int = "https://192.168.2.4:8006/"
+[[clusters.items]]
+title = "NPM"
+icon = "nginx-proxy-manager"
+url_int = "https://192.168.2.7:81/"
+[[clusters.items]]
+title = "AdGuard"
+icon = "adguard-home"
+url_int = "http://192.168.2.9/"
+[[clusters.items]]
+title = "Dockge"
+icon = "dockge"
+url_int = "http://192.168.2.26:5001/"
+[[clusters.items]]
+title = "JDownloader"
+icon = "jdownloader2.png"
+url_int = "http://192.168.2.26:5800/"
+[[clusters.items]]
+title = "Filebrowser"
+icon = "filebrowser-quantum"
+url_int = "http://192.168.2.4:8080/files/RootFS/"
+[[clusters.items]]
+title = "Wire"
+icon = "wireguard"
+url_ext = "https://wire.8tom.de/"
+url_int = "http://192.168.2.15:10086/"
+
+[[clusters]]
+name = "Smart Home"
+[[clusters.items]]
+title = "HA"
+icon = "home-assistant"
+url_ext = "https://home.8tom.de"
+url_int = "http://192.168.2.10:8123/"
+[[clusters.items]]
+title = "Zigbee"
+icon = "zigbee2mqtt"
+url_int = "http://192.168.2.12:8080/#/"
+[[clusters.items]]
+title = "Staubi"
+icon = "valetudo"
+url_int = "http://192.168.2.44/"
+[[clusters.items]]
+title = "wz"
+icon = "raspberry-pi"
+url_int = "http://192.168.2.42/cgi-bin/main.cgi"
+[[clusters.items]]
+title = "sz"
+icon = "raspberry-pi"
+url_int = "http://192.168.2.41/cgi-bin/main.cgi"
+[[clusters.items]]
+title = "kuba"
+icon = "raspberry-pi"
+url_int = "http://192.168.2.43/cgi-bin/main.cgi"
+[[clusters.items]]
+title = "Espframe"
+icon = "esphome-alt"
+url_int = "http://192.168.2.65/"
+
 [[clusters]]
 name = "Collect"
 [[clusters.items]]
@@ -146,38 +211,6 @@ icon = "mail-archiver"
 url_int = "http://192.168.2.16:15630/"
 
 [[clusters]]
-name = "Infra"
-[[clusters.items]]
-title = "Proxmox"
-icon = "proxmox"
-url_int = "https://192.168.2.4:8006/"
-[[clusters.items]]
-title = "NPM (Nginx Proxy Manager)"
-icon = "nginx-proxy-manager"
-url_int = "https://192.168.2.7:81/"
-[[clusters.items]]
-title = "AdGuard"
-icon = "adguard-home"
-url_int = "http://192.168.2.9/"
-[[clusters.items]]
-title = "Dockge"
-icon = "dockge"
-url_int = "http://192.168.2.26:5001/"
-[[clusters.items]]
-title = "JDownloader"
-icon = "jdownloader2.png"
-url_int = "http://192.168.2.26:5800/"
-[[clusters.items]]
-title = "Filebrowser"
-icon = "filebrowser-quantum"
-url_int = "http://192.168.2.4:8080/files/RootFS/"
-[[clusters.items]]
-title = "Wire"
-icon = "wireguard"
-url_ext = "https://wire.8tom.de/"
-url_int = "http://192.168.2.15:10086/"
-
-[[clusters]]
 name = "Netzwerk"
 [[clusters.items]]
 title = "FB 1"
@@ -190,38 +223,6 @@ url_int = "http://192.168.2.2/"
 [[clusters.items]]
 title = "Repeater"
 url_int = "http://192.168.2.3/"
-
-[[clusters]]
-name = "Smart Home"
-[[clusters.items]]
-title = "HA"
-icon = "home-assistant"
-url_ext = "https://home.8tom.de"
-url_int = "http://192.168.2.10:8123/"
-[[clusters.items]]
-title = "Zigbee"
-icon = "zigbee2mqtt"
-url_int = "http://192.168.2.12:8080/#/"
-[[clusters.items]]
-title = "Staubi"
-icon = "valetudo"
-url_int = "http://192.168.2.44/"
-[[clusters.items]]
-title = "wz"
-icon = "raspberry-pi"
-url_int = "http://192.168.2.42/cgi-bin/main.cgi"
-[[clusters.items]]
-title = "sz"
-icon = "raspberry-pi"
-url_int = "http://192.168.2.41/cgi-bin/main.cgi"
-[[clusters.items]]
-title = "kuba"
-icon = "raspberry-pi"
-url_int = "http://192.168.2.43/cgi-bin/main.cgi"
-[[clusters.items]]
-title = "Espframe"
-icon = "esphome-alt"
-url_int = "http://192.168.2.65/"
 
 [[clusters]]
 name = "Radio"
