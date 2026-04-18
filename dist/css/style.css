@@ -39,9 +39,9 @@ body {
   --btn-radio-hover: #d81b60;
 
   /* Badge (interne IP bei Dual-Links) */
-  --badge-bg:     rgba(130, 60, 230, 0.18);
-  --badge-border: rgba(130, 60, 230, 0.50);
-  --badge-fg:     #c299ff;
+  --badge-bg:     #823ce6;
+  --badge-border: #a050ff;
+  --badge-fg:     #f0e7ff;
 }
 
 @media (prefers-color-scheme: light) {
@@ -69,10 +69,10 @@ body {
     --btn-radio-border: rgba(200, 10, 50, 0.28);
     --btn-radio-fg:    #b30030;
     --btn-radio-hover: #b30030;
-
-    --badge-bg:     rgba(110, 40, 200, 0.7);
-    --badge-border: rgba(110, 40, 200, 0.9);
-    --badge-fg:     #6a28bb;
+    
+    --badge-bg:     #6e28c8;
+    --badge-border: #8f4dff;
+    --badge-fg:     #ffffff;
   }
 }
 
