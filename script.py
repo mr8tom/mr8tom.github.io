@@ -1,13 +1,28 @@
 import tomllib
 from tinyhtml import html, h, frag, raw
 
-ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/{}.svg"
+ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons"
+
+def icon_src(name: str) -> str:
+    if name.startswith("http://") or name.startswith("https://"):
+        return name
+
+    lower = name.lower()
+
+    if lower.endswith(".svg"):
+        return f"{ICON_CDN}/svg/{name}"
+    if lower.endswith(".png"):
+        return f"{ICON_CDN}/png/{name}"
+    if lower.endswith(".webp"):
+        return f"{ICON_CDN}/webp/{name}"
+
+    return f"{ICON_CDN}/svg/{name}.svg"
 
 def icon_img(name, size=18):
     if not name:
         return frag()
     return h("img",
-        src=ICON_CDN.format(name),
+        src=icon_src(name),
         alt=name,
         width=str(size), height=str(size),
         loading="lazy",
