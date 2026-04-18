@@ -86,7 +86,7 @@ url_int = "https://192.168.2.7:81/"
 [[clusters.items]]
 title = "TMX"
 icon = "termix"
-url_ext = "https:/adv.8tom.de/"
+url_ext = "https://adv.8tom.de/"
 url_int = "http://192.168.2.18/"
 [[clusters.items]]
 title = "AdGuard"
