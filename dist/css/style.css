@@ -3,63 +3,101 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 14px;
-  background: var(--bg, #111);
-  color: var(--fg, #d0d0d0);
+  font-size: 15.4px; /* 14 * 1.1 = 15.4 */
+  background: var(--bg);
+  color: var(--fg);
   min-height: 100dvh;
 }
 
-/* ── CSS Variables ────────────────────────────────────────────────────────── */
+/* ── Design Tokens ────────────────────────────────────────────────────────── */
 :root {
-  --primary: #d81b60;
-  --bg: #111111;
-  --surface: #1c1c1c;
-  --surface2: #242424;
-  --border: rgba(255,255,255,0.08);
-  --fg: #d0d0d0;
-  --fg-muted: #777;
-  --radius: 8px;
+  --primary:     #d81b60;
+  --intern:      #c8a800;
+  --int-green:   #4caf50;
+
+  --bg:          #111111;
+  --surface:     #1c1c1c;
+  --surface2:    #242424;
+  --border:      rgba(255,255,255,0.07);
+  --fg:          #d0d0d0;
+  --fg-muted:    #666;
+
+  --btn-ext-bg:      rgba(216, 27, 96,  0.13);
+  --btn-ext-border:  rgba(216, 27, 96,  0.35);
+  --btn-ext-fg:      #f08aaa;
+  --btn-ext-hover:   #d81b60;
+
+  --btn-int-bg:      rgba(200, 168, 0,  0.13);
+  --btn-int-border:  rgba(200, 168, 0,  0.35);
+  --btn-int-fg:      #d4b84a;
+  --btn-int-hover:   #b89200;
+
+  /* Intern-only: grüne Umrandung */
+  --btn-intonly-bg:      rgba(76, 175, 80, 0.10);
+  --btn-intonly-border:  rgba(76, 175, 80, 0.45);
+  --btn-intonly-fg:      #7ec882;
+  --btn-intonly-hover:   #388e3c;
 }
+
 @media (prefers-color-scheme: light) {
   :root {
-    --primary: #85d457;
-    --bg: #f2f2f2;
-    --surface: #ffffff;
-    --surface2: #f8f8f8;
-    --border: rgba(0,0,0,0.08);
-    --fg: #1a1a1a;
-    --fg-muted: #666;
+    --bg:        #f0f0f0;
+    --surface:   #ffffff;
+    --surface2:  #f5f5f5;
+    --border:    rgba(0,0,0,0.09);
+    --fg:        #1a1a1a;
+    --fg-muted:  #888;
+
+    --btn-ext-bg:      rgba(168, 0, 74,   0.08);
+    --btn-ext-border:  rgba(168, 0, 74,   0.35);
+    --btn-ext-fg:      #a8004a;
+    --btn-ext-hover:   #a8004a;
+
+    --btn-int-bg:      rgba(120, 96, 0,   0.08);
+    --btn-int-border:  rgba(120, 96, 0,   0.35);
+    --btn-int-fg:      #7a6000;
+    --btn-int-hover:   #7a6000;
+
+    --btn-intonly-bg:      rgba(56, 142, 60, 0.08);
+    --btn-intonly-border:  rgba(56, 142, 60, 0.40);
+    --btn-intonly-fg:      #2e7d32;
+    --btn-intonly-hover:   #2e7d32;
   }
 }
 
 /* ── Layout ───────────────────────────────────────────────────────────────── */
-.container { max-width: 1400px; margin: 0 auto; padding: 14px 12px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 15px 13px; }
 
 .clusters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+}
+@media (max-width: 900px) {
+  .clusters-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .clusters-grid { grid-template-columns: 1fr; }
 }
 
 /* ── Cluster ──────────────────────────────────────────────────────────────── */
 .cluster {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 8px 10px 10px;
+  border-radius: 9px;
+  padding: 9px 11px 11px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
 }
 
-/* Header: nur Text, kein Icon, wenig Abstand */
 .cluster-header {
   padding-bottom: 5px;
   border-bottom: 1px solid var(--border);
 }
 
 .cluster-name {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -71,120 +109,139 @@ body {
 .cluster-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
   align-items: center;
 }
 
-/* ── Item (link/button) ───────────────────────────────────────────────────── */
 .item-wrap { position: relative; display: inline-flex; }
 
+/* ── Base Item ────────────────────────────────────────────────────────────── */
 .item {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 4px 9px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid transparent;
   color: var(--fg);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background 0.13s, border-color 0.13s, color 0.13s;
+  transition: background 0.13s, border-color 0.13s, color 0.13s, filter 0.13s;
   white-space: nowrap;
   line-height: 1.3;
+  background: var(--surface2);
+  -webkit-user-select: none;
+  user-select: none;
 }
-.item:hover {
+
+/* ── Extern ───────────────────────────────────────────────────────────────── */
+.item.ext {
+  background:   var(--btn-ext-bg);
+  border-color: var(--btn-ext-border);
+  color:        var(--btn-ext-fg);
+}
+.item.ext:hover {
+  background:   var(--btn-ext-hover);
+  border-color: var(--btn-ext-hover);
+  color: #fff;
+}
+.item.ext:hover .service-icon { filter: brightness(10); }
+
+/* ── Intern-only (nur url_int, grüne Umrandung) ───────────────────────────── */
+.item.int-only {
+  background:   var(--btn-intonly-bg);
+  border-color: var(--btn-intonly-border);
+  color:        var(--btn-intonly-fg);
+}
+.item.int-only:hover {
+  background:   var(--btn-intonly-hover);
+  border-color: var(--btn-intonly-hover);
+  color: #fff;
+}
+.item.int-only:hover .service-icon { filter: brightness(10); }
+
+/* ── Radio Stream Buttons ─────────────────────────────────────────────────── */
+.stream-btn {
+  padding: 3px 9px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--fg-muted);
+}
+.stream-btn:hover {
   background: var(--primary);
   border-color: var(--primary);
   color: #fff;
 }
-.item:hover .service-icon { filter: brightness(10); }
-
-/* ── Radio: compact stream buttons ───────────────────────────────────────── */
-/* Radio-Buttons sind noch kompakter, ohne Icon */
-.stream-btn {
-  padding: 3px 8px;
-  font-size: 12px;
-  border: none;
-}
-
 .stream-btn.radio-active {
   background: var(--primary);
   border-color: var(--primary);
   color: #fff;
-  outline: 2px solid rgba(255,255,255,0.35);
+  outline: 2px solid rgba(255,255,255,0.3);
   outline-offset: 1px;
 }
-
-.stop-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--fg-muted);
-}
+.stop-btn { background: transparent; border: 1px solid var(--border); color: var(--fg-muted); }
 .stop-btn:hover { background: #c0392b; border-color: #c0392b; color: #fff; }
 
 .now-playing {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--primary);
   font-style: italic;
   align-self: center;
-  padding-left: 2px;
   flex-basis: 100%;
-  min-height: 14px;
+  min-height: 15px;
 }
 
-/* ── Intern-Badge ─────────────────────────────────────────────────────────── */
+/* ── Intern-Badge (grüner Punkt für Dual-URL Items) ──────────────────────── */
 .int-badge {
   position: absolute;
-  top: -6px;
-  right: -6px;
-  width: 18px;
-  height: 18px;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid rgba(76,175,80,0.5);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 9px;
-  color: #4caf50;
+  font-size: 10px;
+  color: var(--int-green);
   text-decoration: none;
   line-height: 1;
-  transition: transform 0.13s, background 0.13s;
+  /* Touch: scale on press */
+  transition: transform 0.15s ease, background 0.15s, border-color 0.15s;
   z-index: 2;
+  touch-action: manipulation;
 }
-.int-badge:hover {
-  transform: scale(1.4);
-  background: #4caf50;
+/* Hover + long-press simulation via :active */
+.int-badge:hover,
+.int-badge:active {
+  transform: scale(2);
+  background: var(--int-green);
   color: #fff;
-  border-color: #4caf50;
+  border-color: var(--int-green);
 }
 
 /* ── Service Icon ─────────────────────────────────────────────────────────── */
 .service-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
   flex-shrink: 0;
   transition: filter 0.13s;
 }
 
-/* ── Dim Overlay (idle) ───────────────────────────────────────────────────── */
+/* ── Dim Overlay (Idle) ───────────────────────────────────────────────────── */
 #dim-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.92);
   opacity: 0; pointer-events: none;
-  transition: opacity 3s ease-in-out;
+  transition: opacity 0.6s ease-in-out;   /* deutlich schneller: 0.6s statt 3s */
   z-index: 9999;
 }
 body.is-dimmed #dim-overlay { opacity: 1; }
 @media (prefers-color-scheme: light) {
   #dim-overlay { background: rgba(255,255,255,0.85); }
-}
-
-/* ── Responsive ───────────────────────────────────────────────────────────── */
-@media (max-width: 480px) {
-  .clusters-grid { grid-template-columns: 1fr; }
-  .item { font-size: 12px; }
 }
