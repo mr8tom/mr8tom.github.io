@@ -1,9 +1,9 @@
-
 /* ── Reset / Base ─────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 15.4px; /* 14 * 1.1 = 15.4 */
+  font-size: 15.4px;
   background: var(--bg);
   color: var(--fg);
   min-height: 100dvh;
@@ -11,71 +11,102 @@ body {
 
 /* ── Design Tokens ────────────────────────────────────────────────────────── */
 :root {
-  --primary:     #d81b60;
-  --intern:      #c8a800;
-  --int-green:   #4caf50;
+  --primary: #4a7dff;
+  --primary-strong: #2b5cff;
+  --secondary: #8b5cf6;
+  --secondary-strong: #6d28d9;
+  --badge: #7c3aed;
 
-  --bg:          #111111;
-  --surface:     #1c1c1c;
-  --surface2:    #242424;
-  --border:      rgba(255,255,255,0.07);
-  --fg:          #d0d0d0;
-  --fg-muted:    #666;
+  --radio: #d81b60;
 
-  --btn-ext-bg:      rgba(216, 27, 96,  0.13);
-  --btn-ext-border:  rgba(216, 27, 96,  0.35);
-  --btn-ext-fg:      #f08aaa;
-  --btn-ext-hover:   #d81b60;
+  --bg: #111111;
+  --surface: #1c1c1c;
+  --surface2: #242424;
+  --border: rgba(255, 255, 255, 0.07);
+  --fg: #d0d0d0;
+  --fg-muted: #777;
 
-  --btn-int-bg:      rgba(200, 168, 0,  0.13);
-  --btn-int-border:  rgba(200, 168, 0,  0.35);
-  --btn-int-fg:      #d4b84a;
-  --btn-int-hover:   #b89200;
+  --btn-ext-bg: rgba(74, 125, 255, 0.12);
+  --btn-ext-border: rgba(74, 125, 255, 0.35);
+  --btn-ext-fg: #8fb0ff;
+  --btn-ext-hover: #4a7dff;
 
-  /* Intern-only: grüne Umrandung */
-  --btn-intonly-bg:      rgba(76, 175, 80, 0.10);
-  --btn-intonly-border:  rgba(76, 175, 80, 0.45);
-  --btn-intonly-fg:      #7ec882;
-  --btn-intonly-hover:   #388e3c;
+  --btn-intonly-bg: rgba(139, 92, 246, 0.12);
+  --btn-intonly-border: rgba(139, 92, 246, 0.35);
+  --btn-intonly-fg: #c4b5fd;
+  --btn-intonly-hover: #8b5cf6;
+
+  --btn-radio-bg: rgba(216, 27, 96, 0.12);
+  --btn-radio-border: rgba(216, 27, 96, 0.35);
+  --btn-radio-fg: #f08aaa;
+  --btn-radio-hover: #d81b60;
+
+  --btn-disabled-bg: rgba(128, 128, 128, 0.08);
+  --btn-disabled-border: rgba(128, 128, 128, 0.18);
+  --btn-disabled-fg: #8f8f8f;
+
+  --badge-bg: rgba(124, 58, 237, 0.16);
+  --badge-border: rgba(124, 58, 237, 0.48);
+  --badge-fg: #ddd6fe;
+
+  --int-dot: #7c3aed;
+  --int-dot-hover: #a78bfa;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg:        #f0f0f0;
-    --surface:   #ffffff;
-    --surface2:  #f5f5f5;
-    --border:    rgba(0,0,0,0.09);
-    --fg:        #1a1a1a;
-    --fg-muted:  #888;
+    --bg: #f2f4f8;
+    --surface: #ffffff;
+    --surface2: #f6f8fc;
+    --border: rgba(0, 0, 0, 0.09);
+    --fg: #1a1a1a;
+    --fg-muted: #666;
 
-    --btn-ext-bg:      rgba(168, 0, 74,   0.08);
-    --btn-ext-border:  rgba(168, 0, 74,   0.35);
-    --btn-ext-fg:      #a8004a;
-    --btn-ext-hover:   #a8004a;
+    --btn-ext-bg: rgba(74, 125, 255, 0.08);
+    --btn-ext-border: rgba(74, 125, 255, 0.28);
+    --btn-ext-fg: #2b5cff;
+    --btn-ext-hover: #2b5cff;
 
-    --btn-int-bg:      rgba(120, 96, 0,   0.08);
-    --btn-int-border:  rgba(120, 96, 0,   0.35);
-    --btn-int-fg:      #7a6000;
-    --btn-int-hover:   #7a6000;
+    --btn-intonly-bg: rgba(139, 92, 246, 0.08);
+    --btn-intonly-border: rgba(139, 92, 246, 0.28);
+    --btn-intonly-fg: #6d28d9;
+    --btn-intonly-hover: #6d28d9;
 
-    --btn-intonly-bg:      rgba(56, 142, 60, 0.08);
-    --btn-intonly-border:  rgba(56, 142, 60, 0.40);
-    --btn-intonly-fg:      #2e7d32;
-    --btn-intonly-hover:   #2e7d32;
+    --btn-radio-bg: rgba(216, 27, 96, 0.08);
+    --btn-radio-border: rgba(216, 27, 96, 0.28);
+    --btn-radio-fg: #b91c4c;
+    --btn-radio-hover: #b91c4c;
+
+    --btn-disabled-bg: rgba(0, 0, 0, 0.04);
+    --btn-disabled-border: rgba(0, 0, 0, 0.08);
+    --btn-disabled-fg: #8c8c8c;
+
+    --badge-bg: rgba(124, 58, 237, 0.10);
+    --badge-border: rgba(124, 58, 237, 0.38);
+    --badge-fg: #6d28d9;
+
+    --int-dot: #6d28d9;
+    --int-dot-hover: #8b5cf6;
   }
 }
 
 /* ── Layout ───────────────────────────────────────────────────────────────── */
-.container { max-width: 1400px; margin: 0 auto; padding: 15px 13px; }
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 13px;
+}
 
 .clusters-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 11px;
 }
+
 @media (max-width: 900px) {
   .clusters-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 540px) {
   .clusters-grid { grid-template-columns: 1fr; }
 }
@@ -113,7 +144,10 @@ body {
   align-items: center;
 }
 
-.item-wrap { position: relative; display: inline-flex; }
+.item-wrap {
+  position: relative;
+  display: inline-flex;
+}
 
 /* ── Base Item ────────────────────────────────────────────────────────────── */
 .item {
@@ -127,7 +161,7 @@ body {
   text-decoration: none;
   font-size: 14px;
   cursor: pointer;
-  transition: background 0.13s, border-color 0.13s, color 0.13s, filter 0.13s;
+  transition: background 0.13s, border-color 0.13s, color 0.13s, filter 0.13s, opacity 0.13s;
   white-space: nowrap;
   line-height: 1.3;
   background: var(--surface2);
@@ -135,93 +169,121 @@ body {
   user-select: none;
 }
 
-/* ── Extern ───────────────────────────────────────────────────────────────── */
-.item.ext {
-  background:   var(--btn-ext-bg);
-  border-color: var(--btn-ext-border);
-  color:        var(--btn-ext-fg);
-}
-.item.ext:hover {
-  background:   var(--btn-ext-hover);
-  border-color: var(--btn-ext-hover);
+.item:hover {
   color: #fff;
 }
-.item.ext:hover .service-icon { filter: brightness(10); }
 
-/* ── Intern-only (nur url_int, grüne Umrandung) ───────────────────────────── */
-.item.int-only {
-  background:   var(--btn-intonly-bg);
-  border-color: var(--btn-intonly-border);
-  color:        var(--btn-intonly-fg);
+/* ── Extern ───────────────────────────────────────────────────────────────── */
+.item.ext {
+  background: var(--btn-ext-bg);
+  border-color: var(--btn-ext-border);
+  color: var(--btn-ext-fg);
 }
+
+.item.ext:hover {
+  background: var(--btn-ext-hover);
+  border-color: var(--btn-ext-hover);
+}
+
+.item.ext:hover .service-icon {
+  filter: brightness(10);
+}
+
+/* ── Intern-only ──────────────────────────────────────────────────────────── */
+.item.int-only {
+  background: var(--btn-intonly-bg);
+  border-color: var(--btn-intonly-border);
+  color: var(--btn-intonly-fg);
+}
+
 .item.int-only:hover {
-  background:   var(--btn-intonly-hover);
+  background: var(--btn-intonly-hover);
   border-color: var(--btn-intonly-hover);
   color: #fff;
 }
-.item.int-only:hover .service-icon { filter: brightness(10); }
+
+.item.int-only:hover .service-icon {
+  filter: brightness(10);
+}
 
 /* ── Radio Stream Buttons ─────────────────────────────────────────────────── */
 .stream-btn {
   padding: 3px 9px;
   font-size: 13px;
-  border: 1px solid var(--border);
-  background: var(--surface2);
-  color: var(--fg-muted);
+  border: 1px solid var(--btn-radio-border);
+  background: var(--btn-radio-bg);
+  color: var(--btn-radio-fg);
 }
+
 .stream-btn:hover {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--btn-radio-hover);
+  border-color: var(--btn-radio-hover);
   color: #fff;
 }
+
 .stream-btn.radio-active {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--btn-radio-hover);
+  border-color: var(--btn-radio-hover);
   color: #fff;
-  outline: 2px solid rgba(255,255,255,0.3);
+  outline: 2px solid rgba(255, 255, 255, 0.3);
   outline-offset: 1px;
 }
-.stop-btn { background: transparent; border: 1px solid var(--border); color: var(--fg-muted); }
-.stop-btn:hover { background: #c0392b; border-color: #c0392b; color: #fff; }
+
+.stop-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+}
+
+.stop-btn:hover {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
 
 .now-playing {
   font-size: 12px;
-  color: var(--primary);
+  color: var(--btn-radio-hover);
   font-style: italic;
   align-self: center;
   flex-basis: 100%;
   min-height: 15px;
 }
 
-/* ── Intern-Badge (grüner Punkt für Dual-URL Items) ──────────────────────── */
+/* ── Dual-Link Badge ──────────────────────────────────────────────────────── */
 .int-badge {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 22px;
-  height: 22px;
-  background: var(--surface);
-  border: 1.5px solid rgba(76,175,80,0.5);
+  top: -9px;
+  right: -9px;
+  width: 24px;
+  height: 24px;
+  background: var(--badge-bg);
+  border: 1.5px solid var(--badge-border);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  color: var(--int-green);
+  font-size: 11px;
+  color: var(--badge-fg);
   text-decoration: none;
   line-height: 1;
-  /* Touch: scale on press */
-  transition: transform 0.15s ease, background 0.15s, border-color 0.15s;
+  transition: transform 0.15s ease, background 0.15s, border-color 0.15s, color 0.15s;
   z-index: 2;
   touch-action: manipulation;
 }
-/* Hover + long-press simulation via :active */
+
 .int-badge:hover,
 .int-badge:active {
   transform: scale(2);
-  background: var(--int-green);
+  background: var(--badge-border);
   color: #fff;
-  border-color: var(--int-green);
+  border-color: var(--badge-border);
+}
+
+/* ── Disabled / unavailable state ─────────────────────────────────────────── */
+.item.is-unavailable {
+  opacity: 0.45;
+  filter: grayscale(1);
 }
 
 /* ── Service Icon ─────────────────────────────────────────────────────────── */
@@ -233,15 +295,29 @@ body {
   transition: filter 0.13s;
 }
 
-/* ── Dim Overlay (Idle) ───────────────────────────────────────────────────── */
+/* ── Dim Overlay ──────────────────────────────────────────────────────────── */
 #dim-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.92);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.6s ease-in-out;   /* deutlich schneller: 0.6s statt 3s */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease-in-out;
   z-index: 9999;
 }
-body.is-dimmed #dim-overlay { opacity: 1; }
+
+body.is-dimmed #dim-overlay {
+  opacity: 1;
+}
+
 @media (prefers-color-scheme: light) {
-  #dim-overlay { background: rgba(255,255,255,0.85); }
+  #dim-overlay {
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .clusters-grid { grid-template-columns: 1fr; }
+  .item { font-size: 12px; }
 }
