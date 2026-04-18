@@ -73,7 +73,6 @@ url_ext = "https://8tom.de/apps/calendar/dayGridMonth/now"
 title = "Collectives"
 url_ext = "https://8tom.de/apps/collectives/"
 
-
 [[clusters]]
 name = "Infra"
 [[clusters.items]]
@@ -83,11 +82,11 @@ url_int = "https://192.168.2.4:8006/"
 [[clusters.items]]
 title = "NPM"
 icon = "nginx-proxy-manager"
-url_ext = "https:/adv.8tom.de/"
 url_int = "https://192.168.2.7:81/"
 [[clusters.items]]
 title = "TMX"
 icon = "termix"
+url_ext = "https:/adv.8tom.de/"
 url_int = "http://192.168.2.18/"
 [[clusters.items]]
 title = "AdGuard"
