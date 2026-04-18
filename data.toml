@@ -1,9 +1,7 @@
-
 [meta]
 title = "8tom"
 primary_color_dark = "#d81b60"
 primary_color_light = "#85d457"
-text_align = "center"
 base_url = "https://mr8tom.github.io/"
 
 [[clusters]]
@@ -236,22 +234,22 @@ url_int = "http://192.168.2.3/"
 name = "Radio"
 radio = true
 [[clusters.items]]
-title = "DLF"
+title = "DF"
 stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
 [[clusters.items]]
-title = "DLF Kultur"
+title = "DFK"
 stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
 [[clusters.items]]
 title = "RP"
 stream = "https://stream.radioparadise.com/aac-64"
 [[clusters.items]]
-title = "Chill"
+title = "Chl"
 stream = "https://streams.fluxfm.de/chillout/aac-64/audio/"
 [[clusters.items]]
-title = "Drone"
+title = "Drn"
 stream = "https://ice1.somafm.com/dronezone-128-aac"
 [[clusters.items]]
-title = "Space"
+title = "Spc"
 stream = "https://ice3.somafm.com/spacestation-128-aac"
 [[clusters.items]]
 title = "Sea"
