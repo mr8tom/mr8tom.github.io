@@ -83,10 +83,11 @@ gtag_block = raw(f"""
 """) if gtag else frag()
 
 favicons = raw("""
-  <link rel="icon" type="image/x-icon"  href="img/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-  <link rel="apple-touch-icon"          href="img/apple-touch-icon.png">
-  <link rel="manifest"                  href="img/manifest.json">
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico?v=2">
+  <link rel="icon" type="image/png" href="./img/favicon.png?v=2">
+  <link rel="icon" type="image/webp" href="./img/jake.webp?v=2">
+  <link rel="apple-touch-icon" href="./img/favicon.png?v=2">
+  <link rel="manifest" href="./img/manifest.json">
 """)
 
 radio_js = r"""
