@@ -84,6 +84,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   position: sticky;
   top: 0;
@@ -92,7 +93,18 @@ body {
   -webkit-backdrop-filter: blur(8px);
 }
 
-.now-playing { display: none; }
+.stream-btn {
+  padding: 5px 10px;
+  font-size: 13px;
+  border: 1px solid var(--btn-radio-border);
+  background: var(--btn-radio-bg);
+  color: var(--btn-radio-fg);
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.13s, border-color 0.13s, color 0.13s;
+  line-height: 1.25;
+}
 
 /* ── Layout ───────────────────────────────────────────────────────────────── */
 .container {
@@ -284,4 +296,16 @@ body.is-dimmed #dim-overlay { opacity: 1; }
 
 @media (prefers-color-scheme: light) {
   #dim-overlay { background: rgba(255,255,255,0.85); }
+}
+
+@media (max-width: 540px) {
+  .radio-bar {
+    padding: 6px 10px;
+    gap: 5px;
+  }
+
+  .stream-btn {
+    font-size: 12px;
+    padding: 5px 9px;
+  }
 }
