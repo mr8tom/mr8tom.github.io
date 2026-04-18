@@ -10,8 +10,6 @@ gtag_id = "G-33WB8LVHR6"
 # ── CLUSTER: Media ─────────────────────────────────────────────────────────────
 [[clusters]]
 name = "Media"
-icon = "jellyfin"
-
 [[clusters.items]]
 title = "Stream"
 icon = "jellyfin"
