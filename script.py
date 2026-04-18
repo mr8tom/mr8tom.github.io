@@ -3,7 +3,7 @@ from tinyhtml import html, h, frag, raw
 
 ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/{}.svg"
 
-def icon_img(name, size=20):
+def icon_img(name, size=18):
     if not name:
         return frag()
     return h("img",
@@ -22,7 +22,6 @@ def render_item(item):
     if item.get("stream"):
         return h("button", klass="item stream-btn",
                  **{"data-stream": item["stream"], "data-title": item["title"]})(
-            icon_img(item.get("icon")),
             h("span", klass="item-title")(item["title"]),
         )
 
@@ -35,18 +34,28 @@ def render_item(item):
             klass="int-badge",
             href=item.get("url_int", ""),
             target="_blank",
-            title="Interner Zugriff",
+            title="Intern öffnen",
         )("●") if has_both else frag(),
     )
 
 def render_cluster(cluster):
+    is_radio = cluster.get("radio", False)
+    items_html = list(render_item(item) for item in cluster.get("items", []))
+
+    stop_btn = h("button", klass="item stream-btn stop-btn", **{"data-stop": "true"})(
+        h("span", klass="item-title")("⏹ Stop"),
+    ) if is_radio else frag()
+
+    now_playing = h("span", klass="now-playing", id="now-playing")() if is_radio else frag()
+
     return h("div", klass="cluster")(
         h("div", klass="cluster-header")(
-            icon_img(cluster.get("icon"), size=18),
             h("h3", klass="cluster-name")(cluster.get("name", "")),
         ),
         h("div", klass="cluster-items")(
-            render_item(item) for item in cluster.get("items", [])
+            *items_html,
+            stop_btn,
+            now_playing,
         ),
     )
 
@@ -64,12 +73,63 @@ gtag_block = raw(f"""
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{gtag}');</script>
 """) if gtag else frag()
 
+radio_js = r"""
+<script>
+(() => {
+  const player = document.getElementById("radio-player");
+  const nowPlaying = document.getElementById("now-playing");
+  const DEFAULT_TITLE = document.title;
+  let active = null, vol = 0.65, idleTimer = null;
+  const IDLE_MS = 12000;
+
+  // ── Idle/dim logic ────────────────────────────────────────────────────────
+  const resetIdle = () => {
+    clearTimeout(idleTimer);
+    document.body.classList.remove("is-dimmed");
+    if (!active) return;
+    idleTimer = setTimeout(() => document.body.classList.add("is-dimmed"), IDLE_MS);
+  };
+  ["mousemove","mousedown","keydown","scroll","touchstart"]
+    .forEach(e => document.addEventListener(e, resetIdle, {passive:true}));
+
+  // ── Stop ──────────────────────────────────────────────────────────────────
+  const stop = () => {
+    try { player.pause(); } catch(e) {}
+    player.removeAttribute("src"); player.load();
+    if (active) { active.classList.remove("radio-active"); active = null; }
+    document.title = DEFAULT_TITLE;
+    if (nowPlaying) nowPlaying.textContent = "";
+    clearTimeout(idleTimer);
+    document.body.classList.remove("is-dimmed");
+  };
+
+  // ── Click delegation ──────────────────────────────────────────────────────
+  document.addEventListener("click", async ev => {
+    const btn = ev.target.closest(".stream-btn");
+    if (!btn) return;
+
+    if (btn.dataset.stop === "true") { stop(); return; }
+
+    stop();
+    active = btn;
+    btn.classList.add("radio-active");
+    player.volume = vol;
+    player.src = btn.dataset.stream;
+    const name = btn.dataset.title || "Radio";
+    document.title = name + " — " + DEFAULT_TITLE;
+    if (nowPlaying) nowPlaying.textContent = "▶ " + name;
+    try { await player.play(); } catch(e) { stop(); }
+    resetIdle();
+  });
+})();
+</script>
+"""
+
 page = html(lang="de")(
     h("head")(
         h("meta", charset="utf-8"),
         h("meta", name="viewport", content="width=device-width, initial-scale=1"),
         h("title")(title),
-        h("link", rel="stylesheet", href="css/pico.min.css"),
         h("link", rel="stylesheet", href="css/style.css"),
         h("style")(raw(f"""
             :root {{ --primary: {primary_dark}; }}
@@ -85,46 +145,7 @@ page = html(lang="de")(
             ),
             h("audio", id="radio-player", preload="none")(),
         ),
-        raw("""<script>
-(() => {
-  const player = document.getElementById("radio-player");
-  const DEFAULT_TITLE = document.title;
-  let active = null, vol = 0.65, idleTimer = null;
-
-  const IDLE = 10000;
-  const resetIdle = () => {
-    clearTimeout(idleTimer);
-    document.body.classList.remove("is-dimmed");
-    if (!active) return;
-    idleTimer = setTimeout(() => document.body.classList.add("is-dimmed"), IDLE);
-  };
-  ["mousemove","mousedown","keydown","scroll","touchstart"]
-    .forEach(e => document.addEventListener(e, resetIdle, {passive:true}));
-
-  const stop = () => {
-    try { player.pause(); } catch(e) {}
-    player.removeAttribute("src"); player.load();
-    if (active) { active.classList.remove("radio-active"); active = null; }
-    document.title = DEFAULT_TITLE;
-    resetIdle();
-  };
-
-  document.addEventListener("click", async ev => {
-    const btn = ev.target.closest(".stream-btn");
-    if (!btn) return;
-    stop();
-    active = btn;
-    btn.classList.add("radio-active");
-    player.volume = vol;
-    player.src = btn.dataset.stream;
-    document.title = (btn.dataset.title || "Radio") + " — " + DEFAULT_TITLE;
-    try { await player.play(); } catch(e) { stop(); }
-    resetIdle();
-  });
-
-  window.jakeRadio = { stop, volUp: () => { vol = Math.min(1, vol+0.1); player.volume=vol; }, volDown: () => { vol = Math.max(0, vol-0.1); player.volume=vol; } };
-})();
-</script>"""),
+        raw(radio_js),
     ),
 )
 
@@ -133,4 +154,4 @@ os.makedirs("dist", exist_ok=True)
 with open("dist/index.html", "w") as f:
     f.write(page.render())
 
-print("done")
+print("done – dist/index.html written")

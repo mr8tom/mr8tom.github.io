@@ -10,8 +10,9 @@ gtag_id = "G-33WB8LVHR6"
 # ── CLUSTER: Media ─────────────────────────────────────────────────────────────
 [[clusters]]
 name = "Media"
+
 [[clusters.items]]
-title = "Stream"
+title = "Jellyfin Stream"
 icon = "jellyfin"
 url_ext = "https://stream.8tom.de/web/#/tv.html?topParentId=43cfe12fe7d9d8d21251e0964e0232e2&collectionType=tvshows"
 url_int = "http://192.168.2.13:8096/"
@@ -22,14 +23,19 @@ icon = "audiobookshelf"
 url_ext = "https://audio.8tom.de/audiobookshelf/library/c3d39639-835c-4d3a-8904-aa7953684608/bookshelf?filter=genres.8J%252BMtu%252B4jw%253D%253D&sort=mtimeMs&desc=1"
 
 [[clusters.items]]
+title = "Navidrome"
+icon = "navidrome"
+url_int = "http://192.168.2.11:9000/material/"
+
+[[clusters.items]]
 title = "Photoprism"
 icon = "photoprism"
 url_ext = "https://p.8tom.de/scenes?sortby=date"
 
 [[clusters.items]]
-title = "Picframe"
-icon = "home-assistant"
-url_ext = "https://picframe.8tom.de/"
+title = "Immich"
+icon = "immich"
+url_ext = "https://pic.8tom.de/"
 
 [[clusters.items]]
 title = "Watcharr"
@@ -37,14 +43,18 @@ icon = "watcharr"
 url_ext = "https://watcharr.8tom.de/"
 
 [[clusters.items]]
-title = "Linkwarden"
-icon = "linkwarden"
-url_ext = "https://link.8tom.de/de/collections/36"
+title = "Picframe"
+icon = "home-assistant"
+url_ext = "https://picframe.8tom.de/"
+
+[[clusters.items]]
+title = "Kube (Video)"
+icon = "home-assistant"
+url_ext = "https://kube.8tom.de/"
 
 # ── CLUSTER: Nextcloud ─────────────────────────────────────────────────────────
 [[clusters]]
 name = "Nextcloud"
-icon = "nextcloud"
 
 [[clusters.items]]
 title = "Dateien"
@@ -52,7 +62,7 @@ icon = "nextcloud"
 url_ext = "https://8tom.de/apps/files/"
 
 [[clusters.items]]
-title = "Arbeit"
+title = "Arbeit (AZE)"
 icon = "nextcloud"
 url_ext = "https://8tom.de/apps/files/files/1557730?dir=/Archiv/Arbeit&openfile=true"
 
@@ -81,10 +91,33 @@ title = "Collectives"
 icon = "nextcloud"
 url_ext = "https://8tom.de/apps/collectives/"
 
+# ── CLUSTER: Collect ───────────────────────────────────────────────────────────
+[[clusters]]
+name = "Collect"
+
+[[clusters.items]]
+title = "Linkwarden"
+icon = "linkwarden"
+url_ext = "https://link.8tom.de/de/collections/36"
+
+[[clusters.items]]
+title = "Reitti (Routen)"
+icon = "gpxsee"
+url_ext = "https://reitti.8tom.de/"
+
+[[clusters.items]]
+title = "Tandoor Rezepte"
+icon = "tandoor"
+url_ext = "https://koch.8tom.de/"
+
+[[clusters.items]]
+title = "Reise"
+icon = "home-assistant"
+url_ext = "https://reise.8tom.de/"
+
 # ── CLUSTER: Kommunikation ─────────────────────────────────────────────────────
 [[clusters]]
 name = "Kommunikation"
-icon = "wire"
 
 [[clusters.items]]
 title = "Wire"
@@ -92,12 +125,17 @@ icon = "wire"
 url_ext = "https://wire.8tom.de/"
 
 [[clusters.items]]
+title = "Matrix"
+icon = "matrix"
+url_int = "http://192.168.2.x/"
+
+[[clusters.items]]
 title = "Mail (Cypht)"
 icon = "cypht"
 url_ext = "https://cypht.8tom.de/"
 
 [[clusters.items]]
-title = "RSS"
+title = "RSS (FreshRSS)"
 icon = "freshrss"
 url_ext = "https://rss.8tom.de/"
 url_int = "http://192.168.2.19/"
@@ -112,50 +150,38 @@ title = "Journal"
 icon = "silverbullet"
 url_ext = "https://journal.8tom.de/"
 
+# ── CLUSTER: Tools ─────────────────────────────────────────────────────────────
+[[clusters]]
+name = "Tools"
+
 [[clusters.items]]
 title = "Neko Browser"
 icon = "neko"
 url_ext = "https://neko.8tom.de/"
 
 [[clusters.items]]
-title = "Screen"
+title = "Screen (Guacamole)"
 icon = "guacamole"
 url_ext = "https://screen.8tom.de/?room=sonnesaftigsark/"
-
-# ── CLUSTER: Lifestyle ─────────────────────────────────────────────────────────
-[[clusters]]
-name = "Lifestyle"
-icon = "tandoor"
-
-[[clusters.items]]
-title = "Kochbuch"
-icon = "tandoor"
-url_ext = "https://koch.8tom.de/"
-
-[[clusters.items]]
-title = "Reise"
-icon = "home-assistant"
-url_ext = "https://reise.8tom.de/"
-
-[[clusters.items]]
-title = "Reitti (Routen)"
-icon = "gpxsee"
-url_ext = "https://reitti.8tom.de/"
-
-[[clusters.items]]
-title = "Homepage"
-icon = "homer"
-url_ext = "https://home.8tom.de"
 
 [[clusters.items]]
 title = "Tec Blog"
 icon = "wordpress"
 url_ext = "https://tec.8tom.de/"
 
-# ── CLUSTER: Infrastruktur ─────────────────────────────────────────────────────
+[[clusters.items]]
+title = "PDF Arranger"
+icon = "stirling-pdf"
+url_int = "http://192.168.2.24:8080/"
+
+[[clusters.items]]
+title = "Homepage"
+icon = "homer"
+url_ext = "https://home.8tom.de"
+
+# ── CLUSTER: OPT (Proxmox VMs/CTs) ────────────────────────────────────────────
 [[clusters]]
-name = "Infrastruktur"
-icon = "proxmox"
+name = "OPT"
 
 [[clusters.items]]
 title = "Proxmox"
@@ -163,44 +189,14 @@ icon = "proxmox"
 url_int = "https://192.168.2.4:8006/"
 
 [[clusters.items]]
-title = "Fritzbox"
-icon = "fritzbox"
-url_int = "http://192.168.2.1/"
-
-[[clusters.items]]
-title = "Fritz Repeater 1"
-icon = "fritzbox"
-url_int = "http://192.168.2.2/"
-
-[[clusters.items]]
-title = "Fritz Repeater 2"
-icon = "fritzbox"
-url_int = "http://192.168.2.3/"
-
-[[clusters.items]]
-title = "Nginx Proxy Manager"
-icon = "nginx-proxy-manager"
-url_int = "https://192.168.2.7:81/"
-
-[[clusters.items]]
-title = "Traefik"
-icon = "traefik"
-url_int = "http://192.168.2.18/"
-
-[[clusters.items]]
-title = "AdGuard Home"
-icon = "adguard-home"
-url_int = "http://192.168.2.9/"
-
-[[clusters.items]]
-title = "Nextcloud (intern)"
+title = "Nextcloud (OPT)"
 icon = "nextcloud"
 url_int = "http://192.168.2.6/"
 
 [[clusters.items]]
-title = "PDF Arranger"
-icon = "stirling-pdf"
-url_int = "http://192.168.2.24:8080/"
+title = "NPM (Nginx Proxy Manager)"
+icon = "nginx-proxy-manager"
+url_int = "https://192.168.2.7:81/"
 
 [[clusters.items]]
 title = "Wordpress"
@@ -223,19 +219,47 @@ icon = "proxmox"
 url_int = "http://192.168.2.4:8080/files/RootFS/"
 
 [[clusters.items]]
-title = "Batocera"
-icon = "batocera"
-url_int = "http://192.168.2.44/"
+title = "Dockge"
+icon = "dockge"
+url_int = "http://192.168.2.26:5001/"
 
 [[clusters.items]]
-title = "ESP"
-icon = "esphome"
-url_int = "http://192.168.2.65/"
+title = "Traefik"
+icon = "traefik"
+url_int = "http://192.168.2.18/"
 
-# ── CLUSTER: Home Automation ───────────────────────────────────────────────────
+# ── CLUSTER: Netzwerk ──────────────────────────────────────────────────────────
 [[clusters]]
-name = "Home Automation"
-icon = "home-assistant"
+name = "Netzwerk"
+
+[[clusters.items]]
+title = "Fritzbox"
+icon = "fritzbox"
+url_int = "http://192.168.2.1/"
+
+[[clusters.items]]
+title = "Fritz Repeater 1"
+icon = "fritzbox"
+url_int = "http://192.168.2.2/"
+
+[[clusters.items]]
+title = "Fritz Repeater 2"
+icon = "fritzbox"
+url_int = "http://192.168.2.3/"
+
+[[clusters.items]]
+title = "AdGuard Home"
+icon = "adguard-home"
+url_int = "http://192.168.2.9/"
+
+[[clusters.items]]
+title = "Wireguard"
+icon = "wireguard"
+url_int = "http://192.168.2.x/"
+
+# ── CLUSTER: Smart Home ────────────────────────────────────────────────────────
+[[clusters]]
+name = "Smart Home"
 
 [[clusters.items]]
 title = "Home Assistant"
@@ -247,6 +271,16 @@ url_int = "http://192.168.2.10:8123/lovelace/0"
 title = "Zigbee2MQTT"
 icon = "zigbee2mqtt"
 url_int = "http://192.168.2.12:8080/#/"
+
+[[clusters.items]]
+title = "Staubsauger (Valetudo)"
+icon = "valetudo"
+url_int = "http://192.168.2.44/"
+
+[[clusters.items]]
+title = "Bosch Sauger"
+icon = "home-assistant"
+url_int = "http://192.168.2.16:15630/"
 
 [[clusters.items]]
 title = "Kamera Wohnzimmer"
@@ -264,19 +298,19 @@ icon = "scrypted"
 url_int = "http://192.168.2.43/cgi-bin/main.cgi"
 
 [[clusters.items]]
-title = "Bosch Sauger"
-icon = "home-assistant"
-url_int = "http://192.168.2.16:15630/"
-
-[[clusters.items]]
-title = "Staubsauger"
-icon = "valetudo"
+title = "Batocera"
+icon = "batocera"
 url_int = "http://192.168.2.44/"
 
-# ── CLUSTER: Radio ────────────────────────────────────────────────────────────
+[[clusters.items]]
+title = "ESPHome"
+icon = "esphome"
+url_int = "http://192.168.2.65/"
+
+# ── CLUSTER: Radio ─────────────────────────────────────────────────────────────
 [[clusters]]
 name = "Radio"
-icon = "navidrome"
+radio = true
 
 [[clusters.items]]
 title = "DLF"
@@ -306,10 +340,9 @@ stream = "https://ice3.somafm.com/spacestation-128-aac"
 title = "Sea Salt Radio"
 stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
 
-# ── CLUSTER: Web ──────────────────────────────────────────────────────────────
+# ── CLUSTER: Web ───────────────────────────────────────────────────────────────
 [[clusters]]
 name = "Web"
-icon = "firefox"
 
 [[clusters.items]]
 title = "MediathekView"
