@@ -249,25 +249,27 @@ body {
   position: absolute;
   top: -8px;
   right: -8px;
-  width: 18px;
-  height: 18px;
-  background: var(--badge-bg);
-  border: 1.5px solid var(--badge-border);
+  width: 16px;
+  height: 16px;
+  background: #7a30cc;
+  border: 2px solid var(--surface);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0;           /* kein sichtbarer Text */
+  font-size: 0;
   text-decoration: none;
-  transition: transform 0.15s ease, background 0.15s, border-color 0.15s;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
   z-index: 2;
   touch-action: manipulation;
+  box-shadow: 0 0 0 1px rgba(122, 48, 204, 0.18);
 }
+
 .int-badge:hover,
 .int-badge:active {
-  transform: scale(2.2);
-  background: var(--badge-border);
-  border-color: var(--badge-border);
+  transform: scale(2.1);
+  background: #9250f0;
+  box-shadow: 0 0 0 3px rgba(146, 80, 240, 0.18);
 }
 
 /* ── Service Icon ─────────────────────────────────────────────────────────── */
