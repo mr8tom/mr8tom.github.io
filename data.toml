@@ -83,7 +83,12 @@ url_int = "https://192.168.2.4:8006/"
 [[clusters.items]]
 title = "NPM"
 icon = "nginx-proxy-manager"
+url_ext = "https:/adv.8tom.de/"
 url_int = "https://192.168.2.7:81/"
+[[clusters.items]]
+title = "TMX"
+icon = "termix"
+url_int = "http://192.168.2.18/"
 [[clusters.items]]
 title = "AdGuard"
 icon = "adguard-home"
@@ -93,7 +98,7 @@ title = "Dockge"
 icon = "dockge"
 url_int = "http://192.168.2.26:5001/"
 [[clusters.items]]
-title = "JDownloader"
+title = "JD"
 icon = "jdownloader2.png"
 url_int = "http://192.168.2.26:5800/"
 [[clusters.items]]
@@ -186,7 +191,7 @@ url_ext = "https://pad.8tom.de/p/lucatom"
 url_int = "http://192.168.2.28:9001/"
 [[clusters.items]]
 title = "Journal"
-icon = "journiv"
+icon = "journiv.png"
 url_ext = "https://journal.8tom.de/"
 url_int = "http://192.168.2.26:8000/"
 
