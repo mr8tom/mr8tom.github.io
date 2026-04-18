@@ -103,7 +103,7 @@ name = "Kommunikation"
 [[clusters.items]]
 title = "Matrix"
 icon = "matrix"
-url_ext = "https://matrix.8tom.de/synapse-admin/
+url_ext = "https://matrix.8tom.de/synapse-admin/"
 [[clusters.items]]
 title = "Cypht"
 icon = "eu-mail"
