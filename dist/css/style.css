@@ -254,8 +254,8 @@ body {
   position: absolute;
   top: -8px;
   right: -8px;
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   background: var(--badge-bg);
   border: 1.5px solid var(--badge-border);
   border-radius: 50%;
@@ -270,7 +270,7 @@ body {
 }
 .int-badge:hover,
 .int-badge:active {
-  transform: scale(2.2);
+  transform: scale(2.8);
   background: var(--badge-border);
   border-color: var(--badge-border);
 }
