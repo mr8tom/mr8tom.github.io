@@ -70,8 +70,8 @@ body {
     --btn-radio-fg:    #b30030;
     --btn-radio-hover: #b30030;
 
-    --badge-bg:     rgba(110, 40, 200, 0.08);
-    --badge-border: rgba(110, 40, 200, 0.35);
+    --badge-bg:     rgba(110, 40, 200, 0.7);
+    --badge-border: rgba(110, 40, 200, 0.9);
     --badge-fg:     #6a28bb;
   }
 }
