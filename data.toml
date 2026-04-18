@@ -238,19 +238,19 @@ stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
 title = "DLF Kultur"
 stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
 [[clusters.items]]
-title = "Radio Paradise"
+title = "RP"
 stream = "https://stream.radioparadise.com/aac-64"
 [[clusters.items]]
-title = "FluxFM Chillout"
+title = "Chill"
 stream = "https://streams.fluxfm.de/chillout/aac-64/audio/"
 [[clusters.items]]
-title = "Soma Drone"
+title = "Drone"
 stream = "https://ice1.somafm.com/dronezone-128-aac"
 [[clusters.items]]
-title = "Soma Space"
+title = "Space"
 stream = "https://ice3.somafm.com/spacestation-128-aac"
 [[clusters.items]]
-title = "Sea Salt"
+title = "Sea"
 stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
 
 [[clusters]]
