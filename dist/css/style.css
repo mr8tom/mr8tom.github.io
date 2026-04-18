@@ -92,14 +92,7 @@ body {
   -webkit-backdrop-filter: blur(8px);
 }
 
-.now-playing {
-  font-size: 13px;
-  color: var(--btn-radio-fg);
-  font-style: italic;
-  align-self: center;
-  margin-left: 4px;
-  min-width: 0;
-}
+.now-playing { display: none; }
 
 /* ── Layout ───────────────────────────────────────────────────────────────── */
 .container {
@@ -249,27 +242,25 @@ body {
   position: absolute;
   top: -8px;
   right: -8px;
-  width: 16px;
-  height: 16px;
-  background: #7a30cc;
-  border: 2px solid var(--surface);
+  width: 18px;
+  height: 18px;
+  background: var(--badge-bg);
+  border: 1.5px solid var(--badge-border);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0;
+  font-size: 0;           /* kein sichtbarer Text */
   text-decoration: none;
-  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s, border-color 0.15s;
   z-index: 2;
   touch-action: manipulation;
-  box-shadow: 0 0 0 1px rgba(122, 48, 204, 0.18);
 }
-
 .int-badge:hover,
 .int-badge:active {
-  transform: scale(2.1);
-  background: #9250f0;
-  box-shadow: 0 0 0 3px rgba(146, 80, 240, 0.18);
+  transform: scale(2.2);
+  background: var(--badge-border);
+  border-color: var(--badge-border);
 }
 
 /* ── Service Icon ─────────────────────────────────────────────────────────── */
