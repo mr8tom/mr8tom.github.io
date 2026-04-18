@@ -1,293 +1,136 @@
 import tomllib
-
 from tinyhtml import html, h, frag, raw
 
+ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/{}.svg"
 
-def render_item(item, outline: bool):
-    klass = "outline" if outline else ""
+def icon_img(name, size=20):
+    if not name:
+        return frag()
+    return h("img",
+        src=ICON_CDN.format(name),
+        alt=name,
+        width=str(size), height=str(size),
+        loading="lazy",
+        klass="service-icon",
+        onerror="this.style.display='none'",
+    )
+
+def render_item(item):
+    has_both = item.get("url_ext") and item.get("url_int")
+    url = item.get("url_ext") or item.get("url_int") or "#"
 
     if item.get("stream"):
-        return h(
-            "button",
-            role="button",
-            klass=klass,
-            **{
-                "data-stream": item.get("stream"),
-                "data-title": item.get("title") or "",
-            },
-        )(
-            h("hgroup")(
-                h("h4")(item.get("title")),
-                h("h5")(item.get("description")),
-            ),
+        return h("button", klass="item stream-btn",
+                 **{"data-stream": item["stream"], "data-title": item["title"]})(
+            icon_img(item.get("icon")),
+            h("span", klass="item-title")(item["title"]),
         )
 
-    if item.get("data-stop"):
-        return h(
-            "button",
-            role="button",
-            klass=klass,
-            onclick="window.jakeRadio.stop(); return false;",
-        )(
-            h("hgroup")(
-                h("h4")(item.get("title")),
-            ),
-        )
+    return h("div", klass="item-wrap")(
+        h("a", klass="item", href=url, target="_blank")(
+            icon_img(item.get("icon")),
+            h("span", klass="item-title")(item["title"]),
+        ),
+        h("a",
+            klass="int-badge",
+            href=item.get("url_int", ""),
+            target="_blank",
+            title="Interner Zugriff",
+        )("●") if has_both else frag(),
+    )
 
-    return h(
-        "a",
-        role="button",
-        klass=klass,
-        href=item.get("url"),
-        # target="_blank",
-    )(
-        h("hgroup")(
-            h("h4")(item.get("title")),
-            h("h5")(item.get("description")),
+def render_cluster(cluster):
+    return h("div", klass="cluster")(
+        h("div", klass="cluster-header")(
+            icon_img(cluster.get("icon"), size=18),
+            h("h3", klass="cluster-name")(cluster.get("name", "")),
+        ),
+        h("div", klass="cluster-items")(
+            render_item(item) for item in cluster.get("items", [])
         ),
     )
 
 with open("data.toml", "rb") as f:
     data = tomllib.load(f)
-    sections = frag(
-        h("div", klass="section")(
-            h("hgroup")(
-                h("h3")(section.get("title")),
-                h("p")(section.get("description")),
-            ),
-            h(
-                "div",
-                klass="items",
-                style=f"flex-direction: {section.get('direction', 'column')}",
-            )(
-                h(
-                    "div",
-                    klass="item",
-                    style=f"width: {'100%' if section.get('direction', 'column') == 'column' else 'unset'}",
-                )(
-                    render_item(
-                        item,
-                        section.get("item_style", "outline") == "outline",
-                    )
-                )
-                for item in section["items"]
-            ),
-        )
-        for section in data["sections"]
-    )
 
-    meta_tags = frag(
-        h("title")("8tom"),
-        h("meta", name="description", content=data.get("description")),
-        h("meta", name="keywords", content=data.get("keywords")),
-        h("meta", name="viewport", content="width=device-width, initial-scale=1"),
+meta = data.get("meta", {})
+gtag = meta.get("gtag_id", "")
+primary_dark = meta.get("primary_color_dark", "#d81b60")
+primary_light = meta.get("primary_color_light", "#85d457")
+title = meta.get("title", "Dashboard")
+
+gtag_block = raw(f"""
+<script async src="https://www.googletagmanager.com/gtag/js?id={gtag}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{gtag}');</script>
+""") if gtag else frag()
+
+page = html(lang="de")(
+    h("head")(
         h("meta", charset="utf-8"),
-        h(
-            "link",
-            rel="icon",
-            href=f"./img/{data.get('favicon', 'favicon.png')}?v=3",
-            type="image/png",
-        )
-    )
-
-    head = frag(
-        h("head")(
-            meta_tags,
-            h("link", rel="stylesheet", href="css/pico.min.css"),
-            h("link", rel="stylesheet", href="css/style.css"),
-            h("style", rel="stylesheet")(
-                f"""
-                    /* Standard: Fallback & Textausrichtung */
-                    * {{
-                        text-align: {data.get("text_align", "center")};
-                    }}
-                    
-                    /* Theme-Farben je nach Browser-Einstellung (Dark/Light) */
-                    :root {{
-                        /* Wenn nichts erkannt wird (Standard oft Dark) */
-                        --primary: {data.get("primary_color_dark", data.get("primary_color", "#546e7a"))} !important;
-                    }}
-
-                    @media (prefers-color-scheme: dark) {{
-                        :root {{
-                            --primary: {data.get("primary_color_dark", data.get("primary_color", "#546e7a"))} !important;
-                        }}
-                    }}
-
-                    @media (prefers-color-scheme: light) {{
-                        :root {{
-                            --primary: {data.get("primary_color_light", data.get("primary_color", "#546e7a"))} !important;
-                        }}
-                    }}
-
-                    /* Dim-Overlay Styles für Dark Mode (Standard) */
-                    #dim-overlay {{
-                        position: fixed;
-                        top: 0; left: 0; width: 100vw; height: 100vh;
-                        background: rgba(0, 0, 0, 0.85); /* Dunkler Schleier */
-                        opacity: 0;
-                        pointer-events: none;
-                        transition: opacity 2s ease-in-out;
-                        z-index: 9999;
-                    }}
-                    body.is-dimmed #dim-overlay {{
-                        opacity: 1;
-                    }}
-                    
-                    /* Dim-Overlay Styles für Light Mode */
-                    @media (prefers-color-scheme: light) {{
-                        #dim-overlay {{
-                            background: rgba(255, 255, 255, 0.75); /* Heller Schleier */
-                        }}
-                    }}
-                """
+        h("meta", name="viewport", content="width=device-width, initial-scale=1"),
+        h("title")(title),
+        h("link", rel="stylesheet", href="css/pico.min.css"),
+        h("link", rel="stylesheet", href="css/style.css"),
+        h("style")(raw(f"""
+            :root {{ --primary: {primary_dark}; }}
+            @media (prefers-color-scheme: light) {{ :root {{ --primary: {primary_light}; }} }}
+        """)),
+        gtag_block,
+    ),
+    h("body")(
+        h("div", id="dim-overlay")(),
+        h("main", klass="container")(
+            h("div", klass="clusters-grid")(
+                render_cluster(c) for c in data.get("clusters", [])
             ),
-            raw(
-                f"""
-                    <script async src="https://www.googletagmanager.com/gtag/js?id={data.get("gtag_id")}"></script>
-                    <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){{dataLayer.push(arguments);}}
-                    gtag('js', new Date());
-                    gtag('config', '{data.get("gtag_id")}');
-                    </script>
-                """
-            )
-            if data.get("gtag_id")
-            else None,
+            h("audio", id="radio-player", preload="none")(),
         ),
-    )
-
-    header = frag(
-        # h("header", klass="container")(
-        #     ...
-        # )
-    )
-
-    footer = frag(
-        # h("footer", klass="container")(
-        #     ...
-        # )
-    )
-
-    output = html(lang="en")(
-        head,
-        h("body")(
-            h("div", id="dim-overlay")(), 
-            header,
-            h("main", klass="container")(
-                sections,
-                h("audio", id="radio-player", preload="none")(),
-                raw(
-                    """
-<script>
+        raw("""<script>
 (() => {
   const player = document.getElementById("radio-player");
-  if (!player) return;
+  const DEFAULT_TITLE = document.title;
+  let active = null, vol = 0.65, idleTimer = null;
 
-  const DEFAULT_TITLE = "8tom";
-  let vol = 0.6;
-  let active = null;
-  
-  // -- Dimming Logik --
-  let idleTimer = null;
-  const IDLE_TIME = 10000; 
-
-  const resetIdleTimer = () => {
-    if (!active) {
-      document.body.classList.remove("is-dimmed");
-      clearTimeout(idleTimer);
-      return;
-    }
-    document.body.classList.remove("is-dimmed");
+  const IDLE = 10000;
+  const resetIdle = () => {
     clearTimeout(idleTimer);
-    idleTimer = setTimeout(() => {
-      document.body.classList.add("is-dimmed");
-    }, IDLE_TIME);
+    document.body.classList.remove("is-dimmed");
+    if (!active) return;
+    idleTimer = setTimeout(() => document.body.classList.add("is-dimmed"), IDLE);
   };
-
-  ['mousemove', 'mousedown', 'keydown', 'scroll', 'touchstart'].forEach(evt => 
-    document.addEventListener(evt, resetIdleTimer, { passive: true })
-  );
-
-  async function fetchIcecastHeaders(streamUrl) {
-    try {
-      const response = await fetch(streamUrl, { method: 'HEAD' });
-      const icyName = response.headers.get('icy-name');
-      const icyDesc = response.headers.get('icy-description');
-      
-      if (icyName && icyDesc) {
-        return `${icyName} - ${icyDesc}`;
-      } else if (icyName) {
-        return icyName;
-      }
-    } catch (e) {
-      console.warn("Konnte Stream-Header nicht lesen", e);
-    }
-    return null;
-  }
-
-  const setActive = async (el) => {
-    if (active) active.classList.remove("radio-active");
-    active = el;
-    
-    if (active) {
-      active.classList.add("radio-active");
-      
-      const fallbackTitle = active.dataset.title || "Radio";
-      document.title = `${fallbackTitle} — ${DEFAULT_TITLE}`;
-
-      const streamUrl = active.dataset.stream;
-      const icyTitle = await fetchIcecastHeaders(streamUrl);
-      
-      if (icyTitle && active === el) { 
-        document.title = `${icyTitle} — ${DEFAULT_TITLE}`;
-      }
-      
-      resetIdleTimer();
-      
-    } else {
-      document.title = DEFAULT_TITLE;
-      resetIdleTimer(); 
-    }
-  };
+  ["mousemove","mousedown","keydown","scroll","touchstart"]
+    .forEach(e => document.addEventListener(e, resetIdle, {passive:true}));
 
   const stop = () => {
-    try { player.pause(); } catch (e) {}
-    player.removeAttribute("src");
-    player.load();
-    setActive(null);
+    try { player.pause(); } catch(e) {}
+    player.removeAttribute("src"); player.load();
+    if (active) { active.classList.remove("radio-active"); active = null; }
+    document.title = DEFAULT_TITLE;
+    resetIdle();
   };
 
-  document.addEventListener("click", async (ev) => {
-    const btn = ev.target.closest("button[data-stream]");
+  document.addEventListener("click", async ev => {
+    const btn = ev.target.closest(".stream-btn");
     if (!btn) return;
-
-    setActive(btn);
+    stop();
+    active = btn;
+    btn.classList.add("radio-active");
     player.volume = vol;
     player.src = btn.dataset.stream;
-
-    try {
-      await player.play();
-    } catch (e) {
-      stop();
-      console.warn("play() failed", e);
-    }
+    document.title = (btn.dataset.title || "Radio") + " — " + DEFAULT_TITLE;
+    try { await player.play(); } catch(e) { stop(); }
+    resetIdle();
   });
 
-  window.jakeRadio = {
-    volDown: () => { vol = Math.max(0, Math.round((vol - 0.1) * 10) / 10); player.volume = vol; },
-    volUp:   () => { vol = Math.min(1, Math.round((vol + 0.1) * 10) / 10); player.volume = vol; },
-    stop
-  };
+  window.jakeRadio = { stop, volUp: () => { vol = Math.min(1, vol+0.1); player.volume=vol; }, volDown: () => { vol = Math.max(0, vol-0.1); player.volume=vol; } };
 })();
-</script>
-"""
-                ),
-            ),
-            footer,
-        ),
-    ).render()
+</script>"""),
+    ),
+)
 
-    with open("dist/index.html", "w") as f:
-        f.write(output)
+import os
+os.makedirs("dist", exist_ok=True)
+with open("dist/index.html", "w") as f:
+    f.write(page.render())
+
+print("done")
