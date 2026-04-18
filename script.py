@@ -67,9 +67,8 @@ def render_radio_bar(clusters):
           **{"data-stream": item["stream"], "data-title": item["title"]})(item["title"])
         for item in radio.get("items", []) if item.get("stream")
     ]
-    stop = h("button", klass="stream-btn stop-btn", **{"data-stop": "true"})("⏹")
     now = h("span", klass="now-playing", id="now-playing")()
-    return h("div", klass="radio-bar")(*stream_btns, stop, now)
+    return h("div", klass="radio-bar")(*stream_btns, now)
 
 with open("data.toml", "rb") as f:
     data = tomllib.load(f)
@@ -121,7 +120,12 @@ radio_js = r"""
   document.addEventListener("click", async ev => {
     const btn = ev.target.closest(".stream-btn");
     if (!btn) return;
-    if (btn.dataset.stop === "true") { stop(); return; }
+
+    if (active === btn) {
+      stop();
+      return;
+    }
+
     stop();
     active = btn;
     btn.classList.add("radio-active");
@@ -129,7 +133,7 @@ radio_js = r"""
     player.src = btn.dataset.stream;
     const name = btn.dataset.title || "Radio";
     document.title = name + " — " + DEF;
-    if (nowPlay) nowPlay.textContent = "▶ " + name;
+    if (nowPlay) nowPlay.textContent = "";
     try { await player.play(); } catch(e) { stop(); }
     resetIdle();
   });
