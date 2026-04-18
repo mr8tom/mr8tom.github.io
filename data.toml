@@ -17,6 +17,7 @@ url_int = "http://192.168.2.13:8096/"
 title = "ABS"
 icon = "audiobookshelf"
 url_ext = "https://audio.8tom.de/audiobookshelf/library/c3d39639-835c-4d3a-8904-aa7953684608/bookshelf?filter=genres.8J%252BMtu%252B4jw%253D%253D&sort=mtimeMs&desc=1"
+url_int = "http://192.168.2.8:13378/"
 [[clusters.items]]
 title = "Lyrion"
 icon = "lyrion"
@@ -25,22 +26,26 @@ url_int = "http://192.168.2.11:9000/material/"
 title = "Prn"
 icon = "stash"
 url_ext = "https://p.8tom.de/scenes?sortby=date"
+url_int = "http://192.168.2.26:9999/"
 [[clusters.items]]
 title = "Immich"
 icon = "immich"
 url_ext = "https://pic.8tom.de/"
+url_int = "http://192.168.2.23:2283/"
 [[clusters.items]]
 title = "Watcharr"
 icon = "watcharr"
 url_ext = "https://watcharr.8tom.de/"
+url_int = "http://192.168.2.33:3090/"
 [[clusters.items]]
 title = "Picframe"
 icon = "immich"
 url_ext = "https://picframe.8tom.de/"
+url_int = "http://192.168.2.33:3090"
 [[clusters.items]]
 title = "Navidrome"
 icon = "navidrome"
-url_int = http://192.168.2.29:4533/
+url_int = "http://192.168.2.29:4533/"
 
 [[clusters]]
 name = "Nextcloud"
@@ -74,16 +79,20 @@ name = "Collect"
 title = "Linkwarden"
 icon = "linkwarden.png"
 url_ext = "https://link.8tom.de/de/collections/36"
+url_int = "http://192.168.2.14:3000/"
 [[clusters.items]]
 title = "Reitti"
 url_ext = "https://reitti.8tom.de/"
+url_int = "http://192.168.2.20:8080"
 [[clusters.items]]
 title = "Tandoor"
 icon = "tandoor-recipes"
 url_ext = "https://koch.8tom.de/"
+url_int = "http://192.168.2.22:8002"
 [[clusters.items]]
 title = "Trek"
 url_ext = "https://reise.8tom.de/"
+url_int = "http://192.168.2.26:3000/"
 #[[clusters.items]]
 #title = "Wordpress"
 #icon = "wordpress"
@@ -99,6 +108,7 @@ url_ext = "https://matrix.8tom.de/synapse-admin/
 title = "Cypht"
 icon = "eu-mail"
 url_ext = "https://cypht.8tom.de/"
+url_int = "http://192.168.2.21:80/"
 [[clusters.items]]
 title = "RSS"
 icon = "freshrss"
@@ -108,6 +118,7 @@ url_int = "http://192.168.2.19/"
 title = "Pad"
 icon = "etherpad"
 url_ext = "https://pad.8tom.de/p/lucatom"
+url_int = "http://192.168.2.28:9001/"
 [[clusters.items]]
 title = "Journal"
 icon = "journiv"
@@ -124,6 +135,7 @@ url_int = "http://192.168.2.26:8080/"
 [[clusters.items]]
 title = "Tec"
 url_ext = "https://tec.8tom.de/"
+url_int = "https://192.168.2.17:443/"
 [[clusters.items]]
 title = "PDF"
 icon = "stirling-pdf"
