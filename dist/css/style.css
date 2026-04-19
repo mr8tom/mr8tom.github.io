@@ -39,8 +39,8 @@ body {
   --btn-radio-hover: #d81b60;
 
   /* Badge (interne IP bei Dual-Links) */
-  --badge-bg:     rgba(130, 60, 230, 0.8);
-  --badge-border: rgba(130, 60, 230, 0.9);
+  --badge-bg:     rgba(130, 60, 230, 0.18);
+  --badge-border: rgba(130, 60, 230, 0.50);
   --badge-fg:     #c299ff;
 }
 
@@ -69,10 +69,10 @@ body {
     --btn-radio-border: rgba(200, 10, 50, 0.28);
     --btn-radio-fg:    #b30030;
     --btn-radio-hover: #b30030;
-    
-    --badge-bg:     rgba(130, 60, 230, 0.8);
-    --badge-border: rgba(130, 60, 230, 0.9);
-    --badge-fg:     #c299ff;
+
+    --badge-bg:     rgba(110, 40, 200, 0.08);
+    --badge-border: rgba(110, 40, 200, 0.35);
+    --badge-fg:     #6a28bb;
   }
 }
 
@@ -84,7 +84,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   gap: 6px;
   position: sticky;
   top: 0;
@@ -93,18 +92,7 @@ body {
   -webkit-backdrop-filter: blur(8px);
 }
 
-.stream-btn {
-  padding: 5px 10px;
-  font-size: 13px;
-  border: 1px solid var(--btn-radio-border);
-  background: var(--btn-radio-bg);
-  color: var(--btn-radio-fg);
-  border-radius: 7px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.13s, border-color 0.13s, color 0.13s;
-  line-height: 1.25;
-}
+.now-playing { display: none; }
 
 /* ── Layout ───────────────────────────────────────────────────────────────── */
 .container {
@@ -115,12 +103,8 @@ body {
 
 .clusters-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 11px;
-}
-
-@media (max-width: 900px) {
-  .clusters-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 540px) {
@@ -157,7 +141,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .item-wrap {
@@ -169,6 +153,7 @@ body {
 .item {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 6px;
   padding: 6px 11px;
   border-radius: 7px;
@@ -183,6 +168,8 @@ body {
   background: var(--surface2);
   -webkit-user-select: none;
   user-select: none;
+  flex: 1 1 calc(50% - 3px);
+  min-width: 0;
 }
 
 /* ── Extern ───────────────────────────────────────────────────────────────── */
@@ -252,10 +239,10 @@ body {
 /* ── Dual-Link Badge (internes IP für hover/press) ────────────────────────── */
 .int-badge {
   position: absolute;
-  top: -3px;
-  right: -3px;
-  width: 12px;
-  height: 12px;
+  top: -8px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
   background: var(--badge-bg);
   border: 1.5px solid var(--badge-border);
   border-radius: 50%;
@@ -270,7 +257,7 @@ body {
 }
 .int-badge:hover,
 .int-badge:active {
-  transform: scale(2.8);
+  transform: scale(2.2);
   background: var(--badge-border);
   border-color: var(--badge-border);
 }
@@ -298,14 +285,34 @@ body.is-dimmed #dim-overlay { opacity: 1; }
   #dim-overlay { background: rgba(255,255,255,0.85); }
 }
 
-@media (max-width: 540px) {
-  .radio-bar {
-    padding: 6px 10px;
-    gap: 5px;
-  }
-
-  .stream-btn {
-    font-size: 12px;
-    padding: 5px 9px;
-  }
+.immichframe-shell {
+  width: min(100%, 420px);
+  aspect-ratio: 1 / 1;
+  margin: 24px auto 0;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
 }
+.immichframe-shell iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: none;
+}
+.immichframe-shell.is-active iframe { display: block; }
+.immichframe-activate {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--surface2);
+  color: var(--fg);
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.immichframe-shell.is-active .immichframe-activate { display: none; }
