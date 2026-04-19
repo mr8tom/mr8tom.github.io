@@ -1,5 +1,4 @@
 /* ── Reset / Base ─────────────────────────────────────────────────────────── */*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 16px;
@@ -109,13 +108,13 @@ body {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 14px 13px;
+  padding: 4px 3px;
 }
 
 .clusters-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 11px;
+  gap: 5px;
 }
 
 @media (max-width: 900px) {
@@ -131,7 +130,7 @@ body {
   background: var(--surface);
   border: 0px; 
   border-radius: 0px;
-  padding: 9px 0px 0px;
+  padding: 9px 5px 5px;
   display: flex;
   flex-direction: column;
   gap: 0px;
