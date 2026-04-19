@@ -50,7 +50,7 @@ def render_item(item):
     return h("div", klass="item-wrap")(link, badge)
 
 def render_cluster(cluster):
-    items_html = list(render_item(item) for item in cluster.get("items", []))
+    items_html = [render_item(item) for item in cluster.get("items", [])][:3]
     return h("div", klass="cluster")(
         h("div", klass="cluster-header")(
             h("h3", klass="cluster-name")(cluster.get("name", "")),
@@ -83,10 +83,10 @@ gtag_block = raw(f"""
 """) if gtag else frag()
 
 favicons = raw("""
-  <link rel="icon" type="image/x-icon"  href="./img/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="./img/logo.svg">
-  <link rel="apple-touch-icon"          href="./img/apple-touch-icon.png">
-  <link rel="manifest"                  href="./img/manifest.json">
+  <link rel="icon" type="image/x-icon"  href="img/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link rel="apple-touch-icon"          href="img/apple-touch-icon.png">
+  <link rel="manifest"                  href="img/manifest.json">
 """)
 
 radio_js = r"""
@@ -138,11 +138,28 @@ radio_js = r"""
     resetIdle();
   });
 })();
+(() => {
+  const card = document.querySelector(".immichframe-shell");
+  const btn = document.getElementById("immichframe-activate");
+  const iframe = document.getElementById("immichframe");
+  const key = "immichframe-active";
+  const url = "https://picframe.8tom.de/";
+  if (sessionStorage.getItem(key) === "1") {
+    card.classList.add("is-active");
+    iframe.src = url;
+  }
+  btn?.addEventListener("click", () => {
+    sessionStorage.setItem(key, "1");
+    card.classList.add("is-active");
+    iframe.src = url;
+  });
+})();
 </script>
 """
 
 all_clusters = data.get("clusters", [])
 non_radio    = [c for c in all_clusters if not c.get("radio")]
+immich_url = data.get("meta", {}).get("immichframe_url", "https://picframe.8tom.de/")
 
 page = html(lang="de")(
     h("head")(
@@ -158,9 +175,13 @@ page = html(lang="de")(
         render_radio_bar(all_clusters),
         h("main", klass="container")(
             h("div", klass="clusters-grid")(
-                render_cluster(c) for c in non_radio
+                [render_cluster(c) for c in non_radio]
             ),
             h("audio", id="radio-player", preload="none")(),
+            h("div", klass="immichframe-shell")(
+                h("button", klass="immichframe-activate", id="immichframe-activate", type="button")("ImmichFrame aktivieren"),
+                h("iframe", id="immichframe", title="ImmichFrame", loading="lazy", src="about:blank", allow="fullscreen", referrerpolicy="no-referrer")(),
+            ),
         ),
         raw(radio_js),
     ),
