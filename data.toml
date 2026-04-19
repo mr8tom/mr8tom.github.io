@@ -151,7 +151,7 @@ url_ext = "https://link.8tom.de/de/collections/36"
 url_int = "http://192.168.2.14:3000/"
 [[clusters.items]]
 title = "Reitti"
-icon = "mapillary"
+icon = "mapillary.svg"
 url_ext = "https://reitti.8tom.de/"
 url_int = "http://192.168.2.20:8080"
 [[clusters.items]]
@@ -161,7 +161,7 @@ url_ext = "https://koch.8tom.de/"
 url_int = "http://192.168.2.22:8002"
 [[clusters.items]]
 title = "Trek"
-icon = "trek_5u4ozqxqly"
+icon = "trek_5u4ozqxqly.svg"
 url_ext = "https://reise.8tom.de/"
 url_int = "http://192.168.2.26:3000/"
 [[clusters.items]]
