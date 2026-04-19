@@ -19,14 +19,14 @@ body {
   --fg-muted:    #666;
 
   /* Extern: kräftiges Blau */
-  --btn-ext-bg:      rgba(37, 120, 255, 0.13);
-  --btn-ext-border:  rgba(37, 120, 255, 0.38);
+  --btn-ext-bg:      rgba(37, 120, 255, 0.3);
+  --btn-ext-border:  rgba(37, 120, 255, 0.5);
   --btn-ext-fg:      #7eb4ff;
   --btn-ext-hover:   #2578ff;
 
   /* Intern-only: deutliches Lila */
-  --btn-intonly-bg:      rgba(160, 80, 255, 0.13);
-  --btn-intonly-border:  rgba(160, 80, 255, 0.38);
+  --btn-intonly-bg:      rgba(160, 80, 255, 0.4);
+  --btn-intonly-border:  rgba(160, 80, 255, 0.5);
   --btn-intonly-fg:      #cc99ff;
   --btn-intonly-hover:   #a050ff;
 
