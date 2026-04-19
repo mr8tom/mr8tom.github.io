@@ -155,22 +155,21 @@ body {
 /* ── Items ────────────────────────────────────────────────────────────────── */
 .cluster-items {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 6px;
-  align-items: stretch;
+  align-items: center;
 }
 
 .item-wrap {
   position: relative;
-  display: flex;
-  width: 100%;
+  display: inline-flex;
 }
 
+/* ── Base Item ────────────────────────────────────────────────────────────── */
 .item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  width: 100%;
   padding: 6px 11px;
   border-radius: 7px;
   border: 1px solid transparent;
@@ -179,6 +178,7 @@ body {
   font-size: 15px;
   cursor: pointer;
   transition: background 0.13s, border-color 0.13s, color 0.13s, filter 0.13s, opacity 0.13s;
+  white-space: nowrap;
   line-height: 1.3;
   background: var(--surface2);
   -webkit-user-select: none;
