@@ -107,7 +107,7 @@ url_int = "http://192.168.2.4:8080/files/RootFS/"
 [[clusters.items]]
 title = "Wire"
 icon = "wireguard"
-url_ext = "https://wire.8tom.de/"
+#url_ext = "https://wire.8tom.de/"
 url_int = "http://192.168.2.15:10086/"
 
 [[clusters]]
