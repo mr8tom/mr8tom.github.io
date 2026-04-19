@@ -1,5 +1,4 @@
-/* ── Reset / Base ─────────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── Reset / Base ─────────────────────────────────────────────────────────── */*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
@@ -130,12 +129,12 @@ body {
 /* ── Cluster ──────────────────────────────────────────────────────────────── */
 .cluster {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  padding: 9px 11px 11px;
+  border: 0px; 
+  border-radius: 0px;
+  padding: 9px 0px 0px;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 0px;
 }
 
 .cluster-header {
