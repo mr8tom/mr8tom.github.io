@@ -230,6 +230,10 @@ url_ext = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 title = "MuForPro"
 icon = "img/musicfor.png"
 url_ext = "https://musicforprogramming.net/latest/"
+[[clusters.items]]
+title = "myNoise"
+icon = "img/mynoise.ico"
+url_ext = "https://mynoise.net/noiseMachines.php"
 
 [[clusters]]
 name = "Kommunikation"
