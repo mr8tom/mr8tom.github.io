@@ -114,7 +114,7 @@ url_ext = "https://audio.8tom.de/audiobookshelf/library/c3d39639-835c-4d3a-8904-
 url_int = "http://192.168.2.8:13378/"
 [[clusters.items]]
 title = "Lyrion"
-icon = "lyrion"
+icon = "img/lyrion.png"
 url_int = "http://192.168.2.11:9000/material/"
 [[clusters.items]]
 title = "Navi"
@@ -290,4 +290,5 @@ icon = "fritzbox"
 url_int = "http://192.168.2.2/"
 [[clusters.items]]
 title = "Repeater"
+icon = "avm-repeater-2400"
 url_int = "http://192.168.2.3/"
