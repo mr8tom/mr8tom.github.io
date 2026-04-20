@@ -304,11 +304,11 @@ body.is-dimmed #dim-overlay { opacity: 1; }
   #dim-overlay { background: rgba(255,255,255,0.85); }
 }
 
-@media (max-width: 540px) {
+@media (min-width: 540px) {
   .radio-bar {
-    padding: 6px 10px;
-    gap: 5px;
+    justify-content: center;
   }
+}
 
   .stream-btn {
     font-size: 12px;
