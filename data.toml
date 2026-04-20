@@ -177,7 +177,7 @@ url_ext = "https://link.8tom.de/de/collections/36"
 url_int = "http://192.168.2.14:3000/"
 [[clusters.items]]
 title = "Reit"
-icon = "img/reitti.png"
+icon = "img/reitti.svg"
 url_ext = "https://reitti.8tom.de/"
 url_int = "http://192.168.2.20:8080"
 [[clusters.items]]
