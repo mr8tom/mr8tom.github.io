@@ -1,5 +1,9 @@
 /* ── Reset / Base ─────────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
@@ -25,18 +29,18 @@ body {
   --btn-ext-hover:   #2578ff;
 
   /* Intern-only: deutliches Lila */
-  --btn-intonly-bg:      rgba(160, 80, 255, 0.4);
-  --btn-intonly-border:  rgba(160, 80, 255, 0.5);
+  --btn-intonly-bg:      rgba(160,80,255,0.4);
+  --btn-intonly-border:  rgba(160,80,255,0.5);
   --btn-intonly-fg:      #cc99ff;
   --btn-intonly-hover:   #a050ff;
 
   /* Radio */
-  --radio-bar-bg:    rgba(180, 10, 50, 0.18);
+  --radio-bar-bg:     rgba(180, 10, 50, 0.18);
   --radio-bar-border: rgba(180, 10, 50, 0.30);
-  --btn-radio-bg:    rgba(200, 10, 50, 0.16);
+  --btn-radio-bg:     rgba(200, 10, 50, 0.16);
   --btn-radio-border: rgba(200, 10, 50, 0.42);
-  --btn-radio-fg:    #ff6090;
-  --btn-radio-hover: #d81b60;
+  --btn-radio-fg:     #ff6090;
+  --btn-radio-hover:   #d81b60;
 
   /* Badge (interne IP bei Dual-Links) */
   --badge-bg:     rgba(130, 60, 230, 0.8);
@@ -58,18 +62,18 @@ body {
     --btn-ext-fg:      #1a5fd4;
     --btn-ext-hover:   #1a5fd4;
 
-    --btn-intonly-bg:      rgba(140, 60, 230, 0.08);
-    --btn-intonly-border:  rgba(140, 60, 230, 0.30);
+    --btn-intonly-bg:      rgba(140,60,230,0.08);
+    --btn-intonly-border:  rgba(140,60,230,0.30);
     --btn-intonly-fg:      #7a30cc;
     --btn-intonly-hover:   #7a30cc;
 
-    --radio-bar-bg:    rgba(200, 10, 50, 0.07);
-    --radio-bar-border: rgba(200, 10, 50, 0.18);
-    --btn-radio-bg:    rgba(200, 10, 50, 0.08);
+    --radio-bar-bg:     rgba(200, 10, 50, 0.07);
+    --radio-bar-border:  rgba(200, 10, 50, 0.18);
+    --btn-radio-bg:     rgba(200, 10, 50, 0.08);
     --btn-radio-border: rgba(200, 10, 50, 0.28);
-    --btn-radio-fg:    #b30030;
-    --btn-radio-hover: #b30030;
-    
+    --btn-radio-fg:     #b30030;
+    --btn-radio-hover:   #b30030;
+
     --badge-bg:     rgba(130, 60, 230, 0.8);
     --badge-border: rgba(130, 60, 230, 0.9);
     --badge-fg:     #c299ff;
@@ -99,6 +103,7 @@ body {
 }
 
 .stream-btn {
+  flex: 0 0 auto;
   padding: 6px 11px;
   font-size: 14px;
   border: 1px solid var(--btn-radio-border);
@@ -110,11 +115,13 @@ body {
   transition: background 0.13s, border-color 0.13s, color 0.13s;
   line-height: 1.3;
 }
+
 .stream-btn:hover {
   background: var(--btn-radio-hover);
   border-color: var(--btn-radio-hover);
   color: #fff;
 }
+
 .stream-btn.radio-active {
   background: var(--btn-radio-hover);
   border-color: var(--btn-radio-hover);
@@ -122,12 +129,14 @@ body {
   outline: 2px solid rgba(255,255,255,0.25);
   outline-offset: 1px;
 }
+
 .stop-btn {
   background: transparent;
   border: 1px solid rgba(200,10,50,0.25);
   color: var(--btn-radio-fg);
   opacity: 0.7;
 }
+
 .stop-btn:hover {
   background: #c0392b;
   border-color: #c0392b;
@@ -150,22 +159,26 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .clusters-grid { grid-template-columns: repeat(2, minmax(0, 320px)); }
+  .clusters-grid {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+  }
 }
 
 @media (max-width: 700px) {
-  .clusters-grid { grid-template-columns: minmax(0, 320px); }
+  .clusters-grid {
+    grid-template-columns: minmax(0, 320px);
+  }
 }
 
 /* ── Cluster ──────────────────────────────────────────────────────────────── */
 .cluster {
   background: var(--surface);
-  border: 0px;
-  border-radius: 0px;
+  border: 0;
+  border-radius: 0;
   padding: 9px 5px 5px;
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 0;
   width: 100%;
   max-width: 320px;
 }
@@ -187,7 +200,7 @@ body {
 /* ── Items ────────────────────────────────────────────────────────────────── */
 .cluster-items {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 6px;
   align-items: stretch;
 }
@@ -196,6 +209,24 @@ body {
   position: relative;
   display: block;
   min-width: 0;
+}
+
+/* 2. Zeile mit genau 3 Items → 3 gleich breite Spalten in der 4‑Spalten‑Zeile */
+.item-wrap:nth-last-child(3):nth-child(4n + 1),
+.item-wrap:nth-last-child(2):nth-child(4n + 2),
+.item-wrap:nth-last-child(1):nth-child(4n + 3) {
+  grid-column: span 4;
+}
+
+/* 2. Zeile mit genau 2 Items → 2 gleich breite Blöcke */
+.item-wrap:nth-last-child(2):nth-child(4n + 1),
+.item-wrap:nth-last-child(1):nth-child(4n + 2) {
+  grid-column: span 6;
+}
+
+/* 2. Zeile mit 1 Item → bleibt normal, nicht zu breit */
+.item-wrap:last-child:nth-child(4n + 1) {
+  grid-column: span 4;
 }
 
 /* ── Base Item ────────────────────────────────────────────────────────────── */
@@ -234,12 +265,16 @@ body {
   border-color: var(--btn-ext-border);
   color: var(--btn-ext-fg);
 }
+
 .item.ext:hover {
   background: var(--btn-ext-hover);
   border-color: var(--btn-ext-hover);
   color: #fff;
 }
-.item.ext:hover .service-icon { filter: brightness(10); }
+
+.item.ext:hover .service-icon {
+  filter: brightness(10);
+}
 
 /* ── Intern-only ──────────────────────────────────────────────────────────── */
 .item.int-only {
@@ -247,12 +282,16 @@ body {
   border-color: var(--btn-intonly-border);
   color: var(--btn-intonly-fg);
 }
+
 .item.int-only:hover {
   background: var(--btn-intonly-hover);
   border-color: var(--btn-intonly-hover);
   color: #fff;
 }
-.item.int-only:hover .service-icon { filter: brightness(10); }
+
+.item.int-only:hover .service-icon {
+  filter: brightness(10);
+}
 
 /* ── Dual-Link Badge (internes IP für hover/press) ───────────────────────── */
 .int-badge {
@@ -273,6 +312,7 @@ body {
   z-index: 2;
   touch-action: manipulation;
 }
+
 .int-badge:hover,
 .int-badge:active {
   transform: scale(2.8);
@@ -291,23 +331,30 @@ body {
 
 /* ── Dim Overlay ──────────────────────────────────────────────────────────── */
 #dim-overlay {
-  position: fixed; inset: 0;
+  position: fixed;
+  inset: 0;
   background: rgba(0,0,0,0.92);
-  opacity: 0; pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 0.6s ease-in-out;
   z-index: 9999;
 }
-body.is-dimmed #dim-overlay { opacity: 1; }
 
-@media (prefers-color-scheme: light) {
-  #dim-overlay { background: rgba(255,255,255,0.85); }
+body.is-dimmed #dim-overlay {
+  opacity: 1;
 }
 
+@media (prefers-color-scheme: light) {
+  #dim-overlay {
+    background: rgba(255,255,255,0.85);
+  }
+}
+
+/* Radio-Buttons auf Desktop mittig und etwas größer */
 @media (min-width: 540px) {
   .radio-bar {
     justify-content: center;
   }
-}
 
   .stream-btn {
     font-size: 15px;
