@@ -181,7 +181,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--fg-muted);
-  line-height: 0;
+  line-height: 1;
 }
 
 /* ── Items ────────────────────────────────────────────────────────────────── */
