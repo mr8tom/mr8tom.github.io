@@ -4,7 +4,6 @@ from tinyhtml import html, h, frag, raw
 
 ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons"
 
-
 def icon_src(name: str) -> str:
     if not name:
         return ""
@@ -12,20 +11,10 @@ def icon_src(name: str) -> str:
     name = name.strip()
     low = name.lower()
 
-    if name.startswith("/img/"):
+    if low.startswith("img/"):
         return name
-
-    if name.startswith("http://") or name.startswith("https://"):
-        return name
-
-    if low.endswith(".svg"):
-        return f"{ICON_CDN}/svg/{name}"
-
-    if low.endswith(".png"):
-        return f"{ICON_CDN}/png/{name}"
 
     return f"{ICON_CDN}/svg/{name}.svg"
-
 
 def icon_img(name, size=18):
     if not name:
