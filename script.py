@@ -1,26 +1,37 @@
+import os
 import tomllib
 from tinyhtml import html, h, frag, raw
 
 ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons"
 
+
 def icon_src(name: str) -> str:
     if not name:
         return ""
+
+    name = name.strip()
+    low = name.lower()
+
+    if name.startswith("/img/"):
+        return name
+
     if name.startswith("http://") or name.startswith("https://"):
         return name
-    low = name.lower()
+
     if low.endswith(".svg"):
         return f"{ICON_CDN}/svg/{name}"
+
     if low.endswith(".png"):
         return f"{ICON_CDN}/png/{name}"
-    if low.endswith(".webp"):
-        return f"{ICON_CDN}/webp/{name}"
+
     return f"{ICON_CDN}/svg/{name}.svg"
+
 
 def icon_img(name, size=18):
     if not name:
         return frag()
-    return h("img",
+    return h(
+        "img",
         src=icon_src(name),
         alt=name,
         width=str(size), height=str(size),
@@ -28,6 +39,7 @@ def icon_img(name, size=18):
         klass="service-icon",
         onerror="this.style.display='none'",
     )
+
 
 def render_item(item):
     has_ext = bool(item.get("url_ext"))
@@ -49,14 +61,16 @@ def render_item(item):
     badge = h("a", klass="int-badge", href=item.get("url_int", ""), title="Intern öffnen")() if dual else frag()
     return h("div", klass="item-wrap")(link, badge)
 
+
 def render_cluster(cluster):
-    items_html = list(render_item(item) for item in cluster.get("items", []))
+    items_html = [render_item(item) for item in cluster.get("items", [])]
     return h("div", klass="cluster")(
         h("div", klass="cluster-header")(
             h("h3", klass="cluster-name")(cluster.get("name", "")),
         ),
         h("div", klass="cluster-items")(*items_html),
     )
+
 
 def render_radio_bar(clusters):
     radio = next((c for c in clusters if c.get("radio")), None)
@@ -70,11 +84,12 @@ def render_radio_bar(clusters):
     now = h("span", klass="now-playing", id="now-playing")()
     return h("div", klass="radio-bar")(*stream_btns, now)
 
+
 with open("data.toml", "rb") as f:
     data = tomllib.load(f)
 
-meta  = data.get("meta", {})
-gtag  = meta.get("gtag_id", "")
+meta = data.get("meta", {})
+gtag = meta.get("gtag_id", "")
 title = meta.get("title", "Dashboard")
 
 gtag_block = raw(f"""
@@ -142,7 +157,7 @@ radio_js = r"""
 """
 
 all_clusters = data.get("clusters", [])
-non_radio    = [c for c in all_clusters if not c.get("radio")]
+non_radio = [c for c in all_clusters if not c.get("radio")]
 
 page = html(lang="de")(
     h("head")(
@@ -158,7 +173,7 @@ page = html(lang="de")(
         render_radio_bar(all_clusters),
         h("main", klass="container")(
             h("div", klass="clusters-grid")(
-                render_cluster(c) for c in non_radio
+                [render_cluster(c) for c in non_radio]
             ),
             h("audio", id="radio-player", preload="none")(),
         ),
@@ -166,8 +181,7 @@ page = html(lang="de")(
     ),
 )
 
-import os
 os.makedirs("dist", exist_ok=True)
-with open("dist/index.html", "w") as f:
+with open("dist/index.html", "w", encoding="utf-8") as f:
     f.write(page.render())
 print("done")
