@@ -9,10 +9,11 @@ name = "Radio"
 radio = true
 [[clusters.items]]
 title = "DF"
-icon = "/img/DF.png"
+icon = "img/DF.png"
 stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
 [[clusters.items]]
 title = "DFK"
+icon = "img/DLFK.png"
 stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
 [[clusters.items]]
 title = "RP"
@@ -186,11 +187,11 @@ url_ext = "https://koch.8tom.de/"
 url_int = "http://192.168.2.22:8002"
 [[clusters.items]]
 title = "Trek"
-icon = "trek_5u4ozqxqly.svg"
+icon = "img/trek.svg"
 url_ext = "https://reise.8tom.de/"
 url_int = "http://192.168.2.26:3000/"
 [[clusters.items]]
-title = "Journ"
+title = "Journiv"
 icon = "journiv.png"
 url_ext = "https://journal.8tom.de/"
 url_int = "http://192.168.2.26:8000/"
@@ -198,7 +199,6 @@ url_int = "http://192.168.2.26:8000/"
 #title = "Wordpress"
 #icon = "wordpress"
 #url_int = "http://192.168.2.21:80/"
-
 
 [[clusters]]
 name = "Web"
@@ -208,6 +208,7 @@ icon = "mediathekview"
 url_ext = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
 [[clusters.items]]
 title = "ARTE"
+icon = "img/ARTE.png"
 url_ext = "https://www.arte.tv/de/videos/meistgesehen/"
 [[clusters.items]]
 title = "Finance"
@@ -215,6 +216,7 @@ icon = "yahoo"
 url_ext = "https://finance.yahoo.com/portfolio/p_0/view/view_0"
 [[clusters.items]]
 title = "Wetter"
+icon = "img/weather.png"
 url_ext = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
 [[clusters.items]]
 title = "git"
@@ -222,6 +224,7 @@ icon = "github"
 url_ext = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
 [[clusters.items]]
 title = "MuForPro"
+icon = "img/musicfor.png"
 url_ext = "https://musicforprogramming.net/latest/"
 
 [[clusters]]
@@ -262,7 +265,7 @@ title = "PDF"
 icon = "stirling-pdf"
 url_int = "http://192.168.2.24:8080/"
 [[clusters.items]]
-title = "Bich"
+title = "Bichon"
 icon = "mail-archiver"
 url_int = "http://192.168.2.16:15630/"
 
