@@ -9,6 +9,7 @@ name = "Radio"
 radio = true
 [[clusters.items]]
 title = "DF"
+icon = "/img/DF.png"
 stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
 [[clusters.items]]
 title = "DFK"
