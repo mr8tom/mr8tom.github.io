@@ -290,5 +290,5 @@ icon = "fritzbox"
 url_int = "http://192.168.2.2/"
 [[clusters.items]]
 title = "Repeater"
-icon = "avm-repeater-2400"
+icon = "img/repeater.png"
 url_int = "http://192.168.2.3/"
