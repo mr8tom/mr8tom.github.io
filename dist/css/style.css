@@ -188,10 +188,9 @@ body {
 .cluster-items {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: auto;
+  grid-template-rows: 1fr 1fr;
   gap: 6px;
   align-items: stretch;
-  max-height: 200px;  /* grobe Beschränkung auf 2 Zeilen */
   overflow: hidden;
 }
 
