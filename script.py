@@ -108,7 +108,7 @@ radio_js = r"""
     if (!active) return;
     idleTimer = setTimeout(() => document.body.classList.add("is-dimmed"), IDLE_MS);
   };
-  ["mousemove","mousedown","keydown","scroll","touchstart"]
+  ["mousedown","touchstart"]
     .forEach(e => document.addEventListener(e, resetIdle, {passive: true}));
 
   const stop = () => {
