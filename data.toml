@@ -38,14 +38,14 @@ title = "Prox"
 icon = "proxmox"
 url_int = "https://192.168.2.4:8006/"
 [[clusters.items]]
-title = "NPM"
-icon = "nginx-proxy-manager"
-url_int = "https://192.168.2.7:81/"
-[[clusters.items]]
 title = "TMX"
 icon = "termix"
 url_ext = "https://adv.8tom.de/"
 url_int = "http://192.168.2.18/"
+[[clusters.items]]
+title = "Npm"
+icon = "nginx-proxy-manager"
+url_int = "https://192.168.2.7:81/"
 [[clusters.items]]
 title = "AdG"
 icon = "adguard-home"
@@ -84,6 +84,10 @@ title = "Staubi"
 icon = "valetudo"
 url_int = "http://192.168.2.44/"
 [[clusters.items]]
+title = "frame"
+icon = "esphome-alt"
+url_int = "http://192.168.2.65/"
+[[clusters.items]]
 title = "wz"
 icon = "raspberry-pi"
 url_int = "http://192.168.2.42/cgi-bin/main.cgi"
@@ -95,10 +99,6 @@ url_int = "http://192.168.2.41/cgi-bin/main.cgi"
 title = "kuba"
 icon = "raspberry-pi"
 url_int = "http://192.168.2.43/cgi-bin/main.cgi"
-[[clusters.items]]
-title = "frame"
-icon = "esphome-alt"
-url_int = "http://192.168.2.65/"
 
 [[clusters]]
 name = "Media"
