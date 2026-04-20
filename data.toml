@@ -103,11 +103,6 @@ url_int = "http://192.168.2.43/cgi-bin/main.cgi"
 [[clusters]]
 name = "Media"
 [[clusters.items]]
-title = "Watcharr"
-icon = "watcharr"
-url_ext = "https://watcharr.8tom.de/"
-url_int = "http://192.168.2.33:3090/"
-[[clusters.items]]
 title = "Jellyfin"
 icon = "jellyfin"
 url_ext = "https://stream.8tom.de/web/#/tv.html?topParentId=43cfe12fe7d9d8d21251e0964e0232e2&collectionType=tvshows"
@@ -135,22 +130,27 @@ title = "Frame"
 icon = "immich"
 url_ext = "https://picframe.8tom.de/"
 url_int = "http://192.168.2.33:3090"
+[[clusters.items]]
+title = "Watcharr"
+icon = "watcharr"
+url_ext = "https://watcharr.8tom.de/"
+url_int = "http://192.168.2.33:3090/"
 
 [[clusters]]
 name = "Nextcloud"
 [[clusters.items]]
 title = "Data"
 icon = "nextcloud"
-url_ext = "https://8tom.de/apps/files/"
+url_ext = "https://8tom.de/apps/files"
 url_int = "http://192.168.2.6/"
 [[clusters.items]]
 title = "AZE"
 icon = "nextcloud-tables"
 url_ext = "https://8tom.de/apps/files/files/1557730?dir=/Archiv/Arbeit&openfile=true"
 [[clusters.items]]
-title = "Coll"
-icon = "nextcloud-contacts"
-url_ext = "https://8tom.de/apps/collectives/"
+title = "News"
+icon = "nextcloud-news"
+url_ext = "https://8tom.de/apps/news"
 [[clusters.items]]
 title = "Task"
 icon = "nextcloud-tasks"
@@ -167,6 +167,10 @@ url_ext = "https://8tom.de/apps/calendar/dayGridMonth/now"
 title = "Such"
 icon = "elasticsearch"
 url_ext = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&provider=collectives-pages&provider=collectives-page-content&provider=notes&provider=files&provider=tasks"
+[[clusters.items]]
+title = "Keep"
+icon = "nextcloud-cospend"
+url_ext = "https://8tom.de/apps/keeweb"
 
 [[clusters]]
 name = "Collect"
