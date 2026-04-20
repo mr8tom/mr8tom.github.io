@@ -5,6 +5,31 @@ primary_color_light = "#85d457"
 base_url = "https://mr8tom.github.io/"
 
 [[clusters]]
+name = "Radio"
+radio = true
+[[clusters.items]]
+title = "DF"
+stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
+[[clusters.items]]
+title = "DFK"
+stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
+[[clusters.items]]
+title = "RP"
+stream = "https://stream.radioparadise.com/aac-64"
+[[clusters.items]]
+title = "ChillOut"
+stream = "https://streams.fluxfm.de/chillout/aac-64/audio/"
+[[clusters.items]]
+title = "Drone"
+stream = "https://ice1.somafm.com/dronezone-128-aac"
+[[clusters.items]]
+title = "Space"
+stream = "https://ice3.somafm.com/spacestation-128-aac"
+[[clusters.items]]
+title = "Sea"
+stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
+
+[[clusters]]
 name = "Infra"
 [[clusters.items]]
 title = "Prox"
@@ -173,6 +198,31 @@ url_int = "http://192.168.2.26:8000/"
 #icon = "wordpress"
 #url_int = "http://192.168.2.21:80/"
 
+
+[[clusters]]
+name = "Web"
+[[clusters.items]]
+title = "Mediathek"
+icon = "mediathekview"
+url_ext = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
+[[clusters.items]]
+title = "ARTE"
+url_ext = "https://www.arte.tv/de/videos/meistgesehen/"
+[[clusters.items]]
+title = "Finance"
+icon = "yahoo"
+url_ext = "https://finance.yahoo.com/portfolio/p_0/view/view_0"
+[[clusters.items]]
+title = "Wetter"
+url_ext = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
+[[clusters.items]]
+title = "git"
+icon = "github"
+url_ext = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
+[[clusters.items]]
+title = "MuForPro"
+url_ext = "https://musicforprogramming.net/latest/"
+
 [[clusters]]
 name = "Kommunikation"
 [[clusters.items]]
@@ -226,54 +276,5 @@ title = "FB 2"
 icon = "fritzbox"
 url_int = "http://192.168.2.2/"
 [[clusters.items]]
-title = "Rptr"
+title = "Repeater"
 url_int = "http://192.168.2.3/"
-
-[[clusters]]
-name = "Radio"
-radio = true
-[[clusters.items]]
-title = "DF"
-stream = "https://st01.sslstream.dlf.de/dlf/01/mid/aac/stream.aac"
-[[clusters.items]]
-title = "DFK"
-stream = "https://st02.sslstream.dlf.de/dlf/02/mid/aac/stream.aac"
-[[clusters.items]]
-title = "RP"
-stream = "https://stream.radioparadise.com/aac-64"
-[[clusters.items]]
-title = "Chl"
-stream = "https://streams.fluxfm.de/chillout/aac-64/audio/"
-[[clusters.items]]
-title = "Drn"
-stream = "https://ice1.somafm.com/dronezone-128-aac"
-[[clusters.items]]
-title = "Spc"
-stream = "https://ice3.somafm.com/spacestation-128-aac"
-[[clusters.items]]
-title = "Sea"
-stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
-
-[[clusters]]
-name = "Web"
-[[clusters.items]]
-title = "Mediathek"
-icon = "mediathekview"
-url_ext = "https://mediathekviewweb.de/#query=!ARTE.DE&page=1"
-[[clusters.items]]
-title = "ARTE"
-url_ext = "https://www.arte.tv/de/videos/meistgesehen/"
-[[clusters.items]]
-title = "Finc"
-icon = "yahoo"
-url_ext = "https://finance.yahoo.com/portfolio/p_0/view/view_0"
-[[clusters.items]]
-title = "Wetter"
-url_ext = "https://www.timeanddate.de/wetter/deutschland/leipzig/stunden"
-[[clusters.items]]
-title = "git"
-icon = "github"
-url_ext = "https://github.com/mr8tom/mr8tom.github.io/blob/main/data.toml"
-[[clusters.items]]
-title = "mFor"
-url_ext = "https://musicforprogramming.net/latest/"
