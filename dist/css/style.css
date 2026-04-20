@@ -99,9 +99,8 @@ body {
 }
 
 .stream-btn {
-  flex: 0 0 auto;
   padding: 6px 11px;
-  font-size: 15px;
+  font-size: 14px;
   border: 1px solid var(--btn-radio-border);
   background: var(--btn-radio-bg);
   color: var(--btn-radio-fg);
@@ -182,7 +181,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--fg-muted);
-  line-height: 1;
+  line-height: 0;
 }
 
 /* ── Items ────────────────────────────────────────────────────────────────── */
@@ -204,7 +203,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 11px;
+  padding: 5px 9px;
   border-radius: 7px;
   border: 1px solid transparent;
   color: var(--fg);
@@ -311,7 +310,7 @@ body.is-dimmed #dim-overlay { opacity: 1; }
 }
 
   .stream-btn {
-    font-size: 12px;
+    font-size: 15px;
     padding: 5px 9px;
   }
 }
