@@ -172,12 +172,12 @@ url_ext = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collective
 name = "Collect"
 [[clusters.items]]
 title = "Link"
-icon = "linkwarden.png"
+icon = "img/linkwarden.png"
 url_ext = "https://link.8tom.de/de/collections/36"
 url_int = "http://192.168.2.14:3000/"
 [[clusters.items]]
 title = "Reit"
-icon = "mapillary.svg"
+icon = "img/reitti.png"
 url_ext = "https://reitti.8tom.de/"
 url_int = "http://192.168.2.20:8080"
 [[clusters.items]]
@@ -258,6 +258,7 @@ url_ext = "https://neko.8tom.de/"
 url_int = "http://192.168.2.26:8080/"
 [[clusters.items]]
 title = "Tec"
+icon = "img/kreuzer.ico"
 url_ext = "https://tec.8tom.de/"
 url_int = "https://192.168.2.17:443/"
 [[clusters.items]]
