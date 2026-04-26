@@ -115,11 +115,11 @@ url_int = "http://192.168.2.8:13378/"
 [[clusters.items]]
 title = "Lyrion"
 icon = "img/lyrion.png"
-url_ext = "https://musik.8tom.de/"
 url_int = "http://192.168.2.11:9000/material/"
 [[clusters.items]]
 title = "Navidrome"
 icon = "navidrome"
+url_ext = "https://musik.8tom.de/"
 url_int = "http://192.168.2.29:4533/"
 [[clusters.items]]
 title = "Immich"
