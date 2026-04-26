@@ -34,36 +34,36 @@ stream = "https://seasaltradio.stream.laut.fm/seasaltradio"
 [[clusters]]
 name = "Infra"
 [[clusters.items]]
-title = "Prox"
+title = "Proxmox"
 icon = "proxmox"
 url_int = "https://192.168.2.4:8006/"
 [[clusters.items]]
-title = "TMX"
+title = "Termix"
 icon = "termix"
 url_ext = "https://adv.8tom.de/"
 url_int = "http://192.168.2.18/"
 [[clusters.items]]
-title = "Npm"
+title = "NPM"
 icon = "nginx-proxy-manager"
 url_int = "https://192.168.2.7:81/"
 [[clusters.items]]
-title = "AdG"
+title = "AdGuard"
 icon = "adguard-home"
 url_int = "http://192.168.2.9/"
 [[clusters.items]]
-title = "Dock"
+title = "Dockge"
 icon = "dockge"
 url_int = "http://192.168.2.26:5001/"
 [[clusters.items]]
-title = "JD"
+title = "JDownloader"
 icon = "jdownloader"
 url_int = "http://192.168.2.26:5800/"
 [[clusters.items]]
-title = "File"
+title = "Filebrowser"
 icon = "filebrowser-quantum"
 url_int = "http://192.168.2.4:8080/files/RootFS/"
 [[clusters.items]]
-title = "Wire"
+title = "Wireguard"
 icon = "wireguard"
 #url_ext = "https://wire.8tom.de/"
 url_int = "http://192.168.2.15:10086/"
@@ -84,7 +84,7 @@ title = "Staubi"
 icon = "valetudo"
 url_int = "http://192.168.2.44/"
 [[clusters.items]]
-title = "frame"
+title = "frameESP"
 icon = "esphome-alt"
 url_int = "http://192.168.2.65/"
 [[clusters.items]]
@@ -115,9 +115,10 @@ url_int = "http://192.168.2.8:13378/"
 [[clusters.items]]
 title = "Lyrion"
 icon = "img/lyrion.png"
+url_ext = "https://musik.8tom.de/"
 url_int = "http://192.168.2.11:9000/material/"
 [[clusters.items]]
-title = "Navi"
+title = "Navidrome"
 icon = "navidrome"
 url_int = "http://192.168.2.29:4533/"
 [[clusters.items]]
@@ -126,7 +127,7 @@ icon = "immich"
 url_ext = "https://pic.8tom.de/"
 url_int = "http://192.168.2.23:2283/"
 [[clusters.items]]
-title = "Frame"
+title = "Frame Immich"
 icon = "immich"
 url_ext = "https://picframe.8tom.de/"
 url_int = "http://192.168.2.33:3090"
@@ -152,45 +153,45 @@ title = "News"
 icon = "nextcloud-news"
 url_ext = "https://8tom.de/apps/news"
 [[clusters.items]]
-title = "Task"
+title = "Tasks"
 icon = "nextcloud-tasks"
 url_ext = "https://8tom.de/apps/tasks/#/calendars/migrated-1"
 [[clusters.items]]
-title = "Note"
+title = "Notes"
 icon = "nextcloud-notes"
 url_ext = "https://8tom.de/apps/notes"
 [[clusters.items]]
-title = "CAL"
+title = "Kalender"
 icon = "nextcloud-calendar"
 url_ext = "https://8tom.de/apps/calendar/dayGridMonth/now"
 [[clusters.items]]
-title = "Such"
+title = "Suchen"
 icon = "elasticsearch"
 url_ext = "https://8tom.de/apps/thesearchpage/?terms=Shimano&provider=collectives&provider=collectives-pages&provider=collectives-page-content&provider=notes&provider=files&provider=tasks"
 [[clusters.items]]
-title = "Keep"
+title = "Keepass"
 icon = "nextcloud-cospend"
 url_ext = "https://8tom.de/apps/keeweb"
 
 [[clusters]]
 name = "Collect"
 [[clusters.items]]
-title = "Link"
+title = "Linkwarden"
 icon = "img/linkwarden.png"
 url_ext = "https://link.8tom.de/de/collections/36"
 url_int = "http://192.168.2.14:3000/"
 [[clusters.items]]
-title = "Reit"
+title = "Reitti"
 icon = "img/reitti.svg"
 url_ext = "https://reitti.8tom.de/"
 url_int = "http://192.168.2.20:8080"
 [[clusters.items]]
-title = "Koch"
+title = "Koch Tandoor"
 icon = "tandoor-recipes"
 url_ext = "https://koch.8tom.de/"
 url_int = "http://192.168.2.22:8002"
 [[clusters.items]]
-title = "Trek"
+title = "Trek Reise"
 icon = "img/trek.svg"
 url_ext = "https://reise.8tom.de/"
 url_int = "http://192.168.2.26:3000/"
@@ -238,7 +239,7 @@ url_ext = "https://mynoise.net/noiseMachines.php"
 [[clusters]]
 name = "Kommunikation"
 [[clusters.items]]
-title = "Mtx"
+title = "Matrix"
 icon = "matrix"
 url_ext = "https://matrix.8tom.de/synapse-admin/"
 [[clusters.items]]
@@ -252,7 +253,7 @@ icon = "freshrss"
 url_ext = "https://rss.8tom.de/"
 url_int = "http://192.168.2.19/"
 [[clusters.items]]
-title = "Pad"
+title = "Etherpad"
 icon = "etherpad"
 url_ext = "https://pad.8tom.de/p/lucatom"
 url_int = "http://192.168.2.28:9001/"
