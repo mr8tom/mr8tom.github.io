@@ -40,7 +40,7 @@ url_int = "https://192.168.2.4:8006/"
 [[clusters.items]]
 title = "Termix"
 icon = "termix"
-url_ext = "https://adv.8tom.de/"
+url_ext = "https://ermix.8tom.de/"
 url_int = "http://192.168.2.18/"
 [[clusters.items]]
 title = "NPM"
@@ -132,10 +132,10 @@ icon = "immich"
 url_ext = "https://picframe.8tom.de/"
 url_int = "http://192.168.2.33:3090"
 [[clusters.items]]
-title = "Watcharr"
-icon = "watcharr"
-url_ext = "https://watcharr.8tom.de/"
-url_int = "http://192.168.2.33:3090/"
+title = "yamtrack"
+icon = "yamtrack"
+url_ext = "https://yam.8tom.de/"
+url_int = "http://192.168.2.31:8000/"
 
 [[clusters]]
 name = "Nextcloud"
@@ -193,7 +193,7 @@ url_int = "http://192.168.2.22:8002"
 [[clusters.items]]
 title = "Trek Reise"
 icon = "img/trek.svg"
-url_ext = "https://reise.8tom.de/"
+url_ext = "https://trek.8tom.de/"
 url_int = "http://192.168.2.26:3000/"
 [[clusters.items]]
 title = "Journiv"
