@@ -131,11 +131,6 @@ title = "Frame Immich"
 icon = "immich"
 url_ext = "https://picframe.8tom.de/"
 url_int = "http://192.168.2.33:3090"
-[[clusters.items]]
-title = "yamtrack"
-icon = "yamtrack"
-url_ext = "https://yam.8tom.de/"
-url_int = "http://192.168.2.31:8000/"
 
 [[clusters]]
 name = "Nextcloud"
@@ -200,6 +195,16 @@ title = "Journiv"
 icon = "img/journiv.png"
 url_ext = "https://journal.8tom.de/"
 url_int = "http://192.168.2.26:8000/"
+[[clusters.items]]
+title = "yamtrack"
+icon = "yamtrack"
+url_ext = "https://yam.8tom.de/"
+url_int = "http://192.168.2.31:8000/"
+[[clusters.items]]
+title = "grimmory"
+icon = "grimmory"
+url_ext = "https://book.8tom.de/"
+url_int = "http://192.168.2.32:6060/"
 #[[clusters.items]]
 #title = "Wordpress"
 #icon = "wordpress"
