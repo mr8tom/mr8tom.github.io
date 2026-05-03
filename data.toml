@@ -205,6 +205,10 @@ title = "grimmory"
 icon = "img/grimmory.svg"
 url_ext = "https://book.8tom.de/"
 url_int = "http://192.168.2.32:6060/"
+[[clusters.items]]
+title = "ghostfolio"
+icon = "ghostfolio"
+url_int = "http://192.168.2.82:3333/"
 #[[clusters.items]]
 #title = "Wordpress"
 #icon = "wordpress"
