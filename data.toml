@@ -86,7 +86,7 @@ url_int = "http://192.168.2.44/"
 [[clusters.items]]
 title = "frameESP"
 icon = "esphome-alt"
-url_int = "http://192.168.2.65/"
+url_int = "http://192.168.2.49/"
 [[clusters.items]]
 title = "wz"
 icon = "raspberry-pi"
