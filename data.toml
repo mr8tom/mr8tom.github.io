@@ -75,6 +75,7 @@ title = "HA"
 icon = "home-assistant"
 url_ext = "https://home.8tom.de"
 url_int = "http://192.168.2.10:8123/"
+[[clusters.items]]
 title = "MA"
 icon = "music-assistant"
 url_int = "http://192.168.2.10:8095/"
