@@ -94,7 +94,7 @@ url_int = "http://192.168.2.49/"
 [[clusters.items]]
 title = "wz"
 icon = "raspberry-pi"
-url_int = "http://192.168.2.42/cgi-bin/main.cgi"
+url_int = "http://192.168.2.43/cgi-bin/main.cgi"
 [[clusters.items]]
 title = "sz"
 icon = "raspberry-pi"
@@ -102,7 +102,7 @@ url_int = "http://192.168.2.41/cgi-bin/main.cgi"
 [[clusters.items]]
 title = "kuba"
 icon = "raspberry-pi"
-url_int = "http://192.168.2.43/cgi-bin/main.cgi"
+url_int = "http://192.168.2.42/cgi-bin/main.cgi"
 
 [[clusters]]
 name = "Media"
