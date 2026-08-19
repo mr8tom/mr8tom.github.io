@@ -40,7 +40,7 @@ url_int = "https://192.168.2.4:8006/"
 [[clusters.items]]
 title = "Termix"
 icon = "termix"
-url_ext = "https://ermix.8tom.de/"
+#url_ext = "https://ermix.8tom.de/"
 url_int = "http://192.168.2.18/"
 [[clusters.items]]
 title = "NPM"
@@ -51,9 +51,9 @@ title = "AdGuard"
 icon = "adguard-home"
 url_int = "http://192.168.2.9/"
 [[clusters.items]]
-title = "Dockge"
-icon = "dockge"
-url_int = "http://192.168.2.26:5001/"
+title = "Arcane"
+icon = "arcane"
+url_int = "http://192.168.2.26:3552/"
 [[clusters.items]]
 title = "JDownloader"
 icon = "jdownloader"
