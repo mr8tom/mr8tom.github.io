@@ -136,6 +136,11 @@ title = "Frame Immich"
 icon = "immich"
 url_ext = "https://picframe.8tom.de/"
 url_int = "http://192.168.2.33:3090"
+[[clusters.items]]
+title = "invidious"
+icon = "invidious"
+url_ext = "https://i.8tom.de/"
+url_int = "http://192.168.2.24:3000"
 
 [[clusters]]
 name = "Nextcloud"
@@ -206,8 +211,8 @@ icon = "yamtrack"
 url_ext = "https://yam.8tom.de/"
 url_int = "http://192.168.2.31:8000/"
 [[clusters.items]]
-title = "grimmory"
-icon = "img/grimmory.svg"
+title = "bookorbit"
+icon = "img/bookorbit.svg"
 url_ext = "https://book.8tom.de/"
 url_int = "http://192.168.2.32:6060/"
 [[clusters.items]]
