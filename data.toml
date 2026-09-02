@@ -115,7 +115,7 @@ url_int = "http://192.168.2.13:8096/"
 [[clusters.items]]
 title = "ABS"
 icon = "audiobookshelf"
-url_ext = "https://audio.8tom.de/audiobookshelf/library/c3d39639-835c-4d3a-8904-aa7953684608/bookshelf?filter=genres.8J%252BMtu%252B4jw%253D%253D&sort=mtimeMs&desc=1"
+url_ext = "https://audio.8tom.de/audiobookshelf/library/c3d39639-835c-4d3a-8904-aa7953684608/bookshelf?filter=genres.MQ%253D%253D&sort=mtimeMs&desc=1"
 url_int = "http://192.168.2.8:13378/"
 [[clusters.items]]
 title = "Lyrion"
@@ -126,6 +126,11 @@ title = "Navidrome"
 icon = "navidrome"
 url_ext = "https://musik.8tom.de/"
 url_int = "http://192.168.2.29:4533/"
+[[clusters.items]]
+title = "bookorbit"
+icon = "img/bookorbit.svg"
+url_ext = "https://book.8tom.de/"
+url_int = "http://192.168.2.32:6060/"
 [[clusters.items]]
 title = "Immich"
 icon = "immich"
@@ -210,11 +215,6 @@ title = "yamtrack"
 icon = "yamtrack"
 url_ext = "https://yam.8tom.de/"
 url_int = "http://192.168.2.31:8000/"
-[[clusters.items]]
-title = "bookorbit"
-icon = "img/bookorbit.svg"
-url_ext = "https://book.8tom.de/"
-url_int = "http://192.168.2.32:6060/"
 [[clusters.items]]
 title = "ghostfolio"
 icon = "ghostfolio"
