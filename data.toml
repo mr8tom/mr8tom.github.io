@@ -61,7 +61,7 @@ url_int = "http://192.168.2.26:5800/"
 [[clusters.items]]
 title = "Filebrowser"
 icon = "filebrowser-quantum"
-url_int = "http://192.168.2.4:8080/files/RootFS/"
+url_int = "http://192.168.2.4:8080/"
 [[clusters.items]]
 title = "Wireguard"
 icon = "wireguard"
