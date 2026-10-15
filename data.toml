@@ -69,6 +69,14 @@ icon = "wireguard"
 url_int = "http://192.168.2.15:10086/"
 
 [[clusters]]
+name = "Tec"
+[[clusters.items]]
+title = "Zeit"
+icon = ""
+url_ext = "https://tec.8tom.de/zeiterfassung/"
+url_int = "http://192.168.2.26:8000"
+
+[[clusters]]
 name = "Smart Home"
 [[clusters.items]]
 title = "HA"
